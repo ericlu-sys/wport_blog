@@ -1,0 +1,362 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BlogLayout from "@/layouts/BlogLayout.astro";
+import Topbar from "@/components/Topbar.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post: CollectionEntry<"posts">) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: CollectionEntry<"posts"> };
+const { Content } = await render(post);
+
+const shareUrl = `https://blog.wport.me/posts/${post.id}/`;
+const shareTitle = encodeURIComponent(post.data.title);
+---
+
+<BlogLayout title={post.data.title}>
+  <Topbar />
+
+
+  <main style="max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px;">
+
+    <a href="/" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      返回文章列表
+    </a>
+
+    <div class="post-layout">
+
+      <!-- 主內容 -->
+      <article>
+        <header style="margin-bottom: 36px;">
+          <div class="post-tags">
+            {post.data.tags && post.data.tags.map((tag: string) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+          <h1 style="font-size: 28px; font-weight: 700; color: #2E2E2E; line-height: 1.3; margin-bottom: 14px;">
+            {post.data.title}
+          </h1>
+          <p style="font-size: 15px; color: #9A9A9A; line-height: 1.7; margin-bottom: 20px;">
+            {post.data.description}
+          </p>
+          <div style="display: flex; align-items: center; padding: 16px 0; border-top: 1px solid #F0F0F0; border-bottom: 1px solid #F0F0F0;">
+            <span style="font-size: 13px; color: #9A9A9A;">
+              {post.data.publishDate.toLocaleDateString("zh-TW", {
+                year: "numeric", month: "long", day: "numeric",
+              })}
+            </span>
+          </div>
+        </header>
+
+        <div class="prose">
+          <Content />
+        </div>
+      </article>
+
+      <!-- 側邊欄 -->
+      <aside class="sidebar">
+
+        <!-- 閱讀進度 -->
+        <div class="sidebar-card">
+          <div class="sidebar-progress-bar">
+            <div id="sidebar-progress-fill" style="height: 100%; width: 0%; background: #56C7BB; transition: width 80ms linear; border-radius: 2px;"></div>
+          </div>
+          <div class="sidebar-card-header">
+            <span class="sidebar-label">目錄</span>
+            <span id="progress-pct" style="font-size: 11px; color: #56C7BB; font-weight: 600;">0%</span>
+          </div>
+          <nav id="toc" class="toc"></nav>
+        </div>
+
+        <!-- 分享 -->
+        <div class="sidebar-card">
+          <div class="sidebar-label" style="margin-bottom: 10px;">分享</div>
+          <div style="display: flex; gap: 8px;">
+            <a href={`https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}`}
+              target="_blank" rel="noopener noreferrer"
+              class="share-btn" title="分享到 X">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/>
+              </svg>
+            </a>
+            <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}
+              target="_blank" rel="noopener noreferrer"
+              class="share-btn" title="分享到 LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <button class="share-btn" id="copy-link-btn" title="複製連結">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 複製內容 -->
+        <div class="sidebar-card">
+          <div class="sidebar-label" style="margin-bottom: 10px;">複製內容</div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <button class="copy-btn" id="copy-md-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#56C7BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line>
+                <line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+              </svg>
+              Copy as Markdown
+            </button>
+            <button class="copy-btn" id="copy-text-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#56C7BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="17" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line>
+                <line x1="21" y1="14" x2="3" y2="14"></line><line x1="17" y1="18" x2="3" y2="18"></line>
+              </svg>
+              Copy as Text
+            </button>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+
+  </main>
+
+  <!-- Toast -->
+  <div id="toast" style="
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: #2E2E2E; color: #fff; font-size: 13px; padding: 8px 18px;
+    border-radius: 999px; z-index: 2000; pointer-events: none;
+    opacity: 0; transition: opacity 200ms ease;
+    font-family: 'PingFang TC', 'Noto Sans TC', Arial, sans-serif;
+  "></div>
+
+  <!-- 回到頂部 -->
+  <button id="back-to-top" style="
+    position: fixed; bottom: 28px; right: 28px;
+    width: 42px; height: 42px; border-radius: 50%;
+    background: #56C7BB; border: none; cursor: pointer;
+    display: none; align-items: center; justify-content: center;
+    box-shadow: 0 4px 14px rgba(86,199,187,0.4);
+    color: #fff; transition: background 150ms ease, transform 150ms ease;
+    z-index: 900;
+  " title="回到最上方">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+</BlogLayout>
+
+<style is:global>
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; color: #9A9A9A; text-decoration: none;
+    margin-bottom: 32px; transition: color 150ms ease;
+  }
+  .back-link:hover { color: #4EBCB1; }
+
+  .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .tag { font-size: 12px; font-weight: 500; color: #56C7BB; background: #EAF8F7; border-radius: 999px; padding: 3px 10px; }
+
+  .post-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sidebar-card {
+    border: 1px solid #E8E8E8;
+    border-radius: 10px;
+    padding: 14px 16px;
+    overflow: hidden;
+  }
+
+  .sidebar-progress-bar {
+    height: 3px;
+    background: #F0F0F0;
+    margin: -14px -16px 14px;
+    border-radius: 2px 2px 0 0;
+  }
+
+  .sidebar-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .sidebar-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #9A9A9A;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .toc { display: flex; flex-direction: column; gap: 1px; }
+
+  .toc-link {
+    text-align: left; background: none; border: none; cursor: pointer;
+    font-size: 13px; line-height: 1.5; padding: 4px 0;
+    color: #9A9A9A; font-weight: 400;
+    transition: color 120ms ease;
+    font-family: "PingFang TC", "Noto Sans TC", Arial, sans-serif;
+    text-decoration: none; display: block;
+  }
+  .toc-link:hover { color: #56C7BB; }
+  .toc-link.active { color: #56C7BB; font-weight: 600; }
+  .toc-link.h3 { padding-left: 14px; }
+
+  .share-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; border-radius: 8px;
+    border: 1px solid #E8E8E8; background: #FAFAFA;
+    cursor: pointer; color: #5D5D5D; text-decoration: none;
+    transition: border-color 150ms ease, background 150ms ease;
+  }
+  .share-btn:hover { border-color: #56C7BB; background: #EAF8F7; }
+
+  .copy-btn {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: #5D5D5D;
+    background: none; border: 1px solid #E8E8E8;
+    border-radius: 7px; padding: 7px 10px;
+    cursor: pointer; text-align: left;
+    transition: border-color 150ms ease, background 150ms ease;
+    font-family: "PingFang TC", "Noto Sans TC", Arial, sans-serif;
+  }
+  .copy-btn:hover { border-color: #56C7BB; background: #EAF8F7; }
+
+  /* Prose */
+  .prose { font-size: 16px; color: #5D5D5D; line-height: 1.85; }
+  .prose p  { margin-bottom: 22px; }
+  .prose h2 { font-size: 22px; font-weight: 700; color: #2E2E2E; line-height: 1.3; margin-top: 48px; margin-bottom: 14px; }
+  .prose h3 { font-size: 18px; font-weight: 700; color: #2E2E2E; line-height: 1.3; margin-top: 32px; margin-bottom: 10px; }
+  .prose blockquote { border-left: 3px solid #56C7BB; padding-left: 16px; margin: 28px 0; color: #9A9A9A; font-style: italic; font-size: 15px; line-height: 1.75; }
+  .prose code { font-family: "JetBrains Mono","Fira Code",Consolas,monospace; font-size: 13px; background: #F0F0F0; border-radius: 3px; padding: 2px 5px; }
+  .prose pre { background: #F0F0F0; border: 1px solid #D7D7D7; border-radius: 4px; padding: 14px 16px; overflow-x: auto; margin: 22px 0; }
+  .prose pre code { background: none; padding: 0; font-size: 13px; color: #2E2E2E; line-height: 1.65; }
+  .prose ul, .prose ol { padding-left: 24px; margin-bottom: 22px; }
+  .prose li { margin-bottom: 8px; }
+  .prose hr { border: none; border-top: 1px solid #D7D7D7; margin: 48px 0; }
+  .prose a { color: #56C7BB; text-decoration: none; }
+  .prose a:hover { color: #4EBCB1; text-decoration: underline; }
+  .prose strong { color: #2E2E2E; font-weight: 700; }
+
+  @media (max-width: 768px) {
+    .post-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+  }
+</style>
+
+<script is:inline define:vars={{ shareUrl, postTitle: post.data.title, postDescription: post.data.description }}>
+  // 閱讀進度條
+  const sidebarFill = document.getElementById('sidebar-progress-fill');
+  const progressPct = document.getElementById('progress-pct');
+  const backToTop = document.getElementById('back-to-top');
+
+  function updateProgress() {
+    const el = document.documentElement;
+    const pct = el.scrollHeight - el.clientHeight > 0
+      ? (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100
+      : 0;
+    const w = pct.toFixed(1) + '%';
+    if (sidebarFill) sidebarFill.style.width = w;
+    if (progressPct) progressPct.textContent = Math.round(pct) + '%';
+    if (backToTop) backToTop.style.display = pct > 5 ? 'flex' : 'none';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+
+  // 回到頂部
+  if (backToTop) {
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    backToTop.addEventListener('mouseenter', () => { backToTop.style.background = '#4EBCB1'; backToTop.style.transform = 'scale(1.08)'; });
+    backToTop.addEventListener('mouseleave', () => { backToTop.style.background = '#56C7BB'; backToTop.style.transform = 'scale(1)'; });
+  }
+
+  // TOC 自動產生
+  const toc = document.getElementById('toc');
+  const headings = document.querySelectorAll('.prose h2, .prose h3');
+  if (toc && headings.length > 0) {
+    headings.forEach((h, idx) => {
+      const id = 'heading-' + idx;
+      h.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.className = 'toc-link' + (h.tagName === 'H3' ? ' h3' : '');
+      a.textContent = h.textContent || '';
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      toc.appendChild(a);
+    });
+
+    // Active section highlight
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        const link = toc.querySelector(`[href="#${id}"]`);
+        if (link) link.classList.toggle('active', entry.isIntersecting);
+      });
+    }, { rootMargin: '-10% 0px -80% 0px' });
+    headings.forEach(h => observer.observe(h));
+  }
+
+  // Toast helper
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.style.opacity = '1';
+    setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+  }
+
+  // 複製連結
+  document.getElementById('copy-link-btn')?.addEventListener('click', () => {
+    navigator.clipboard.writeText(shareUrl).then(() => showToast('已複製連結'));
+  });
+
+  // 複製 Markdown
+  document.getElementById('copy-md-btn')?.addEventListener('click', () => {
+    const prose = document.querySelector('.prose');
+    if (!prose) return;
+    let md = `# ${postTitle}\n\n${postDescription}\n\n---\n\n`;
+    prose.querySelectorAll('h2,h3,p,blockquote,pre,hr').forEach(el => {
+      const tag = el.tagName.toLowerCase();
+      const text = el.textContent?.trim() || '';
+      if (tag === 'h2') md += `## ${text}\n\n`;
+      else if (tag === 'h3') md += `### ${text}\n\n`;
+      else if (tag === 'blockquote') md += `> ${text}\n\n`;
+      else if (tag === 'pre') md += '```\n' + text + '\n```\n\n';
+      else if (tag === 'hr') md += '---\n\n';
+      else md += `${text}\n\n`;
+    });
+    navigator.clipboard.writeText(md.trim()).then(() => showToast('已複製為 Markdown'));
+  });
+
+  // 複製純文字
+  document.getElementById('copy-text-btn')?.addEventListener('click', () => {
+    const prose = document.querySelector('.prose');
+    if (!prose) return;
+    navigator.clipboard.writeText(prose.textContent?.trim() || '').then(() => showToast('已複製純文字'));
+  });
+</script>

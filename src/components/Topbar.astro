@@ -1,37 +1,29 @@
 ---
-const { user } = Astro.locals;
 ---
 
-<div
-  class="flex items-center justify-between px-4 py-2 mb-4 rounded-xl bg-white/5 border border-white/10 text-sm text-white/80"
->
-  {
-    user ? (
-      <>
-        <span class="text-blue-100/70">{user.email}</span>
-        <div class="flex items-center gap-3">
-          <a href="/dashboard" class="text-purple-300 hover:text-purple-100 hover:underline transition-colors">
-            Dashboard
-          </a>
-          <form method="POST" action="/api/auth/signout">
-            <button type="submit" class="text-purple-300 hover:text-purple-100 hover:underline transition-colors">
-              Sign out
-            </button>
-          </form>
-        </div>
-      </>
-    ) : (
-      <>
-        <span class="text-blue-100/70">Not signed in</span>
-        <div class="flex gap-3">
-          <a href="/auth/signin" class="text-purple-300 hover:text-purple-100 hover:underline transition-colors">
-            Sign in
-          </a>
-          <a href="/auth/signup" class="text-purple-300 hover:text-purple-100 hover:underline transition-colors">
-            Sign up
-          </a>
-        </div>
-      </>
-    )
-  }
-</div>
+<nav style="
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fff;
+  border-bottom: 1px solid #D7D7D7;
+  font-family: 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', Arial, sans-serif;
+">
+  <div style="
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  ">
+    <!-- Logo -->
+    <a href="/" title="Wport Blog" style="padding: 0 24px; display: flex; align-items: center; text-decoration: none;">
+      <img src="/wport.svg" alt="WPORT" width="77" height="37" style="object-fit: contain; display: block;" />
+    </a>
+
+    <!-- Right: reserved for future wport login integration -->
+    <div></div>
+  </div>
+</nav>

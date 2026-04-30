@@ -1,8 +1,187 @@
 ---
-import Welcome from "../components/Welcome.astro";
-import Layout from "../layouts/Layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import BlogLayout from "@/layouts/BlogLayout.astro";
+import Topbar from "@/components/Topbar.astro";
+
+const posts = (await getCollection("posts")).sort(
+  (a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
+    b.data.publishDate.getTime() - a.data.publishDate.getTime()
+);
+
+const COVER_COLORS = [
+  { hue: "#E0F5F3", accent: "#56C7BB" },
+  { hue: "#FEF3E2", accent: "#F59E0B" },
+  { hue: "#EEF2FF", accent: "#6366F1" },
+  { hue: "#FDF2F8", accent: "#EC4899" },
+  { hue: "#F0FDF4", accent: "#22C55E" },
+  { hue: "#FFF7ED", accent: "#F97316" },
+];
+
+const postsWithCover = posts.map((post, i) => ({
+  post,
+  cover: COVER_COLORS[i % COVER_COLORS.length],
+}));
 ---
 
-<Layout>
-  <Welcome />
-</Layout>
+<BlogLayout title="Wport Blog">
+  <Topbar />
+
+  <main style="max-width: 1080px; margin: 0 auto; padding: 48px 24px 80px;">
+
+    <header style="margin-bottom: 40px;">
+      <h1 style="font-size: 34px; font-weight: 700; color: #2E2E2E; line-height: 1.25; margin-bottom: 10px;">所有文章</h1>
+      <p style="font-size: 15px; color: #9A9A9A; line-height: 1.7;">分享觀點、紀錄思考</p>
+    </header>
+
+    {posts.length === 0
+      ? <p style="color: #9A9A9A; font-size: 15px;">目前還沒有文章。</p>
+      : <ul class="card-grid">
+          {postsWithCover.map(({ post, cover }) => (
+            <li>
+              <a href={`/posts/${post.id}`} class="card">
+                <div class="card-cover" style={`background: ${cover.hue};`}>
+                  <div class="card-cover-shape1" style={`background: ${cover.accent};`}></div>
+                  <div class="card-cover-shape2" style={`background: ${cover.accent};`}></div>
+                  <div class="card-cover-label" style={`color: ${cover.accent};`}>wport</div>
+                </div>
+                <div class="card-body">
+                  {post.data.tags && post.data.tags.length > 0 && (
+                    <div class="card-tags">
+                      {post.data.tags.map((tag: string) => (
+                        <span class="tag">{tag}</span>
+                      ))}
+                    </div>
+                  )}
+                  <div class="card-title">{post.data.title}</div>
+                  <div class="card-excerpt">{post.data.description}</div>
+                  <div class="card-footer">
+                    <span class="card-date">
+                      {post.data.publishDate.toLocaleDateString("zh-TW", {
+                        year: "numeric", month: "long", day: "numeric",
+                      })}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+    }
+  </main>
+</BlogLayout>
+
+<style is:global>
+  .card-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #E8E8E8;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 180ms ease, transform 180ms ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    transform: translateY(-2px);
+  }
+
+  .card-cover {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-cover-shape1 {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    opacity: 0.18;
+    position: absolute;
+    top: 28px;
+    left: 28px;
+  }
+
+  .card-cover-shape2 {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    opacity: 0.25;
+    position: absolute;
+    bottom: 20px;
+    right: 36px;
+  }
+
+  .card-cover-label {
+    font-size: 36px;
+    font-weight: 700;
+    opacity: 0.22;
+    user-select: none;
+    letter-spacing: -2px;
+  }
+
+  .card-body {
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 11px;
+    font-weight: 500;
+    color: #56C7BB;
+    background: #EAF8F7;
+    border-radius: 999px;
+    padding: 2px 8px;
+  }
+
+  .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2E2E2E;
+    line-height: 1.4;
+  }
+
+  .card-excerpt {
+    font-size: 13.5px;
+    color: #9A9A9A;
+    line-height: 1.65;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-footer {
+    padding-top: 8px;
+    border-top: 1px solid #F0F0F0;
+  }
+
+  .card-date {
+    font-size: 12px;
+    color: #C0C0C0;
+  }
+</style>
