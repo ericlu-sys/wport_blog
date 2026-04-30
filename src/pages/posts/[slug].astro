@@ -107,6 +107,13 @@ const shareTitle = encodeURIComponent(post.data.title);
         <div class="sidebar-card">
           <div class="sidebar-label" style="margin-bottom: 10px;">複製內容</div>
           <div style="display: flex; flex-direction: column; gap: 6px;">
+            <button class="copy-btn" id="copy-json-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#56C7BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"></path>
+                <path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"></path>
+              </svg>
+              Copy as JSON
+            </button>
             <button class="copy-btn" id="copy-md-btn">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#56C7BB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line>
@@ -333,6 +340,27 @@ const shareTitle = encodeURIComponent(post.data.title);
   // 複製連結
   document.getElementById('copy-link-btn')?.addEventListener('click', () => {
     navigator.clipboard.writeText(shareUrl).then(() => showToast('已複製連結'));
+  });
+
+  // 複製 JSON
+  document.getElementById('copy-json-btn')?.addEventListener('click', () => {
+    const prose = document.querySelector('.prose');
+    const blocks = [];
+    if (prose) {
+      prose.querySelectorAll('h2,h3,p,blockquote,pre,hr').forEach(el => {
+        const tag = el.tagName.toLowerCase();
+        const text = el.textContent?.trim() || '';
+        if (tag === 'hr') blocks.push({ type: 'hr' });
+        else blocks.push({ type: tag, text });
+      });
+    }
+    const json = JSON.stringify({
+      title: postTitle,
+      description: postDescription,
+      url: shareUrl,
+      content: blocks,
+    }, null, 2);
+    navigator.clipboard.writeText(json).then(() => showToast('已複製為 JSON'));
   });
 
   // 複製 Markdown
