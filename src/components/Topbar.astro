@@ -1,15 +1,36 @@
 ---
+interface Props {
+  currentPage?: "home" | "archive";
+}
+const { currentPage } = Astro.props;
 ---
 
-<nav style="
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: #fff;
-  border-bottom: 1px solid #D7D7D7;
-  font-family: 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', Arial, sans-serif;
-">
-  <div style="
+<nav class="topbar">
+  <div class="topbar-inner">
+    <!-- Logo -->
+    <a href="/" title="Wport Blog" class="topbar-logo">
+      <img src="/wport.svg" alt="WPORT" width="77" height="37" style="object-fit: contain; display: block;" />
+    </a>
+
+    <!-- Right nav -->
+    <nav class="topbar-nav">
+      <a href="/" class:list={["topbar-link", { "topbar-link--active": currentPage === "home" }]}>首頁</a>
+      <a href="/archive" class:list={["topbar-link", { "topbar-link--active": currentPage === "archive" }]}>所有文章</a>
+    </nav>
+  </div>
+</nav>
+
+<style>
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid #d7d7d7;
+    font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+  }
+
+  .topbar-inner {
     max-width: 1080px;
     margin: 0 auto;
     padding: 0 8px;
@@ -17,13 +38,49 @@
     align-items: center;
     justify-content: space-between;
     height: 56px;
-  ">
-    <!-- Logo -->
-    <a href="/" title="Wport Blog" style="padding: 0 24px; display: flex; align-items: center; text-decoration: none;">
-      <img src="/wport.svg" alt="WPORT" width="77" height="37" style="object-fit: contain; display: block;" />
-    </a>
+  }
 
-    <!-- Right: reserved for future wport login integration -->
-    <div></div>
-  </div>
-</nav>
+  .topbar-logo {
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .topbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-right: 16px;
+  }
+
+  .topbar-link {
+    font-size: 14px;
+    color: #5d5d5d;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition:
+      background 150ms ease,
+      color 150ms ease;
+    border-bottom: 2px solid transparent;
+  }
+
+  .topbar-link:hover {
+    background: #f5f5f5;
+    color: #2e2e2e;
+  }
+
+  .topbar-link--active {
+    color: #56c7bb;
+    font-weight: 600;
+    border-bottom-color: #56c7bb;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .topbar-link--active:hover {
+    background: transparent;
+    color: #4ebcb1;
+  }
+</style>

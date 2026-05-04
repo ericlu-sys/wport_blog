@@ -3,10 +3,14 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import BlogLayout from "@/layouts/BlogLayout.astro";
 import Topbar from "@/components/Topbar.astro";
 
-const posts = (await getCollection("posts")).sort(
+const allPosts = await getCollection("posts");
+const sorted = allPosts.sort(
   (a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
     b.data.publishDate.getTime() - a.data.publishDate.getTime()
 );
+
+const featured = sorted.filter((p) => p.data.featured).slice(0, 3);
+const popular = featured.length > 0 ? featured : sorted.slice(0, 3);
 
 const COVER_COLORS = [
   { hue: "#E0F5F3", accent: "#56C7BB" },
@@ -16,61 +20,309 @@ const COVER_COLORS = [
   { hue: "#F0FDF4", accent: "#22C55E" },
   { hue: "#FFF7ED", accent: "#F97316" },
 ];
-
-const postsWithCover = posts.map((post, i) => ({
-  post,
-  cover: COVER_COLORS[i % COVER_COLORS.length],
-}));
 ---
 
-<BlogLayout title="Wport Blog">
-  <Topbar />
+<BlogLayout title="Wport Blog — 在台僑外生找設計工作的完整指南">
+  <Topbar currentPage="home" />
 
-  <main style="max-width: 1080px; margin: 0 auto; padding: 48px 24px 80px;">
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          專為在台僑外生打造
+        </div>
+        <h1 class="hero-h1">
+          在台僑外生<br />找設計工作的完整指南
+        </h1>
+        <h2 class="hero-h2">
+          從作品集到面試、從履歷到簽證——wport 設計誌彙整在台求職所需的設計思維與職涯資源，幫助你在台灣找到理想的 UI/UX
+          設計工作。
+        </h2>
+        <div class="hero-ctas">
+          <a href="/archive" class="btn-primary">瀏覽所有文章 →</a>
+          <a href="#popular" class="btn-secondary">熱門文章</a>
+        </div>
+      </div>
+      <div class="hero-art-wrap">
+        <svg viewBox="0 0 480 360" class="hero-img" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bgGrad" cx="50%" cy="45%" r="55%">
+              <stop offset="0%" stop-color="#EAF8F7"></stop>
+              <stop offset="100%" stop-color="#F8F7F7" stop-opacity="0"></stop>
+            </radialGradient>
+            <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#56C7BB"></stop>
+              <stop offset="100%" stop-color="#4EBCB1"></stop>
+            </linearGradient>
+          </defs>
+          <circle cx="240" cy="180" r="160" fill="url(#bgGrad)"></circle>
+          <ellipse cx="240" cy="305" rx="170" ry="14" fill="#000" opacity="0.06"></ellipse>
+          <rect x="120" y="240" width="240" height="14" rx="3" fill="#D7D7D7"></rect>
+          <rect x="115" y="252" width="250" height="6" rx="3" fill="#9A9A9A"></rect>
+          <rect x="135" y="105" width="210" height="140" rx="6" fill="#2E2E2E"></rect>
+          <rect x="142" y="112" width="196" height="126" rx="3" fill="#fff"></rect>
+          <rect x="150" y="120" width="60" height="6" rx="2" fill="#56C7BB"></rect>
+          <rect x="150" y="132" width="180" height="3" rx="1.5" fill="#E8E8E8"></rect>
+          <rect x="150" y="140" width="140" height="3" rx="1.5" fill="#E8E8E8"></rect>
+          <rect x="150" y="155" width="55" height="38" rx="3" fill="url(#cardGrad)"></rect>
+          <rect x="212" y="155" width="55" height="38" rx="3" fill="#FEF3E2"></rect>
+          <rect x="274" y="155" width="55" height="38" rx="3" fill="#EEF2FF"></rect>
+          <rect x="150" y="200" width="80" height="3" rx="1.5" fill="#D7D7D7"></rect>
+          <rect x="150" y="208" width="120" height="3" rx="1.5" fill="#D7D7D7"></rect>
+          <rect x="150" y="220" width="50" height="10" rx="5" fill="#56C7BB"></rect>
+          <g>
+            <rect x="55" y="80" width="78" height="26" rx="13" fill="#fff" stroke="#56C7BB" stroke-width="1.5"></rect>
+            <circle cx="68" cy="93" r="4" fill="#56C7BB"></circle>
+            <rect x="78" y="89" width="46" height="3" rx="1.5" fill="#5D5D5D"></rect>
+            <rect x="78" y="96" width="32" height="3" rx="1.5" fill="#9A9A9A"></rect>
+          </g>
+          <g>
+            <rect x="350" y="60" width="86" height="26" rx="13" fill="#fff" stroke="#F59E0B" stroke-width="1.5"></rect>
+            <circle cx="363" cy="73" r="4" fill="#F59E0B"></circle>
+            <rect x="373" y="69" width="50" height="3" rx="1.5" fill="#5D5D5D"></rect>
+            <rect x="373" y="76" width="36" height="3" rx="1.5" fill="#9A9A9A"></rect>
+          </g>
+          <g>
+            <rect x="370" y="170" width="78" height="26" rx="13" fill="#fff" stroke="#6366F1" stroke-width="1.5"></rect>
+            <circle cx="383" cy="183" r="4" fill="#6366F1"></circle>
+            <rect x="393" y="179" width="46" height="3" rx="1.5" fill="#5D5D5D"></rect>
+            <rect x="393" y="186" width="32" height="3" rx="1.5" fill="#9A9A9A"></rect>
+          </g>
+          <g fill="#56C7BB">
+            <circle cx="80" cy="190" r="3.5"></circle>
+            <circle cx="400" cy="270" r="2.5"></circle>
+            <circle cx="60" cy="250" r="2"></circle>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
 
-    <header style="margin-bottom: 40px;">
-      <h1 style="font-size: 34px; font-weight: 700; color: #2E2E2E; line-height: 1.25; margin-bottom: 10px;">所有文章</h1>
-      <p style="font-size: 15px; color: #9A9A9A; line-height: 1.7;">分享觀點、紀錄思考</p>
-    </header>
+  <!-- POPULAR ARTICLES -->
+  <section id="popular" class="popular-section">
+    <div class="popular-inner">
+      <div class="popular-header">
+        <div>
+          <div class="popular-label">POPULAR</div>
+          <h2 class="popular-title">熱門文章</h2>
+        </div>
+        <a href="/archive" class="popular-see-all">查看全部 →</a>
+      </div>
 
-    {posts.length === 0
-      ? <p style="color: #9A9A9A; font-size: 15px;">目前還沒有文章。</p>
-      : <ul class="card-grid">
-          {postsWithCover.map(({ post, cover }) => (
-            <li>
-              <a href={`/posts/${post.id}`} class="card">
-                <div class="card-cover" style={`background: ${cover.hue};`}>
-                  <div class="card-cover-shape1" style={`background: ${cover.accent};`}></div>
-                  <div class="card-cover-shape2" style={`background: ${cover.accent};`}></div>
-                  <div class="card-cover-label" style={`color: ${cover.accent};`}>wport</div>
-                </div>
-                <div class="card-body">
-                  {post.data.tags && post.data.tags.length > 0 && (
-                    <div class="card-tags">
-                      {post.data.tags.map((tag: string) => (
-                        <span class="tag">{tag}</span>
-                      ))}
+      {
+        popular.length === 0 ? (
+          <p style="color: #9A9A9A; font-size: 15px;">目前還沒有文章。</p>
+        ) : (
+          <ul class="card-grid">
+            {popular.map((post, i) => {
+              const cover = COVER_COLORS[i % COVER_COLORS.length];
+              return (
+                <li>
+                  <a href={`/posts/${post.id}`} class="card">
+                    <div class="card-cover" style={`background: ${cover.hue};`}>
+                      <div class="card-cover-shape1" style={`background: ${cover.accent};`} />
+                      <div class="card-cover-shape2" style={`background: ${cover.accent};`} />
+                      <div class="card-cover-label" style={`color: ${cover.accent};`}>
+                        wport
+                      </div>
                     </div>
-                  )}
-                  <div class="card-title">{post.data.title}</div>
-                  <div class="card-excerpt">{post.data.description}</div>
-                  <div class="card-footer">
-                    <span class="card-date">
-                      {post.data.publishDate.toLocaleDateString("zh-TW", {
-                        year: "numeric", month: "long", day: "numeric",
-                      })}
-                    </span>
-                  </div>
-                </div>
-              </a>
-            </li>
-          ))}
-        </ul>
-    }
-  </main>
+                    <div class="card-body">
+                      {post.data.tags && post.data.tags.length > 0 && (
+                        <div class="card-tags">
+                          {post.data.tags.map((tag: string) => (
+                            <span class="tag">{tag}</span>
+                          ))}
+                        </div>
+                      )}
+                      <div class="card-title">{post.data.title}</div>
+                      <div class="card-excerpt">{post.data.description}</div>
+                      <div class="card-footer">
+                        <span class="card-date">
+                          {post.data.publishDate.toLocaleDateString("zh-TW", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        )
+      }
+    </div>
+  </section>
 </BlogLayout>
 
 <style is:global>
+  /* Hero */
+  .hero-section {
+    background: linear-gradient(180deg, #f8fcfb 0%, #fff 100%);
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .hero-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 64px 24px 72px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #56c7bb;
+    background: #eaf8f7;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+  .hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #56c7bb;
+    flex-shrink: 0;
+  }
+  .hero-h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2e2e2e;
+    line-height: 1.25;
+    margin-bottom: 18px;
+    letter-spacing: -0.5px;
+    font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+  }
+  .hero-h2 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #5d5d5d;
+    line-height: 1.75;
+    margin-bottom: 28px;
+    font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: #56c7bb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 150ms ease;
+    font-family: "PingFang TC", "Noto Sans TC", Arial, sans-serif;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: #4ebcb1;
+  }
+  .btn-secondary {
+    background: #fff;
+    color: #5d5d5d;
+    border: 1px solid #d7d7d7;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+      border-color 150ms ease,
+      color 150ms ease;
+    font-family: "PingFang TC", "Noto Sans TC", Arial, sans-serif;
+    display: inline-block;
+  }
+  .btn-secondary:hover {
+    border-color: #56c7bb;
+    color: #56c7bb;
+  }
+
+  .hero-art-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-img {
+    width: 100%;
+    height: auto;
+    max-width: 480px;
+    display: block;
+    animation: heroFloat 6s ease-in-out infinite;
+    transform-origin: center center;
+    filter: drop-shadow(0 16px 32px rgba(86, 199, 187, 0.15));
+  }
+  @keyframes heroFloat {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(-0.5deg);
+    }
+    35% {
+      transform: translateY(-12px) rotate(0.6deg);
+    }
+    70% {
+      transform: translateY(-5px) rotate(-0.3deg);
+    }
+  }
+
+  /* Popular section */
+  .popular-section {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 72px 24px 80px;
+  }
+  .popular-inner {
+    width: 100%;
+  }
+  .popular-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 32px;
+  }
+  .popular-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #56c7bb;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    font-family: "PingFang TC", "Noto Sans TC", Arial, sans-serif;
+  }
+  .popular-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2e2e2e;
+    line-height: 1.3;
+    font-family: "PingFang TC", "Noto Sans TC", Arial, sans-serif;
+  }
+  .popular-see-all {
+    color: #56c7bb;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 150ms ease;
+    font-family: "PingFang TC", "Noto Sans TC", Arial, sans-serif;
+  }
+  .popular-see-all:hover {
+    color: #4ebcb1;
+  }
+
+  /* Cards (shared with archive) */
   .card-grid {
     list-style: none;
     padding: 0;
@@ -79,24 +331,23 @@ const postsWithCover = posts.map((post, i) => ({
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 24px;
   }
-
   .card {
     display: flex;
     flex-direction: column;
     background: #fff;
     border-radius: 12px;
-    border: 1px solid #E8E8E8;
+    border: 1px solid #e8e8e8;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
-    transition: box-shadow 180ms ease, transform 180ms ease;
+    transition:
+      box-shadow 180ms ease,
+      transform 180ms ease;
   }
-
   .card:hover {
-    box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
     transform: translateY(-2px);
   }
-
   .card-cover {
     height: 140px;
     display: flex;
@@ -105,7 +356,6 @@ const postsWithCover = posts.map((post, i) => ({
     position: relative;
     overflow: hidden;
   }
-
   .card-cover-shape1 {
     width: 64px;
     height: 64px;
@@ -115,7 +365,6 @@ const postsWithCover = posts.map((post, i) => ({
     top: 28px;
     left: 28px;
   }
-
   .card-cover-shape2 {
     width: 40px;
     height: 40px;
@@ -125,7 +374,6 @@ const postsWithCover = posts.map((post, i) => ({
     bottom: 20px;
     right: 36px;
   }
-
   .card-cover-label {
     font-size: 36px;
     font-weight: 700;
@@ -133,7 +381,6 @@ const postsWithCover = posts.map((post, i) => ({
     user-select: none;
     letter-spacing: -2px;
   }
-
   .card-body {
     padding: 18px 20px 20px;
     display: flex;
@@ -141,32 +388,28 @@ const postsWithCover = posts.map((post, i) => ({
     flex: 1;
     gap: 10px;
   }
-
   .card-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
   }
-
   .tag {
     font-size: 11px;
     font-weight: 500;
-    color: #56C7BB;
-    background: #EAF8F7;
+    color: #56c7bb;
+    background: #eaf8f7;
     border-radius: 999px;
     padding: 2px 8px;
   }
-
   .card-title {
     font-size: 16px;
     font-weight: 700;
-    color: #2E2E2E;
+    color: #2e2e2e;
     line-height: 1.4;
   }
-
   .card-excerpt {
     font-size: 13.5px;
-    color: #9A9A9A;
+    color: #9a9a9a;
     line-height: 1.65;
     flex: 1;
     display: -webkit-box;
@@ -174,14 +417,24 @@ const postsWithCover = posts.map((post, i) => ({
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-
   .card-footer {
     padding-top: 8px;
-    border-top: 1px solid #F0F0F0;
+    border-top: 1px solid #f0f0f0;
   }
-
   .card-date {
     font-size: 12px;
-    color: #C0C0C0;
+    color: #c0c0c0;
+  }
+
+  @media (max-width: 768px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+    }
+    .hero-art-wrap {
+      display: none;
+    }
+    .hero-h1 {
+      font-size: 30px;
+    }
   }
 </style>
