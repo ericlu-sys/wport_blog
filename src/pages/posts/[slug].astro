@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props as { post: CollectionEntry<"posts"> };
 const { Content } = await render(post);
 
-const shareUrl = Astro.url.href;
+const shareUrl = `https://blog.wport.me/posts/${post.id}/`;
 const shareTitle = encodeURIComponent(post.data.title);
 ---
 
@@ -273,8 +273,7 @@ const shareTitle = encodeURIComponent(post.data.title);
   }
 </style>
 
-<script is:inline define:vars={{ postTitle: post.data.title, postDescription: post.data.description }}>
-  const shareUrl = window.location.href;
+<script is:inline define:vars={{ shareUrl, postTitle: post.data.title, postDescription: post.data.description }}>
   // 閱讀進度條
   const sidebarFill = document.getElementById('sidebar-progress-fill');
   const progressPct = document.getElementById('progress-pct');

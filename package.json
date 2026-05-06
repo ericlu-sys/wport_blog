@@ -6,8 +6,6 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy:proxy": "wrangler deploy --config wrangler.proxy.toml",
-    "deploy:proxy:dry-run": "wrangler deploy --config wrangler.proxy.toml --dry-run",
     "astro": "astro",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
