@@ -18,12 +18,20 @@ interface Props {
 
 export default function ArticleArchive({ posts, allTags }: Props) {
   const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const baseUrl = import.meta.env.BASE_URL;
   const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
   const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`;
 
   const normalizedTags = useMemo(() => new Set(allTags), [allTags]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setDebouncedSearch(search.trim());
+    }, 180);
+    return () => window.clearTimeout(timer);
+  }, [search]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -61,8 +69,8 @@ export default function ArticleArchive({ posts, allTags }: Props) {
       params.delete("tag");
     }
 
-    if (search.trim()) {
-      params.set("q", search.trim());
+    if (debouncedSearch) {
+      params.set("q", debouncedSearch);
     } else {
       params.delete("q");
     }
@@ -70,7 +78,7 @@ export default function ArticleArchive({ posts, allTags }: Props) {
     const query = params.toString();
     const nextUrl = query ? `${window.location.pathname}?${query}` : window.location.pathname;
     window.history.replaceState(null, "", nextUrl);
-  }, [activeTag, search]);
+  }, [activeTag, debouncedSearch]);
 
   return (
     <div>
@@ -168,7 +176,10 @@ export default function ArticleArchive({ posts, allTags }: Props) {
                       src={post.cover}
                       alt={`${post.title} cover`}
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      width={1600}
+                      height={900}
                       loading="lazy"
+                      decoding="async"
                     />
                   ) : (
                     <>

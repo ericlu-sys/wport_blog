@@ -16,6 +16,7 @@ const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href={withBase("/favicon.ico")} />
+    <link rel="preload" href={withBase("/fonts/NotoSansTC-VariableFont_wght.ttf")} as="font" type="font/ttf" crossorigin />
     <title>{title}</title>
   </head>
   <body>

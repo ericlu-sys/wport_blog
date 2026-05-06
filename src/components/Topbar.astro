@@ -6,6 +6,8 @@ const { currentPage } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL;
 const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
 const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`;
+const JOBS_URL = "https://wport.me/jobs";
+const FOREIGN_STUDENT_JOBS_URL = "https://wport.me/foreign-student-jobs";
 ---
 
 <nav class="topbar">
@@ -19,6 +21,8 @@ const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`
     <nav class="topbar-nav">
       <a href={withBase("/")} class:list={["topbar-link", { "topbar-link--active": currentPage === "home" }]}>首頁</a>
       <a href={withBase("/archive")} class:list={["topbar-link", { "topbar-link--active": currentPage === "archive" }]}>所有文章</a>
+      <a href={FOREIGN_STUDENT_JOBS_URL} class="topbar-link topbar-link--external">僑外生找工作</a>
+      <a href={JOBS_URL} class="topbar-link topbar-link--cta">找工作</a>
     </nav>
   </div>
 </nav>
@@ -87,8 +91,36 @@ const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`
     color: var(--color-primary-hover);
   }
 
+  .topbar-link--external {
+    color: var(--fg-primary);
+  }
+
+  .topbar-link--cta {
+    background: var(--color-primary);
+    color: #fff;
+    border-bottom: none;
+    font-weight: 600;
+  }
+
+  .topbar-link--cta:hover {
+    background: var(--color-primary-hover);
+    color: #fff;
+  }
+
   .topbar-logo-image {
     object-fit: contain;
     display: block;
+  }
+
+  @media (max-width: 900px) {
+    .topbar-nav {
+      gap: 2px;
+      padding-right: 8px;
+    }
+
+    .topbar-link {
+      font-size: 13px;
+      padding: 6px 10px;
+    }
   }
 </style>

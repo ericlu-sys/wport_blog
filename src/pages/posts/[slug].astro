@@ -107,7 +107,10 @@ const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`
                         src={related.data.cover}
                         alt={`${related.data.title} cover`}
                         class="post-related-cover"
+                        width="1600"
+                        height="900"
                         loading="lazy"
+                        decoding="async"
                       />
                     )}
                     <div class="post-related-content">
@@ -138,7 +141,10 @@ const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`
                       src={previousPost.data.cover}
                       alt={`${previousPost.data.title} cover`}
                       class="post-pagination-cover"
+                      width="1600"
+                      height="900"
                       loading="lazy"
+                      decoding="async"
                     />
                   )}
                   <span class="post-pagination-label">上一篇</span>
@@ -154,7 +160,10 @@ const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`
                       src={nextPost.data.cover}
                       alt={`${nextPost.data.title} cover`}
                       class="post-pagination-cover"
+                      width="1600"
+                      height="900"
                       loading="lazy"
+                      decoding="async"
                     />
                   )}
                   <span class="post-pagination-label">下一篇</span>

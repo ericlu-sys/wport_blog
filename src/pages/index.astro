@@ -65,8 +65,23 @@ const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`
       </div>
       <div class="hero-art-wrap">
         <div class="hero-figure">
-          <img src={withBase("/mascot-graduation.png")} alt="Wport mascot - graduation" class="hero-mascot hero-mascot--graduation" />
-          <img src={withBase("/mascot-cooperation.png")} alt="Wport mascot - cooperation" class="hero-mascot hero-mascot--cooperation" />
+          <img
+            src={withBase("/mascot-graduation.png")}
+            alt="Wport mascot - graduation"
+            class="hero-mascot hero-mascot--graduation"
+            width="832"
+            height="832"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <img
+            src={withBase("/mascot-cooperation.png")}
+            alt="Wport mascot - cooperation"
+            class="hero-mascot hero-mascot--cooperation"
+            width="832"
+            height="832"
+            decoding="async"
+          />
         </div>
       </div>
     </div>
@@ -95,7 +110,15 @@ const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`
                   <a href={withBase(`/posts/${post.id}`)} class="card">
                     <div class="card-cover" style={`background: ${cover.hue};`}>
                       {post.data.cover ? (
-                        <img src={post.data.cover} alt={`${post.data.title} cover`} class="card-cover-image" loading="lazy" />
+                        <img
+                          src={post.data.cover}
+                          alt={`${post.data.title} cover`}
+                          class="card-cover-image"
+                          width="1600"
+                          height="900"
+                          loading="lazy"
+                          decoding="async"
+                        />
                       ) : (
                         <>
                           <div class="card-cover-shape1" style={`background: ${cover.accent};`} />
@@ -304,6 +327,19 @@ const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`
     }
     50%,
     100% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-figure,
+    .hero-mascot {
+      animation: none;
+    }
+    .hero-mascot--graduation {
+      opacity: 1;
+    }
+    .hero-mascot--cooperation {
       opacity: 0;
     }
   }
