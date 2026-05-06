@@ -64,56 +64,10 @@ const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`
         </div>
       </div>
       <div class="hero-art-wrap">
-        <svg viewBox="0 0 480 360" class="hero-img" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="bgGrad" cx="50%" cy="45%" r="55%">
-              <stop offset="0%" stop-color="#EAF8F7"></stop>
-              <stop offset="100%" stop-color="#F8F7F7" stop-opacity="0"></stop>
-            </radialGradient>
-            <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#56C7BB"></stop>
-              <stop offset="100%" stop-color="#4EBCB1"></stop>
-            </linearGradient>
-          </defs>
-          <circle cx="240" cy="180" r="160" fill="url(#bgGrad)"></circle>
-          <ellipse cx="240" cy="305" rx="170" ry="14" fill="#000" opacity="0.06"></ellipse>
-          <rect x="120" y="240" width="240" height="14" rx="3" fill="#D7D7D7"></rect>
-          <rect x="115" y="252" width="250" height="6" rx="3" fill="#9A9A9A"></rect>
-          <rect x="135" y="105" width="210" height="140" rx="6" fill="#2E2E2E"></rect>
-          <rect x="142" y="112" width="196" height="126" rx="3" fill="#fff"></rect>
-          <rect x="150" y="120" width="60" height="6" rx="2" fill="#56C7BB"></rect>
-          <rect x="150" y="132" width="180" height="3" rx="1.5" fill="#E8E8E8"></rect>
-          <rect x="150" y="140" width="140" height="3" rx="1.5" fill="#E8E8E8"></rect>
-          <rect x="150" y="155" width="55" height="38" rx="3" fill="url(#cardGrad)"></rect>
-          <rect x="212" y="155" width="55" height="38" rx="3" fill="#FEF3E2"></rect>
-          <rect x="274" y="155" width="55" height="38" rx="3" fill="#EEF2FF"></rect>
-          <rect x="150" y="200" width="80" height="3" rx="1.5" fill="#D7D7D7"></rect>
-          <rect x="150" y="208" width="120" height="3" rx="1.5" fill="#D7D7D7"></rect>
-          <rect x="150" y="220" width="50" height="10" rx="5" fill="#56C7BB"></rect>
-          <g>
-            <rect x="55" y="80" width="78" height="26" rx="13" fill="#fff" stroke="#56C7BB" stroke-width="1.5"></rect>
-            <circle cx="68" cy="93" r="4" fill="#56C7BB"></circle>
-            <rect x="78" y="89" width="46" height="3" rx="1.5" fill="#5D5D5D"></rect>
-            <rect x="78" y="96" width="32" height="3" rx="1.5" fill="#9A9A9A"></rect>
-          </g>
-          <g>
-            <rect x="350" y="60" width="86" height="26" rx="13" fill="#fff" stroke="#F59E0B" stroke-width="1.5"></rect>
-            <circle cx="363" cy="73" r="4" fill="#F59E0B"></circle>
-            <rect x="373" y="69" width="50" height="3" rx="1.5" fill="#5D5D5D"></rect>
-            <rect x="373" y="76" width="36" height="3" rx="1.5" fill="#9A9A9A"></rect>
-          </g>
-          <g>
-            <rect x="370" y="170" width="78" height="26" rx="13" fill="#fff" stroke="#6366F1" stroke-width="1.5"></rect>
-            <circle cx="383" cy="183" r="4" fill="#6366F1"></circle>
-            <rect x="393" y="179" width="46" height="3" rx="1.5" fill="#5D5D5D"></rect>
-            <rect x="393" y="186" width="32" height="3" rx="1.5" fill="#9A9A9A"></rect>
-          </g>
-          <g fill="#56C7BB">
-            <circle cx="80" cy="190" r="3.5"></circle>
-            <circle cx="400" cy="270" r="2.5"></circle>
-            <circle cx="60" cy="250" r="2"></circle>
-          </g>
-        </svg>
+        <div class="hero-figure">
+          <img src={withBase("/mascot-graduation.png")} alt="Wport mascot - graduation" class="hero-mascot hero-mascot--graduation" />
+          <img src={withBase("/mascot-cooperation.png")} alt="Wport mascot - cooperation" class="hero-mascot hero-mascot--cooperation" />
+        </div>
       </div>
     </div>
   </section>
@@ -306,14 +260,30 @@ const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`
     justify-content: center;
     align-items: center;
   }
-  .hero-img {
+  .hero-figure {
     width: 100%;
-    height: auto;
     max-width: 480px;
+    aspect-ratio: 1 / 1;
+    position: relative;
     display: block;
+    overflow: hidden;
+    border-radius: 20px;
+    background: radial-gradient(circle at 50% 45%, #eaf8f7 0%, rgba(248, 247, 247, 0) 68%);
     animation: heroFloat 6s ease-in-out infinite;
     transform-origin: center center;
     filter: drop-shadow(0 16px 32px rgba(86, 199, 187, 0.15));
+  }
+  .hero-mascot {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    animation: heroCrossfade 8s ease-in-out infinite;
+  }
+  .hero-mascot--cooperation {
+    animation-delay: 4s;
   }
   @keyframes heroFloat {
     0%,
@@ -325,6 +295,16 @@ const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`
     }
     70% {
       transform: translateY(-5px) rotate(-0.3deg);
+    }
+  }
+  @keyframes heroCrossfade {
+    0%,
+    40% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
     }
   }
 
