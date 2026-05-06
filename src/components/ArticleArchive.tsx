@@ -19,6 +19,9 @@ interface Props {
 export default function ArticleArchive({ posts, allTags }: Props) {
   const [search, setSearch] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const baseUrl = import.meta.env.BASE_URL;
+  const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+  const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`;
 
   const normalizedTags = useMemo(() => new Set(allTags), [allTags]);
 
@@ -158,7 +161,7 @@ export default function ArticleArchive({ posts, allTags }: Props) {
         <ul className="card-grid">
           {filtered.map((post) => (
             <li key={post.id}>
-              <a href={`/posts/${post.id}`} className="card">
+              <a href={withBase(`/posts/${post.id}`)} className="card">
                 <div className="card-cover" style={{ background: post.coverHue }}>
                   {post.cover ? (
                     <img

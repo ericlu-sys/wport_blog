@@ -35,6 +35,9 @@ const COVER_COLORS = [
   { hue: "#F0FDF4", accent: "#22C55E" },
   { hue: "#FFF7ED", accent: "#F97316" },
 ];
+const baseUrl = import.meta.env.BASE_URL;
+const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`;
 ---
 
 <BlogLayout title="Wport Blog — 在台僑外生找設計工作的完整指南">
@@ -56,7 +59,7 @@ const COVER_COLORS = [
           設計工作。
         </h2>
         <div class="hero-ctas">
-          <a href="/archive" class="btn-primary">瀏覽所有文章 →</a>
+          <a href={withBase("/archive")} class="btn-primary">瀏覽所有文章 →</a>
           <a href="#popular" class="btn-secondary">熱門文章</a>
         </div>
       </div>
@@ -123,7 +126,7 @@ const COVER_COLORS = [
           <div class="popular-label">POPULAR</div>
           <h2 class="popular-title">熱門文章</h2>
         </div>
-        <a href="/archive" class="popular-see-all">查看全部 →</a>
+        <a href={withBase("/archive")} class="popular-see-all">查看全部 →</a>
       </div>
 
       {
@@ -135,7 +138,7 @@ const COVER_COLORS = [
               const cover = COVER_COLORS[i % COVER_COLORS.length];
               return (
                 <li>
-                  <a href={`/posts/${post.id}`} class="card">
+                  <a href={withBase(`/posts/${post.id}`)} class="card">
                     <div class="card-cover" style={`background: ${cover.hue};`}>
                       {post.data.cover ? (
                         <img src={post.data.cover} alt={`${post.data.title} cover`} class="card-cover-image" loading="lazy" />

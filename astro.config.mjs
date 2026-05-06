@@ -9,6 +9,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   output: "static",
   site: "https://wport.me",
+  base: "/blog",
   integrations: [react(), sitemap()],
   server: { port: 3000 },
   vite: {

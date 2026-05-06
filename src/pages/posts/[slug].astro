@@ -48,6 +48,9 @@ const shareUrl = `https://wport.me/blog/posts/${post.id}/`;
 const shareUrlEncoded = encodeURIComponent(shareUrl);
 const shareTitle = encodeURIComponent(post.data.title);
 const shareText = encodeURIComponent(`${post.data.title}｜Wport Blog`);
+const baseUrl = import.meta.env.BASE_URL;
+const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`;
 ---
 
 <BlogLayout title={post.data.title}>
@@ -56,7 +59,7 @@ const shareText = encodeURIComponent(`${post.data.title}｜Wport Blog`);
 
   <main class="post-main">
 
-    <a href="/" class="back-link">
+    <a href={withBase("/")} class="back-link">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="15 18 9 12 15 6"></polyline>
       </svg>
@@ -70,7 +73,7 @@ const shareText = encodeURIComponent(`${post.data.title}｜Wport Blog`);
         <header class="post-header">
           <div class="post-tags">
             {post.data.tags && post.data.tags.map((tag: string) => (
-              <a href={`/archive?tag=${encodeURIComponent(tag)}`} class="tag">{tag}</a>
+              <a href={`${withBase("/archive")}?tag=${encodeURIComponent(tag)}`} class="tag">{tag}</a>
             ))}
           </div>
           <h1 class="post-title">
@@ -98,7 +101,7 @@ const shareText = encodeURIComponent(`${post.data.title}｜Wport Blog`);
             <ul class="post-related-list">
               {relatedPosts.map((related) => (
                 <li>
-                  <a href={`/posts/${related.id}`} class="post-related-card">
+                  <a href={withBase(`/posts/${related.id}`)} class="post-related-card">
                     {related.data.cover && (
                       <img
                         src={related.data.cover}
@@ -129,7 +132,7 @@ const shareText = encodeURIComponent(`${post.data.title}｜Wport Blog`);
           <nav class="post-pagination" aria-label="文章導覽">
             <div class="post-pagination-item">
               {previousPost && (
-                <a href={`/posts/${previousPost.id}`} class="post-pagination-link">
+                <a href={withBase(`/posts/${previousPost.id}`)} class="post-pagination-link">
                   {previousPost.data.cover && (
                     <img
                       src={previousPost.data.cover}
@@ -145,7 +148,7 @@ const shareText = encodeURIComponent(`${post.data.title}｜Wport Blog`);
             </div>
             <div class="post-pagination-item post-pagination-item-next">
               {nextPost && (
-                <a href={`/posts/${nextPost.id}`} class="post-pagination-link">
+                <a href={withBase(`/posts/${nextPost.id}`)} class="post-pagination-link">
                   {nextPost.data.cover && (
                     <img
                       src={nextPost.data.cover}

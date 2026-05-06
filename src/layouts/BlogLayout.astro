@@ -5,6 +5,9 @@ interface Props {
   title?: string;
 }
 const { title = "Wport Blog" } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+const withBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`;
 ---
 
 <!doctype html>
@@ -12,7 +15,7 @@ const { title = "Wport Blog" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href={withBase("/favicon.ico")} />
     <title>{title}</title>
   </head>
   <body>
