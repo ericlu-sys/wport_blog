@@ -67,6 +67,36 @@ npm run build
 ├── public/         # Public assets
 ```
 
+## Design Kit & Template Reuse
+
+This blog is now structured to support template reuse for client delivery.
+
+### Design system source of truth
+
+- `src/styles/global.css` is the primary design token file (color, typography, spacing, radius, transitions).
+- Shared primitives should consume tokens via CSS variables (for example `var(--fg-heading)`, `var(--bg-tag)`, `var(--border-default)`).
+- Avoid hardcoded color values in page-level styles unless there is a specific one-off visual requirement.
+
+### Current styling architecture
+
+- `src/layouts/Layout.astro` imports `src/styles/global.css`.
+- `src/components/Topbar.astro`, `src/pages/archive.astro`, and `src/pages/posts/[slug].astro` have been refactored to remove inline styles and use class-based styling.
+- These files now use token-based color/typography values so theme customization can be done centrally.
+
+### Template customization workflow (for new clients)
+
+1. Update brand tokens in `src/styles/global.css` (`:root` variables).
+2. Replace logo and static assets in `public/`.
+3. Adjust content tone/SEO in `src/content/posts/` and page metadata.
+4. Only then apply page-specific style tweaks if needed.
+
+### Conventions for future changes
+
+- Keep reusable visual rules in `src/styles/global.css`.
+- Keep component/page files focused on structure and behavior.
+- Prefer classes over inline `style=...`.
+- If adding new UI patterns, extract reusable classes/components first before duplicating styles.
+
 ## Supabase Configuration
 
 This project uses [Supabase](https://supabase.com/) for authentication. Environment variables are declared via Astro's `astro:env` schema and are treated as **server-only secrets** — they are never exposed to the client.

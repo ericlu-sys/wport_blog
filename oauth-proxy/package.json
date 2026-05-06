@@ -1,0 +1,14 @@
+{
+  "name": "wport-decap-oauth-proxy",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260502.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.88.0"
+  }
+}

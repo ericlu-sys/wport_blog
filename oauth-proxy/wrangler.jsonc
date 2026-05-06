@@ -1,0 +1,12 @@
+{
+  "name": "wport-decap-oauth",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-05-06",
+  "workers_dev": true,
+  "vars": {
+    "ORIGIN": "https://wport.me"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

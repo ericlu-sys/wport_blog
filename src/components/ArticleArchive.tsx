@@ -8,6 +8,7 @@ interface PostData {
   tags?: string[];
   coverHue: string;
   coverAccent: string;
+  cover?: string;
 }
 
 interface Props {
@@ -121,11 +122,22 @@ export default function ArticleArchive({ posts, allTags }: Props) {
             <li key={post.id}>
               <a href={`/posts/${post.id}`} className="card">
                 <div className="card-cover" style={{ background: post.coverHue }}>
-                  <div className="card-cover-shape1" style={{ background: post.coverAccent }} />
-                  <div className="card-cover-shape2" style={{ background: post.coverAccent }} />
-                  <div className="card-cover-label" style={{ color: post.coverAccent }}>
-                    wport
-                  </div>
+                  {post.cover ? (
+                    <img
+                      src={post.cover}
+                      alt={`${post.title} cover`}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <>
+                      <div className="card-cover-shape1" style={{ background: post.coverAccent }} />
+                      <div className="card-cover-shape2" style={{ background: post.coverAccent }} />
+                      <div className="card-cover-label" style={{ color: post.coverAccent }}>
+                        wport
+                      </div>
+                    </>
+                  )}
                 </div>
                 <div className="card-body">
                   {post.tags && post.tags.length > 0 && (

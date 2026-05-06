@@ -26,6 +26,7 @@ const postsData = posts.map((post, i) => ({
   tags: post.data.tags ?? [],
   coverHue: COVER_COLORS[i % COVER_COLORS.length].hue,
   coverAccent: COVER_COLORS[i % COVER_COLORS.length].accent,
+  cover: post.data.cover,
 }));
 
 const allTags = [...new Set(posts.flatMap((p) => p.data.tags ?? []))];
@@ -34,16 +35,12 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags ?? []))];
 <BlogLayout title="所有文章 — Wport Blog">
   <Topbar currentPage="archive" />
 
-  <main style="max-width: 1080px; margin: 0 auto; padding: 48px 24px 80px;">
-    <header style="margin-bottom: 40px;">
-      <h1
-        style="font-size: 34px; font-weight: 700; color: #2E2E2E; line-height: 1.25; margin-bottom: 10px; font-family: 'PingFang TC','Noto Sans TC',Arial,sans-serif;"
-      >
+  <main class="archive-main">
+    <header class="archive-header">
+      <h1 class="archive-title">
         所有文章
       </h1>
-      <p
-        style="font-size: 15px; color: #9A9A9A; line-height: 1.7; font-family: 'PingFang TC','Noto Sans TC',Arial,sans-serif;"
-      >
+      <p class="archive-subtitle">
         分享觀點、紀錄思考
       </p>
     </header>
@@ -53,6 +50,32 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags ?? []))];
 </BlogLayout>
 
 <style is:global>
+  .archive-main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .archive-header {
+    margin-bottom: 40px;
+  }
+
+  .archive-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--fg-heading);
+    line-height: 1.25;
+    margin-bottom: 10px;
+    font-family: var(--font-sans);
+  }
+
+  .archive-subtitle {
+    font-size: var(--text-base);
+    color: var(--fg-meta);
+    line-height: 1.7;
+    font-family: var(--font-sans);
+  }
+
   .card-grid {
     list-style: none;
     padding: 0;
@@ -64,7 +87,7 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags ?? []))];
   .card {
     display: flex;
     flex-direction: column;
-    background: #fff;
+    background: var(--bg-page);
     border-radius: 12px;
     border: 1px solid #e8e8e8;
     overflow: hidden;
@@ -126,20 +149,20 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags ?? []))];
   .tag {
     font-size: 11px;
     font-weight: 500;
-    color: #56c7bb;
-    background: #eaf8f7;
+    color: var(--color-primary);
+    background: var(--bg-tag);
     border-radius: 999px;
     padding: 2px 8px;
   }
   .card-title {
     font-size: 16px;
     font-weight: 700;
-    color: #2e2e2e;
+    color: var(--fg-heading);
     line-height: 1.4;
   }
   .card-excerpt {
     font-size: 13.5px;
-    color: #9a9a9a;
+    color: var(--fg-meta);
     line-height: 1.65;
     flex: 1;
     display: -webkit-box;
@@ -149,7 +172,7 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags ?? []))];
   }
   .card-footer {
     padding-top: 8px;
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid var(--bg-code);
   }
   .card-date {
     font-size: 12px;

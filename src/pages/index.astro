@@ -11,6 +11,21 @@ const sorted = allPosts.sort(
 
 const featured = sorted.filter((p) => p.data.featured).slice(0, 3);
 const popular = featured.length > 0 ? featured : sorted.slice(0, 3);
+const tagCountMap = sorted.reduce(
+  (acc, post) => {
+    for (const tag of post.data.tags ?? []) {
+      acc.set(tag, (acc.get(tag) ?? 0) + 1);
+    }
+    return acc;
+  },
+  new Map<string, number>()
+);
+const tagOverview = [...tagCountMap.entries()].sort((a, b) => {
+  if (b[1] !== a[1]) {
+    return b[1] - a[1];
+  }
+  return a[0].localeCompare(b[0], "zh-Hant");
+});
 
 const COVER_COLORS = [
   { hue: "#E0F5F3", accent: "#56C7BB" },
@@ -122,11 +137,17 @@ const COVER_COLORS = [
                 <li>
                   <a href={`/posts/${post.id}`} class="card">
                     <div class="card-cover" style={`background: ${cover.hue};`}>
-                      <div class="card-cover-shape1" style={`background: ${cover.accent};`} />
-                      <div class="card-cover-shape2" style={`background: ${cover.accent};`} />
-                      <div class="card-cover-label" style={`color: ${cover.accent};`}>
-                        wport
-                      </div>
+                      {post.data.cover ? (
+                        <img src={post.data.cover} alt={`${post.data.title} cover`} class="card-cover-image" loading="lazy" />
+                      ) : (
+                        <>
+                          <div class="card-cover-shape1" style={`background: ${cover.accent};`} />
+                          <div class="card-cover-shape2" style={`background: ${cover.accent};`} />
+                          <div class="card-cover-label" style={`color: ${cover.accent};`}>
+                            wport
+                          </div>
+                        </>
+                      )}
                     </div>
                     <div class="card-body">
                       {post.data.tags && post.data.tags.length > 0 && (
@@ -155,6 +176,31 @@ const COVER_COLORS = [
           </ul>
         )
       }
+    </div>
+  </section>
+
+  <section class="tag-overview-section">
+    <div class="tag-overview-inner">
+      <div class="popular-header">
+        <div>
+          <div class="popular-label">TAG OVERVIEW</div>
+          <h2 class="popular-title">標籤總覽</h2>
+        </div>
+      </div>
+      {tagOverview.length === 0 ? (
+        <p style="color: #9A9A9A; font-size: 15px;">目前還沒有標籤資料。</p>
+      ) : (
+        <ul class="tag-overview-list">
+          {tagOverview.map(([tag, count]) => (
+            <li>
+              <span class="tag-overview-item">
+                <span class="tag-overview-name">{tag}</span>
+                <span class="tag-overview-count">{count}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   </section>
 </BlogLayout>
@@ -285,6 +331,54 @@ const COVER_COLORS = [
     margin: 0 auto;
     padding: 72px 24px 80px;
   }
+  .tag-overview-section {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+  .tag-overview-inner {
+    width: 100%;
+  }
+  .tag-overview-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .tag-overview-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    border: 1px solid #e8e8e8;
+    border-radius: 999px;
+    padding: 8px 12px;
+    background: #fff;
+    transition:
+      border-color 150ms ease,
+      background 150ms ease;
+  }
+  .tag-overview-item:hover {
+    border-color: #56c7bb;
+    background: #f8fcfb;
+  }
+  .tag-overview-name {
+    font-size: 13px;
+    color: #2e2e2e;
+    font-weight: 500;
+  }
+  .tag-overview-count {
+    font-size: 12px;
+    color: #56c7bb;
+    font-weight: 700;
+    background: #eaf8f7;
+    border-radius: 999px;
+    padding: 2px 7px;
+    min-width: 22px;
+    text-align: center;
+  }
   .popular-inner {
     width: 100%;
   }
@@ -355,6 +449,11 @@ const COVER_COLORS = [
     justify-content: center;
     position: relative;
     overflow: hidden;
+  }
+  .card-cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .card-cover-shape1 {
     width: 64px;

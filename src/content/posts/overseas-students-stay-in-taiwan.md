@@ -4,11 +4,14 @@ description: "從工作簽證到居留身份，完整解析僑外生留台的關
 publishDate: 2026-04-29
 tags: ["僑外生", "留台", "移民", "就業"]
 featured: true
+cover: "https://images.pexels.com/photos/18552371/pexels-photo-18552371.jpeg?auto=compress&cs=tinysrgb&w=1600"
 ---
 
 在台灣念完大學或研究所，卻不確定畢業後能不能留下來——這是許多僑外生共同面對的困境。台灣的就業市場其實對外籍人才有一定的開放度，但制度細節繁瑣，稍不留意就可能錯過申辦時機，或選錯路徑，白白浪費在台灣建立的人脈與語言優勢。
 
 這篇文章整理了留台的幾條主要路徑，以及容易踩到的坑，希望幫助即將畢業的僑外生提前布局。
+
+![台北 101 與城市夜景，象徵僑外生留台發展機會](https://images.pexels.com/photos/18552371/pexels-photo-18552371.jpeg?auto=compress&cs=tinysrgb&w=1600)
 
 ---
 
@@ -42,6 +45,8 @@ featured: true
 ## 三、加速路徑：就業金卡
 
 如果你的專業背景夠強，台灣的**就業金卡（Employment Gold Card）**是一條更靈活的路。
+
+![台北市天際線夜景，呼應在台長期職涯規劃](https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&w=1600)
 
 就業金卡合法結合工作許可、居留簽證、ARC 與重入國許可四證合一，有效期一至三年，持有者可自由找工作，不需要事先綁定特定雇主。
 
