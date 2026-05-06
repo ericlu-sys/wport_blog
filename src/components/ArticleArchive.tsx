@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 interface PostData {
   id: string;
@@ -20,6 +20,23 @@ export default function ArticleArchive({ posts, allTags }: Props) {
   const [search, setSearch] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
+  const normalizedTags = useMemo(() => new Set(allTags), [allTags]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const urlTag = params.get("tag");
+    const urlSearch = params.get("q");
+
+    if (urlTag && normalizedTags.has(urlTag)) {
+      setActiveTag(urlTag);
+    }
+
+    if (urlSearch) {
+      setSearch(urlSearch);
+    }
+  }, [normalizedTags]);
+
   const filtered = posts.filter((p) => {
     const matchTag = !activeTag || (p.tags ?? []).includes(activeTag);
     const q = search.toLowerCase();
@@ -30,6 +47,27 @@ export default function ArticleArchive({ posts, allTags }: Props) {
       (p.tags ?? []).some((t) => t.toLowerCase().includes(q));
     return matchTag && matchSearch;
   });
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+
+    if (activeTag) {
+      params.set("tag", activeTag);
+    } else {
+      params.delete("tag");
+    }
+
+    if (search.trim()) {
+      params.set("q", search.trim());
+    } else {
+      params.delete("q");
+    }
+
+    const query = params.toString();
+    const nextUrl = query ? `${window.location.pathname}?${query}` : window.location.pathname;
+    window.history.replaceState(null, "", nextUrl);
+  }, [activeTag, search]);
 
   return (
     <div>

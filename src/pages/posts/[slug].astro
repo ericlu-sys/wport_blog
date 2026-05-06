@@ -70,7 +70,7 @@ const shareText = encodeURIComponent(`${post.data.title}｜Wport Blog`);
         <header class="post-header">
           <div class="post-tags">
             {post.data.tags && post.data.tags.map((tag: string) => (
-              <span class="tag">{tag}</span>
+              <a href={`/archive?tag=${encodeURIComponent(tag)}`} class="tag">{tag}</a>
             ))}
           </div>
           <h1 class="post-title">

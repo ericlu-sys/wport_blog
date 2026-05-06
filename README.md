@@ -54,6 +54,29 @@ npm run build
 - `npm run lint` - Run ESLint
 - `npm run lint:fix` - Fix ESLint issues
 
+## Command Shortcut Script
+
+This project includes a root command runner: `scripts.sh`.
+
+1. Grant execute permission once:
+
+```bash
+chmod +x scripts.sh
+```
+
+2. Use shortcuts:
+
+```bash
+./scripts.sh help
+./scripts.sh dev
+./scripts.sh build
+./scripts.sh lint
+./scripts.sh git:status
+./scripts.sh gh:pr-status
+```
+
+The script also supports custom ports and common Git/GitHub flows, with inline comments in `scripts.sh` for quick reference.
+
 ## Project Structure
 
 ```md
