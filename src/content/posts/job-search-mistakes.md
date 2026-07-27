@@ -2,12 +2,12 @@
 title: "僑外生在台灣找工作的 5 個常見誤區"
 description: "很多僑外生在台灣求職時踩到一樣的坑。這篇整理 5 個最常見的誤區，幫你提早避開、縮短求職時間。"
 publishDate: 2026-07-23
-tags: ["僑外生", "求職技巧", "在台就業"]
+tags: ["僑外生", "求職面試", "留台工作"]
 featured: false
-cover: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&auto=format&fit=crop&q=80"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/job-search-mistakes-cover.jpg"
 ---
 
-![在台灣求職的僑外生](https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&auto=format&fit=crop&q=80)
+![在台灣求職的僑外生](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/job-search-mistakes-cover.jpg)
 
 很多僑外生剛開始在台灣找工作時，都走了一段彎路。不是能力不夠，而是對台灣就業市場的運作方式還不夠熟悉。這篇整理 5 個最常見的誤區，讓你提早避開。
 
@@ -27,7 +27,7 @@ cover: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&auto
 
 **怎麼做更好？** 台灣主流履歷格式是一到兩頁、有大頭照、中文為主，並附上學歷、工作經歷、技能三大區塊。可以參考我們的 [台灣履歷撰寫技巧](/blog/posts/resume-tips/) 和 [中文履歷完整攻略](/blog/posts/chinese-resume-tips/)。
 
-![準備履歷中的求職者](https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&auto=format&fit=crop&q=80)
+![準備履歷中的求職者](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/chinese-resume-tips-cover.jpg)
 
 ---
 
@@ -45,7 +45,7 @@ cover: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&auto
 
 **怎麼做更好？** 面試前要查清楚公司的主要業務、最近的新聞，以及這個職位的職責範圍。也要事先想好薪資期待的回答方式，不要現場回答「都可以」。
 
-![面試準備中的求職者](https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=1200&auto=format&fit=crop&q=80)
+![面試準備中的求職者](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taiwan-interview-tips-cover.jpg)
 
 ---
 

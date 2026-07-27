@@ -2,12 +2,12 @@
 title: "台灣企業招募僑外生完整指南：流程、工作許可與常見問題"
 description: "想招募僑外生但不知道從哪開始？這篇整理台灣企業招募僑外生的完整流程，包含工作許可申請方式與 HR 常見疑問。"
 publishDate: 2026-07-23
-tags: ["僑外生", "企業招募", "HR", "工作許可"]
+tags: ["僑外生", "留台工作"]
 featured: false
-cover: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&auto=format&fit=crop&q=80"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/hiring-overseas-students-guide-cover.jpg"
 ---
 
-![企業 HR 招募流程](https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&auto=format&fit=crop&q=80)
+![企業 HR 招募流程](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/hiring-overseas-students-guide-cover.jpg)
 
 台灣僑外生（在台就讀的外籍學生或僑生）畢業後可以合法在台工作，但很多企業的 HR 對這個群體的招募流程還不夠熟悉，導致有意願但不知道怎麼做。
 
@@ -68,7 +68,7 @@ cover: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&auto=fo
 
 **Q：如果員工在試用期間不適任，要怎麼處理？**<br>A：和本地員工相同，依勞動基準法處理。若是在工作許可有效期間終止聘僱，記得通知勞動部撤銷許可。
 
-![企業會議室](https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&auto=format&fit=crop&q=80)
+![企業會議室](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/office-collaboration.jpg)
 
 ---
 

@@ -2,12 +2,12 @@
 title: "僑外生如何在台灣建立職場人脈？從線上到線下的實用方法"
 description: "台灣很多工作機會來自人脈介紹，而不是求職平台。這篇分享僑外生在台建立職場人脈的具體方法，從 LinkedIn 到線下活動都有。"
 publishDate: 2026-07-23
-tags: ["僑外生", "求職技巧", "人脈", "在台就業"]
+tags: ["僑外生", "求職面試", "留台工作"]
 featured: false
-cover: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&auto=format&fit=crop&q=80"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/networking-in-taiwan-cover.jpg"
 ---
 
-![台灣職場交流活動](https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&auto=format&fit=crop&q=80)
+![台灣職場交流活動](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/networking-in-taiwan-cover.jpg)
 
 在台灣，有相當比例的工作機會是透過熟人介紹或口碑傳播出來的，而不是靠投履歷平台。這對很多剛來台灣的僑外生來說是一個比較陌生的概念，也是求職效率差異很大的關鍵原因。
 
@@ -32,7 +32,7 @@ cover: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&auto
 
 台灣每個月都有大量的職涯、產業、創業相關活動。對僑外生來說，這是最自然、效果也最好的建立人脈方式，因為你在同一個場合和人面對面，比在網路上發訊息容易多了。
 
-![線下交流活動現場](https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop&q=80)
+![線下交流活動現場](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/why-hire-overseas-students-cover.jpg)
 
 ### 怎麼找適合的活動？
 - Accupass、Hypelink、Eventbrite 上搜尋你的職業領域或感興趣的主題
@@ -65,7 +65,7 @@ cover: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&auto
 
 平時可以偶爾分享一篇你覺得有價值的文章，或對別人的動態給一個真實的回應。這些小動作累積下來，你在別人心目中就是一個「有在關注這個領域」的人，而不只是一個「想要工作的人」。
 
-![職場人脈建立](https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&auto=format&fit=crop&q=80)
+![職場人脈建立](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/multicultural-team-discussion.jpg)
 
 ---
 

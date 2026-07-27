@@ -2,12 +2,12 @@
 title: "招募僑外生前必知：工作許可申請流程與雇主義務"
 description: "僑外生打工、畢業 2 年內、正職聘僱，三種情境的工作許可規定都不一樣。這篇整理雇主需要知道的申辦流程與義務。"
 publishDate: 2026-07-23
-tags: ["僑外生", "企業招募", "工作許可", "HR"]
+tags: ["僑外生", "留台工作"]
 featured: false
-cover: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&auto=format&fit=crop&q=80"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/employer-work-permit-guide-cover.jpg"
 ---
 
-![HR 辦理工作許可文件](https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&auto=format&fit=crop&q=80)
+![HR 辦理工作許可文件](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/employer-work-permit-guide-cover.jpg)
 
 台灣企業僱用僑外生，工作許可的辦理方式依聘僱性質不同。很多 HR 對這個流程不熟悉，這篇把不同情境下的規定拆開來說。
 
@@ -80,7 +80,7 @@ cover: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&auto=fo
 
 **Q：員工的工作許可過期後還繼續上班，雇主要負責任嗎？**<br>A：是的，雇主對此有連帶責任，可能面臨裁罰。請務必追蹤每位外籍員工的許可到期日。
 
-![辦公室行政作業](https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=80)
+![辦公室行政作業](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/office-admin-work.jpg)
 
 ---
 

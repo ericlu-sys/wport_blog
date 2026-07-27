@@ -116,7 +116,7 @@ description: "一到兩句話的文章摘要，用於 SEO meta description 與�
 publishDate: 2026-06-11
 tags: ["標籤一", "標籤二"]
 featured: false
-cover: "https://images.pexels.com/photos/XXXXXX/pexels-photo-XXXXXX.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/你的圖片名稱.jpg"
 ---
 ```
 
@@ -125,10 +125,24 @@ cover: "https://images.pexels.com/photos/XXXXXX/pexels-photo-XXXXXX.jpeg?auto=co
 | `title` | string | ✅ | 文章標題 |
 | `description` | string | ✅ | 摘要，建議 50–160 字元，用於 SEO |
 | `publishDate` | date | ✅ | 格式 `YYYY-MM-DD` |
-| `tags` | string[] | — | 分類標籤陣列，建議 2–4 個 |
+| `tags` | string[] | — | 分類標籤，**必須從下方 canonical 清單挑選**，建議 2–4 個 |
 | `featured` | boolean | — | `true` 會在首頁置頂顯示，預設 `false` |
-| `cover` | string | — | 封面圖片 URL（建議使用 Pexels 或自有圖片） |
+| `cover` | string | — | 封面圖片 URL，**必須是 Cloudinary**（見下方 Images） |
 | `draft` | boolean | — | `true` 則文章不對外顯示，預設發布 |
+
+### Tags
+
+`tags` 只能使用以下 10 個 canonical 標籤（定義在 `src/lib/tags.ts`）：
+
+```
+僑外生、留台工作、求職面試、個人品牌、AI 實作、
+聰電站、台大創創、創業募資、簡報 Pitch、WPORT 功能
+```
+
+不在清單裡的標籤**不會被翻譯**（五個語系都會顯示中文原文），也不會併進 archive
+頁的標籤分群。想用的詞不在清單裡時，請對照 `src/lib/tags.ts` 的
+`LEGACY_TAG_REDIRECTS` 找到對應的叢集標籤，例如 `履歷`／`面試`／`求職` → `求職面試`，
+`工作許可`／`居留證` → `留台工作`。
 
 ### Images
 
@@ -154,13 +168,49 @@ https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_li
 
 > 上傳原始圖片尺寸不限，Cloudinary 會自動處理。行銷同仁可直接用 Cloudinary Dashboard 上傳，無需任何 API 金鑰。
 
+### 多語系翻譯（i18n）
+
+本站是五語系靜態站：zh-TW（預設）、en-US、id-ID、vi-VN、th-TH。
+**每篇 zh-TW 文章都必須補齊四個語系的翻譯檔**，否則該文章在 `/en` `/id` `/vi` `/th`
+底下不會存在，語言切換器會把讀者退回該語系首頁。
+
+翻譯檔跟原文同一層，用連字號加語系前綴命名：
+
+```
+my-post.md      ← zh-TW 原文
+my-post-en.md   ← English
+my-post-id.md   ← Bahasa Indonesia
+my-post-vi.md   ← Tiếng Việt
+my-post-th.md   ← ภาษาไทย
+```
+
+翻譯檔只翻 `title`、`description` 與內文；`publishDate`、`tags`、`featured`、`cover`、
+`draft` 必須跟原文完全一致（`tags` 保持中文原樣，渲染時會自動轉換成各語系）。
+
+> ⚠️ zh-TW 原文的檔名不可以用 `-en` `-id` `-vi` `-th` 結尾，會被誤判成翻譯檔。
+
+**使用 AI Agent 協助翻譯：**本 repo 內建 `i18n-translate` skill
+（`.claude/skills/i18n-translate/SKILL.md`）。在 Claude Code 裡新增或修改文章時會自動
+觸發，也可以直接輸入 `/i18n-translate` 呼叫。skill 內含完整的命名慣例、frontmatter
+規則、翻譯風格指引與檢查流程。
+
+**檢查覆蓋率：**
+
+```bash
+npm run check:i18n
+```
+
+會列出缺少翻譯的文章、frontmatter 與原文不一致的欄位、非 canonical 標籤、
+未轉 Cloudinary 的圖片熱連結，以及違反規範的破折號。
+
 ### Preview locally
 
 ```bash
 npm run dev
 ```
 
-開啟 `http://localhost:3000` 確認文章顯示正常後再 commit。
+開啟 `http://localhost:3000` 確認文章顯示正常後再 commit。多語系文章請一併確認
+`http://localhost:3000/blog/en/posts/你的文章` 等四個語系路由。
 
 ## Design Kit & Template Reuse
 

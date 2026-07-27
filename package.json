@@ -11,7 +11,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "ai:rules": "bash scripts/sync-ai-rules.sh",
-    "openspec:init": "bash scripts/init-openspec.sh"
+    "openspec:init": "bash scripts/init-openspec.sh",
+    "check:i18n": "node scripts/check-i18n-coverage.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",

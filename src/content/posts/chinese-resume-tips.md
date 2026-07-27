@@ -2,12 +2,12 @@
 title: "僑外生的中文履歷怎麼寫？格式與重點全攻略"
 description: "台灣企業的履歷格式跟海外不一樣。這篇教你從格式、大頭照、自傳到關鍵字，一步步寫出讓台灣 HR 看得懂的中文履歷。"
 publishDate: 2026-07-23
-tags: ["僑外生", "求職技巧", "履歷", "在台就業"]
+tags: ["僑外生", "求職面試", "留台工作"]
 featured: false
-cover: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&auto=format&fit=crop&q=80"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/chinese-resume-tips-cover.jpg"
 ---
 
-![準備中文履歷的求職者](https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&auto=format&fit=crop&q=80)
+![準備中文履歷的求職者](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/chinese-resume-tips-cover.jpg)
 
 台灣的中文履歷和海外的英文履歷，在格式上有不少差異。如果你直接把英文履歷翻譯成中文就送出，HR 一眼就能看出你不熟悉台灣的求職慣例，第一印象分數會打折。
 
@@ -35,7 +35,7 @@ cover: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&auto
 
 **4. 技能**<br>分成語言能力（中英文程度、其他語言）和專業技能（軟體、工具、證照）兩類列出。
 
-![履歷撰寫中](https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&auto=format&fit=crop&q=80)
+![履歷撰寫中](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/office-collaboration.jpg)
 
 ---
 
@@ -59,7 +59,7 @@ cover: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&auto
 **工作許可狀態**：如果你已經有合法居留或工作資格，可以在基本資料區塊補一行「具合法工作許可」或「在學可合法工作」，主動說清楚，不要讓 HR 自己去猜。
 **學歷認證**：海外學歷如果已完成教育部認證，也可以在學歷欄位旁邊標注，減少 HR 的疑慮。
 
-![求職準備中的年輕人](https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&auto=format&fit=crop&q=80)
+![求職準備中的年輕人](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-preparing.jpg)
 
 ---
 

@@ -2,12 +2,12 @@
 title: "台灣企業面試常見問題與僑外生的回答策略"
 description: "台灣面試有固定的常見問題。這篇整理最常被問到的題目，以及僑外生在回答時需要特別注意的地方。"
 publishDate: 2026-07-23
-tags: ["僑外生", "求職技巧", "面試", "在台就業"]
+tags: ["僑外生", "求職面試", "留台工作"]
 featured: false
-cover: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=1200&auto=format&fit=crop&q=80"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taiwan-interview-tips-cover.jpg"
 ---
 
-![面試準備](https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=1200&auto=format&fit=crop&q=80)
+![面試準備](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taiwan-interview-tips-cover.jpg)
 
 台灣企業面試有一套常見的問題組合，不管你應徵哪種職位，幾乎都會被問到。提前準備這些問題，不只是讓你答得更流暢，也讓面試官覺得你對這份工作是認真的。
 
@@ -27,7 +27,7 @@ cover: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=1200&auto
 
 至少要能說出：「我知道你們主要業務是 XX，我特別對 XX 這個方向感興趣，因為...」不要現場說「我不太清楚」。
 
-![面試現場](https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&auto=format&fit=crop&q=80)
+![面試現場](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/hiring-overseas-students-guide-cover.jpg)
 
 <span style="color:#0d7c70; font-weight:700;">「你的優勢是什麼？」</span>
 
@@ -53,7 +53,7 @@ cover: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=1200&auto
 
 這是雇主在確認你的穩定性。如果你有長期在台發展的計畫，就說清楚。如果目前還不確定，可以說：「我現在的計畫是以台灣為主要發展地，希望能在這個職位上持續累積經驗。」
 
-![面試後思考](https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&auto=format&fit=crop&q=80)
+![面試後思考](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/post-interview-reflection.jpg)
 
 ---
 

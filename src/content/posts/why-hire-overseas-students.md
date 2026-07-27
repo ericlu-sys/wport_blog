@@ -2,12 +2,12 @@
 title: "為什麼越來越多台灣企業開始僱用僑外生？"
 description: "語言能力、海外視野、跨文化溝通，僑外生帶給企業的不只是多一個人力。這篇整理台灣企業僱用僑外生的實際優勢。"
 publishDate: 2026-07-23
-tags: ["僑外生", "企業招募", "HR", "人才多元化"]
+tags: ["僑外生", "留台工作"]
 featured: false
-cover: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop&q=80"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/why-hire-overseas-students-cover.jpg"
 ---
 
-![多元文化職場](https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop&q=80)
+![多元文化職場](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/why-hire-overseas-students-cover.jpg)
 
 台灣的勞動市場正在改變。隨著產業國際化加速，以及本地人力短缺的壓力持續，越來越多台灣企業開始把目光放到在台就學的僑外生身上。
 
@@ -29,7 +29,7 @@ cover: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=fo
 
 很多台灣企業在嘗試進入東南亞市場時，會在「在地化」這個環節卡住，不是因為產品不好，而是不了解當地用戶的習慣和偏好。一位來自當地的僑外生員工，可以直接補上這個缺口。
 
-![多元文化團隊討論](https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&auto=format&fit=crop&q=80)
+![多元文化團隊討論](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/multicultural-team-discussion.jpg)
 
 ---
 
@@ -55,7 +55,7 @@ cover: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=fo
 
 詳細流程可以參考 [台灣企業招募僑外生完整指南](/blog/posts/hiring-overseas-students-guide/)。
 
-![辦公室合作場景](https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&auto=format&fit=crop&q=80)
+![辦公室合作場景](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/office-collaboration.jpg)
 
 ---
 

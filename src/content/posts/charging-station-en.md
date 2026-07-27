@@ -4,10 +4,10 @@ description: "Congdianzhan is WPORT's regular in-person event series. Each sessi
 publishDate: 2026-07-03
 tags: ["聰電站", "AI 課程", "線下活動", "僑外生"]
 featured: false
-cover: "https://res.cloudinary.com/xyudkke9/image/upload/w_1200,h_630,c_fill,g_auto,f_auto,q_auto/v1784540461/ChatGPT_Image_2026%E5%B9%B47%E6%9C%887%E6%97%A5_%E4%B8%8B%E5%8D%8804_34_56_rpe73e"
+cover: "https://res.cloudinary.com/xyudkke9/image/upload/w_1200,h_630,c_fill,g_auto,f_auto,q_auto/v1784861085/charging-station-banner_mlyjjs.png"
 ---
 
-![Congdianzhan event banner](https://res.cloudinary.com/xyudkke9/image/upload/w_1200,f_auto,q_auto/v1784540461/ChatGPT_Image_2026%E5%B9%B47%E6%9C%887%E6%97%A5_%E4%B8%8B%E5%8D%8804_34_56_rpe73e)
+![Congdianzhan event banner](https://res.cloudinary.com/xyudkke9/image/upload/w_1200,f_auto,q_auto/v1784861085/charging-station-banner_mlyjjs.png)
 
 ---
 

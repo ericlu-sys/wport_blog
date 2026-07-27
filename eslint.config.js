@@ -56,11 +56,26 @@ const reactConfig = tseslint.config({
   },
 });
 
+// Node CLI scripts: allow node globals and console output.
+const nodeScriptsConfig = tseslint.config({
+  files: ["scripts/**/*.{js,mjs}"],
+  languageOptions: {
+    globals: {
+      console: "readonly",
+      process: "readonly",
+    },
+  },
+  rules: {
+    "no-console": "off",
+  },
+});
+
 export default tseslint.config(
   includeIgnoreFile(gitignorePath),
   baseConfig,
   jsxA11yConfig,
   reactConfig,
   eslintPluginAstro.configs["flat/recommended"],
+  nodeScriptsConfig,
   eslintPluginPrettier
 );
