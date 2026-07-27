@@ -4,7 +4,7 @@ description: "僑外生在台灣工作前一定要看！整理工作許可申請
 publishDate: 2026-06-10
 tags: ["僑外生", "留台工作"]
 featured: false
-cover: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reading-documents-forms.jpg"
 ---
 
 在台灣工作之前，有一件比找工作更重要的事：**確保你有合法的工作資格。**
@@ -13,7 +13,7 @@ cover: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=
 
 而且 2026 年開始，台灣推出了一項對僑外生非常有利的新制，很多人還不知道。這篇文章幫你把流程、新制和注意事項全部整理清楚。
 
-![正在閱讀文件與填寫表格的工作者](https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![正在閱讀文件與填寫表格的工作者](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reading-documents-forms.jpg)
 
 ---
 
@@ -110,7 +110,7 @@ cover: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=
 - 公司負責人身分證或護照影本
 - 公司設立登記證明影本
 
-![在辦公室查看文件與電腦的工作者](https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![在辦公室查看文件與電腦的工作者](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reviewing-documents-office.jpg)
 
 ---
 

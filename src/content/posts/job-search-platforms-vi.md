@@ -4,14 +4,14 @@ description: "Tổng hợp WPORT, 104, 1111 và Cai DuoDuo. Nêu rõ điểm m�
 publishDate: 2026-06-10
 tags: ["僑外生", "求職面試"]
 featured: false
-cover: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/job-browsing-cafe.jpg"
 ---
 
 Mới đến Đài Loan, muốn tìm việc nhưng chẳng biết nên bắt đầu từ nền tảng nào?
 
 Đây là câu hỏi rất phổ biến. Hệ sinh thái tìm việc ở Đài Loan khác với môi trường bạn từng quen thuộc. Không chỉ là khác biệt ngôn ngữ. Chức năng nền tảng, loại việc làm và cách nộp hồ sơ cũng có nhiều điểm riêng.
 
-![Cảnh duyệt thông tin việc làm trên laptop trong quán cà phê](https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Cảnh duyệt thông tin việc làm trên laptop trong quán cà phê](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/job-browsing-cafe.jpg)
 
 Bài viết này giúp bạn hệ thống 4 nền tảng tìm việc mà sinh viên hải ngoại dùng nhiều nhất, nêu rõ đặc điểm và thời điểm phù hợp để dùng. Không cần mò mẫm theo may rủi. Hãy bắt đầu đúng nơi.
 
@@ -85,7 +85,7 @@ Một số điểm nổi bật:
 
 Nếu thế mạnh của bạn là đa ngôn ngữ hoặc nền tảng đa văn hóa, Cai DuoDuo là nơi phát huy tốt nhất lợi thế đó.
 
-![Nhiều người hợp tác thảo luận trong văn phòng, tượng trưng môi trường nhân tài đa dạng](https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Nhiều người hợp tác thảo luận trong văn phòng, tượng trưng môi trường nhân tài đa dạng](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/office-diverse-collaboration.jpg)
 
 ---
 

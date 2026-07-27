@@ -4,7 +4,7 @@ description: "Gửi CV rồi mà không có phản hồi? Có thể vấn đề 
 publishDate: 2026-06-10
 tags: ["僑外生", "求職面試"]
 featured: false
-cover: "https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/writing-resume-desk.jpg"
 ---
 
 Đã gửi vài bản CV rồi mà vẫn chưa nhận được lời mời phỏng vấn?
@@ -13,7 +13,7 @@ Vấn đề có thể không phải năng lực của bạn, mà là CV “khi�
 
 CV tiếng Trung ở Đài Loan có định dạng và quy ước quen thuộc, khác với thói quen ở nhiều quốc gia khác. Bài viết này tổng hợp 5 chi tiết CV mà nhà tuyển dụng Đài Loan quan tâm nhất, giúp bạn đối chiếu nhanh và tìm ra điểm sai.
 
-![Người tìm việc đang nghiêm túc viết CV tại bàn](https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Người tìm việc đang nghiêm túc viết CV tại bàn](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/writing-resume-desk.jpg)
 
 ---
 
@@ -102,7 +102,7 @@ Tự thuật không phải danh sách bằng cấp. Cần có khung rõ ràng:
 
 “Vì sao muốn làm việc tại Đài Loan?” gần như lần nào phỏng vấn cũng hỏi. Đưa câu trả lời thuyết phục trong tự thuật giúp nhà tuyển dụng đã có ấn tượng tốt ngay khi đọc CV.
 
-![Người tìm việc đang sắp xếp tài liệu ứng tuyển](https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Người tìm việc đang sắp xếp tài liệu ứng tuyển](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-organizing-documents.jpg)
 
 ---
 

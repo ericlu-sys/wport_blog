@@ -5,14 +5,14 @@ publishDate: 2026-04-29
 tags: ["僑外生", "留台", "移民", "就業"]
 featured: true
 draft: true
-cover: "https://images.pexels.com/photos/18552371/pexels-photo-18552371.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taipei-101-night.jpg"
 ---
 
-在台灣念完大學或研究所，卻不確定畢業後能不能留下來——這是許多僑外生共同面對的困境。台灣的就業市場其實對外籍人才有一定的開放度，但制度細節繁瑣，稍不留意就可能錯過申辦時機，或選錯路徑，白白浪費在台灣建立的人脈與語言優勢。
+在台灣念完大學或研究所，卻不確定畢業後能不能留下來，這是許多僑外生共同面對的困境。台灣的就業市場其實對外籍人才有一定的開放度，但制度細節繁瑣，稍不留意就可能錯過申辦時機，或選錯路徑，白白浪費在台灣建立的人脈與語言優勢。
 
 這篇文章整理了留台的幾條主要路徑，以及容易踩到的坑，希望幫助即將畢業的僑外生提前布局。
 
-![台北 101 與城市夜景，象徵僑外生留台發展機會](https://images.pexels.com/photos/18552371/pexels-photo-18552371.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![台北 101 與城市夜景，象徵僑外生留台發展機會](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taipei-101-night.jpg)
 
 ---
 
@@ -47,7 +47,7 @@ cover: "https://images.pexels.com/photos/18552371/pexels-photo-18552371.jpeg?aut
 
 如果你的專業背景夠強，台灣的**就業金卡（Employment Gold Card）**是一條更靈活的路。
 
-![台北市天際線夜景，呼應在台長期職涯規劃](https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![台北市天際線夜景，呼應在台長期職涯規劃](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taipei-skyline-night.jpg)
 
 就業金卡合法結合工作許可、居留簽證、ARC 與重入國許可四證合一，有效期一至三年，持有者可自由找工作，不需要事先綁定特定雇主。
 
@@ -91,6 +91,6 @@ cover: "https://images.pexels.com/photos/18552371/pexels-photo-18552371.jpeg?aut
 
 留台這件事，從來不是「畢業後再想」就能搞定的。台灣的制度設計上雖然對人才有一定友善度，但繁瑣的申辦流程、時間壓力與薪資門檻，都需要提前準備。
 
-最實際的建議是：**在學最後一年就找好你的路徑**——是求職、是金卡、還是創業，確定方向後，有的放矢地準備，才不會在畢業典禮後手忙腳亂。
+最實際的建議是：**在學最後一年就找好你的路徑**。是求職、是金卡、還是創業，確定方向後，有的放矢地準備，才不會在畢業典禮後手忙腳亂。
 
 台灣對很多僑外生來說，是一個值得深耕的地方。希望這篇文章能幫你更有把握地踏出下一步。

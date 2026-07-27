@@ -5,13 +5,13 @@ publishDate: 2026-05-12
 tags: ["僑外生", "職涯成長", "在台工作", "行銷策略"]
 featured: false
 draft: true
-cover: "https://images.pexels.com/photos/6829538/pexels-photo-6829538.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/team-meeting-collaboration.jpg"
 ---
 
 拿到 offer 只是第一步。  
 對僑外生來說，前 90 天是建立信任、降低試用期風險、累積長期留台資本的關鍵階段。
 
-![團隊會議與協作場景，對應入職前 90 天規劃](https://images.pexels.com/photos/6829538/pexels-photo-6829538.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![團隊會議與協作場景，對應入職前 90 天規劃](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/team-meeting-collaboration.jpg)
 
 ---
 
@@ -60,7 +60,7 @@ cover: "https://images.pexels.com/photos/6829538/pexels-photo-6829538.jpeg?auto=
 
 你不只是執行者，而是能放大團隊效能的人。
 
-![同事討論工作內容，象徵持續同步成果與擴大影響力](https://images.pexels.com/photos/7889204/pexels-photo-7889204.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![同事討論工作內容，象徵持續同步成果與擴大影響力](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/colleagues-discussing-work.jpg)
 
 ---
 

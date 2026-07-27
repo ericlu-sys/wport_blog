@@ -5,7 +5,7 @@ publishDate: 2026-05-07
 tags: ["僑外生", "SEO", "履歷優化", "台灣求職"]
 featured: false
 draft: true
-cover: "https://images.pexels.com/photos/7947663/pexels-photo-7947663.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/analytics-dashboard-laptop.jpg"
 ---
 
 多數僑外生求職卡關，不是能力不足，而是「可被找到的能力」不足。  
@@ -13,7 +13,7 @@ cover: "https://images.pexels.com/photos/7947663/pexels-photo-7947663.jpeg?auto=
 
 這篇用 SEO 思維處理求職：把履歷和作品集當成搜尋頁面，讓你被企業更快找到。
 
-![筆電上的分析儀表板，對應求職關鍵字與曝光追蹤](https://images.pexels.com/photos/7947663/pexels-photo-7947663.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![筆電上的分析儀表板，對應求職關鍵字與曝光追蹤](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/analytics-dashboard-laptop.jpg)
 
 ---
 
@@ -78,7 +78,7 @@ cover: "https://images.pexels.com/photos/7947663/pexels-photo-7947663.jpeg?auto=
 
 每個 case study 至少要有以下結構：
 
-![資料監測畫面，象徵持續優化履歷與作品集表現](https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![資料監測畫面，象徵持續優化履歷與作品集表現](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/analytics-monitor.jpg)
 
 - 問題背景（Problem）
 - 目標指標（Goal / KPI）

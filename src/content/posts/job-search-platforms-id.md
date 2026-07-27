@@ -4,14 +4,14 @@ description: "Ringkasan WPORT, 104, 1111, dan Cai DuoDuo. Pahami keunggulan masi
 publishDate: 2026-06-10
 tags: ["僑外生", "求職面試"]
 featured: false
-cover: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/job-browsing-cafe.jpg"
 ---
 
 Baru datang ke Taiwan, ingin mencari kerja, tapi tidak tahu harus mulai dari platform mana?
 
 Pertanyaan ini sangat umum. Ekosistem lowongan di Taiwan berbeda dari lingkungan yang mungkin sudah kamu kenal. Bukan hanya soal bahasa. Fitur platform, jenis lowongan, dan cara kirim CV juga punya tipenya sendiri.
 
-![Suasana menelusuri informasi lowongan dengan laptop di kafe](https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Suasana menelusuri informasi lowongan dengan laptop di kafe](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/job-browsing-cafe.jpg)
 
 Artikel ini merangkum 4 platform yang paling sering dipakai mahasiswa luar negeri, menjelaskan ciri khas dan waktu terbaik untuk menggunakannya. Tidak perlu mengandalkan keberuntungan. Langsung mulai di tempat yang tepat.
 
@@ -85,7 +85,7 @@ Beberapa keunggulan:
 
 Jika keunggulanmu adalah kemampuan multibahasa atau latar lintas budaya, Cai DuoDuo adalah tempat yang paling bisa menonjolkan keunggulan itu.
 
-![Kolaborasi di kantor yang melambangkan lingkungan talenta yang beragam](https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Kolaborasi di kantor yang melambangkan lingkungan talenta yang beragam](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/office-diverse-collaboration.jpg)
 
 ---
 

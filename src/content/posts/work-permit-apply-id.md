@@ -4,7 +4,7 @@ description: "Wajib dibaca sebelum bekerja di Taiwan. Ringkasan alur izin kerja,
 publishDate: 2026-06-10
 tags: ["僑外生", "留台工作"]
 featured: false
-cover: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reading-documents-forms.jpg"
 ---
 
 Sebelum bekerja di Taiwan, ada satu hal yang lebih penting dari sekadar dapat tawaran kerja: **pastikan kamu punya kualifikasi kerja yang legal.**
@@ -13,7 +13,7 @@ Banyak mahasiswa luar negeri mengira setelah mendapat offer bisa langsung mulai 
 
 Selain itu, mulai 2026 Taiwan menerapkan aturan baru yang sangat menguntungkan mahasiswa luar negeri. Banyak orang belum mengetahuinya. Artikel ini merangkum alur, aturan baru, dan poin penting yang perlu diperhatikan.
 
-![Pekerja yang sedang membaca dokumen dan mengisi formulir](https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Pekerja yang sedang membaca dokumen dan mengisi formulir](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reading-documents-forms.jpg)
 
 ---
 
@@ -110,7 +110,7 @@ Di sisi pemberi kerja, juga perlu menyiapkan:
 - Salinan KTP atau paspor penanggung jawab perusahaan
 - Salinan bukti pendaftaran pendirian perusahaan
 
-![Pekerja yang sedang memeriksa dokumen dan komputer di kantor](https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Pekerja yang sedang memeriksa dokumen dan komputer di kantor](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reviewing-documents-office.jpg)
 
 ---
 

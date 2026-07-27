@@ -4,7 +4,7 @@ description: "履歷投出去都沒有回音？可能是這些地方出了問題
 publishDate: 2026-06-10
 tags: ["僑外生", "求職面試"]
 featured: false
-cover: "https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/writing-resume-desk.jpg"
 ---
 
 履歷已經投出去好幾封，卻遲遲沒有面試通知？
@@ -13,7 +13,7 @@ cover: "https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=
 
 台灣的中文履歷有一套約定俗成的格式與眉角，跟其他國家的習慣不太一樣。這篇文章整理了 5 個台灣雇主最在乎的履歷細節，幫你快速對照、找出問題點。
 
-![在桌前認真撰寫履歷的求職者](https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![在桌前認真撰寫履歷的求職者](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/writing-resume-desk.jpg)
 
 ---
 
@@ -102,7 +102,7 @@ cover: "https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=
 
 「為什麼來台灣工作？」這個問題，幾乎每次面試都會被問到。在自傳裡先給出有說服力的答案，可以讓雇主在讀履歷的時候就對你留下好印象。
 
-![認真整理求職資料的求職者](https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![認真整理求職資料的求職者](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-organizing-documents.jpg)
 
 ---
 

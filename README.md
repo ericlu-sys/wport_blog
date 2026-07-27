@@ -168,6 +168,14 @@ https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_li
 
 > 上傳原始圖片尺寸不限，Cloudinary 會自動處理。行銷同仁可直接用 Cloudinary Dashboard 上傳，無需任何 API 金鑰。
 
+要批次上傳的話，可以用 `scripts/upload_to_cloudinary.py`，來源支援本機檔案、遠端 URL 與 Google Drive：
+
+```bash
+python3 scripts/upload_to_cloudinary.py 圖片名稱=./photo.jpg 另一張=https://example.com/a.jpg
+```
+
+這個腳本會從專案根目錄的 `.env` 讀 `CLOUDINARY_API_KEY` 與 `CLOUDINARY_API_SECRET`（`.env` 已被 gitignore）。**金鑰不要寫進程式碼。**
+
 ### 多語系翻譯（i18n）
 
 本站是五語系靜態站：zh-TW（預設）、en-US、id-ID、vi-VN、th-TH。

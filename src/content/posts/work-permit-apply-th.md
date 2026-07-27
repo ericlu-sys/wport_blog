@@ -4,7 +4,7 @@ description: "ต้องอ่านก่อนทำงานในไต้
 publishDate: 2026-06-10
 tags: ["僑外生", "留台工作"]
 featured: false
-cover: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reading-documents-forms.jpg"
 ---
 
 ก่อนทำงานในไต้หวัน มีสิ่งหนึ่งที่สำคัญกว่าการได้งานเสียอีก: **ต้องแน่ใจว่าคุณมีคุณสมบัติทำงานอย่างถูกกฎหมาย**
@@ -13,7 +13,7 @@ cover: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=
 
 นอกจากนี้ ตั้งแต่ปี 2026 ไต้หวันมีกฎใหม่ที่เป็นประโยชน์อย่างมากต่อนักศึกษาต่างชาติ และหลายคนยังไม่รู้ บทความนี้ช่วยสรุปขั้นตอน กฎใหม่ และข้อควรระวังทั้งหมดให้ชัดเจน
 
-![ผู้ที่กำลังอ่านเอกสารและกรอกแบบฟอร์ม](https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![ผู้ที่กำลังอ่านเอกสารและกรอกแบบฟอร์ม](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reading-documents-forms.jpg)
 
 ---
 
@@ -110,7 +110,7 @@ cover: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=
 - สำเนาบัตรประชาชนหรือหนังสือเดินทางของผู้รับผิดชอบบริษัท
 - สำเนาใบทะเบียนจัดตั้งบริษัท
 
-![ผู้ที่กำลังตรวจเอกสารและคอมพิวเตอร์ในออฟฟิศ](https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![ผู้ที่กำลังตรวจเอกสารและคอมพิวเตอร์ในออฟฟิศ](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reviewing-documents-office.jpg)
 
 ---
 

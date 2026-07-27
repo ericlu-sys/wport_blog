@@ -4,7 +4,7 @@ description: "ก่อนทำงานในไต้หวัน นัก�
 publishDate: 2026-06-10
 tags: ["僑外生", "留台工作"]
 featured: false
-cover: "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-outside-office.jpg"
 ---
 
 เพิ่งเรียนจบแล้วอยากอยู่ทำงานในไต้หวันต่อ?
@@ -13,7 +13,7 @@ cover: "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=
 
 นักศึกษาต่างชาติและชาวจีนโพ้นทะเลหลายคนไม่รู้เรื่องนี้ จนได้ offer แล้วค่อยวุ่นวาย ใบอนุญาตทำงานไม่ใช่แค่กระดาษแผ่นหนึ่ง แต่เป็นฐานทางกฎหมายให้คุณทำงานในไต้หวันได้อย่างถูกกฎหมาย หากไม่มี แม้บริษัทจะรับคุณแล้วก็ยังเริ่มงานไม่ได้
 
-![ผู้หางานถือเอกสารและเตรียมตัวหน้ารออฟฟิศ](https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![ผู้หางานถือเอกสารและเตรียมตัวหน้ารออฟฟิศ](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-outside-office.jpg)
 
 ---
 
@@ -121,7 +121,7 @@ cover: "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=
 
 ใบอนุญาตทำงานออกให้กับ **ผู้จ้างรายเฉพาะ** เปลี่ยนบริษัทใช้ใบเก่าต่อไม่ได้ ผู้จ้างใหม่ต้องยื่นใหม่ให้คุณ ก่อนเปลี่ยนงาน ให้ยืนยันล่วงหน้าว่าบริษัทใหม่ยินดีช่วยดำเนินการ
 
-![ผู้หางานจัดเอกสารสมัครงานในร้านกาแฟ](https://images.pexels.com/photos/4467687/pexels-photo-4467687.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![ผู้หางานจัดเอกสารสมัครงานในร้านกาแฟ](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/organizing-documents-cafe.jpg)
 
 ---
 

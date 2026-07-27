@@ -4,7 +4,7 @@ description: "Bắt buộc đọc trước khi làm việc tại Đài Loan. T�
 publishDate: 2026-06-10
 tags: ["僑外生", "留台工作"]
 featured: false
-cover: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reading-documents-forms.jpg"
 ---
 
 Trước khi làm việc tại Đài Loan, có một việc còn quan trọng hơn việc tìm được việc: **đảm bảo bạn có tư cách làm việc hợp pháp.**
@@ -13,7 +13,7 @@ Nhiều sinh viên hải ngoại nghĩ rằng nhận được offer là có th�
 
 Ngoài ra, từ năm 2026 Đài Loan đã đưa ra quy định mới rất có lợi cho sinh viên hải ngoại. Nhiều người vẫn chưa biết. Bài viết này giúp bạn hệ thống quy trình, quy định mới và các lưu ý quan trọng.
 
-![Người đang đọc tài liệu và điền biểu mẫu](https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Người đang đọc tài liệu và điền biểu mẫu](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reading-documents-forms.jpg)
 
 ---
 
@@ -110,7 +110,7 @@ Phía nhà tuyển dụng còn cần chuẩn bị:
 - Bản sao CCCD hoặc hộ chiếu của người đại diện công ty
 - Bản sao giấy đăng ký thành lập công ty
 
-![Người đang xem tài liệu và máy tính trong văn phòng](https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Người đang xem tài liệu và máy tính trong văn phòng](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reviewing-documents-office.jpg)
 
 ---
 

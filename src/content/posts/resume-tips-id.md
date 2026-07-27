@@ -4,7 +4,7 @@ description: "CV sudah dikirim tapi tidak ada balasan? Bisa jadi masalahnya di s
 publishDate: 2026-06-10
 tags: ["僑外生", "求職面試"]
 featured: false
-cover: "https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/writing-resume-desk.jpg"
 ---
 
 CV sudah dikirim beberapa kali, tapi undangan wawancara belum datang-datang?
@@ -13,7 +13,7 @@ Masalahnya mungkin bukan kemampuanmu, melainkan CV-mu “membuat pemberi kerja T
 
 CV berbahasa Mandarin di Taiwan punya format dan kebiasaan yang disepakati secara umum, berbeda dari kebiasaan di negara lain. Artikel ini merangkum 5 detail CV yang paling dipedulikan pemberi kerja Taiwan, agar kamu bisa membandingkan cepat dan menemukan masalahnya.
 
-![Pencari kerja yang sedang menulis CV dengan serius di meja](https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Pencari kerja yang sedang menulis CV dengan serius di meja](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/writing-resume-desk.jpg)
 
 ---
 
@@ -102,7 +102,7 @@ Autobiografi bukan daftar riwayat pendidikan. Harus punya struktur yang jelas:
 
 “Mengapa ingin bekerja di Taiwan?” hampir selalu muncul di setiap wawancara. Memberikan jawaban yang meyakinkan di autobiografi membantu pemberi kerja sudah punya kesan baik saat membaca CV.
 
-![Pencari kerja yang sedang merapikan dokumen lamaran](https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Pencari kerja yang sedang merapikan dokumen lamaran](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-organizing-documents.jpg)
 
 ---
 

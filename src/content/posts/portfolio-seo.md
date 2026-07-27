@@ -5,13 +5,13 @@ publishDate: 2026-05-10
 tags: ["僑外生", "作品集", "SEO", "面試"]
 featured: false
 draft: true
-cover: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/designer-desk-laptop.jpg"
 ---
 
 作品集常見問題不是不精美，而是「企業看不懂你解了什麼商業問題」。  
 SEO 思維能幫你解決這件事：讓內容更容易被找到，也更容易被判斷。
 
-![設計師工作桌面與筆電，呼應作品集案例優化](https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![設計師工作桌面與筆電，呼應作品集案例優化](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/designer-desk-laptop.jpg)
 
 ---
 
@@ -62,7 +62,7 @@ SEO 思維能幫你解決這件事：讓內容更容易被找到，也更容易�
 - 結果證據：指標、用戶回饋、上線影響
 - 協作證據：你如何與 PM、工程、行銷協作
 
-![團隊工作桌協作場景，對應跨部門合作證據](https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![團隊工作桌協作場景，對應跨部門合作證據](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/team-desk-collaboration.jpg)
 
 僑外生特別要補協作證據，因為企業會關注跨文化溝通能力。
 

@@ -5,7 +5,7 @@ publishDate: 2026-05-11
 tags: ["僑外生", "面試", "雇主溝通", "留台就業"]
 featured: false
 draft: true
-cover: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reading-documents-forms.jpg"
 ---
 
 你可能遇過這種情況：面試聊得很好，最後卻因為公司「不熟外籍聘僱流程」而沒下文。  
@@ -13,7 +13,7 @@ cover: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=
 
 你要做的是一件事：把自己包裝成「可被順利聘用的人」。
 
-![面試情境中的履歷填寫，呼應僱主溝通與聘僱流程](https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![面試情境中的履歷填寫，呼應僱主溝通與聘僱流程](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reading-documents-forms.jpg)
 
 ---
 
@@ -82,7 +82,7 @@ cover: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=
 
 主動管理流程，能降低變數。
 
-![求職者與面試官握手，象徵降低風險並達成錄用共識](https://images.pexels.com/photos/5668859/pexels-photo-5668859.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![求職者與面試官握手，象徵降低風險並達成錄用共識](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/handshake-interview.jpg)
 
 ---
 

@@ -4,14 +4,14 @@ description: "สรุป WPORT, 104, 1111 และ Cai DuoDuo จุดเด
 publishDate: 2026-06-10
 tags: ["僑外生", "求職面試"]
 featured: false
-cover: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/job-browsing-cafe.jpg"
 ---
 
 เพิ่งมาไต้หวัน อยากหางาน แต่ไม่รู้เลยว่าควรเริ่มจากแพลตฟอร์มไหน?
 
 คำถามนี้พบบ่อยมาก ระบบนิเวศการหางานในไต้หวันต่างจากสิ่งที่คุณคุ้นเคย ไม่ใช่แค่เรื่องภาษา แต่ฟีเจอร์แพลตฟอร์ม ประเภทตำแหน่งงาน และวิธีส่งเรซูเม่ก็มีรายละเอียดของตัวเอง
 
-![ภาพการเปิดดูข้อมูลหางานด้วยแล็ปท็อปในคาเฟ่](https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![ภาพการเปิดดูข้อมูลหางานด้วยแล็ปท็อปในคาเฟ่](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/job-browsing-cafe.jpg)
 
 บทความนี้ช่วยสรุป 4 แพลตฟอร์มหางานที่นักศึกษาต่างชาตินิยมใช้มากที่สุด อธิบายจุดเด่นและจังหวะที่เหมาะจะใช้ เพื่อไม่ต้องลองผิดลองถูกแบบสุ่ม เริ่มจากที่ถูกต้องได้เลย
 
@@ -85,7 +85,7 @@ Cai DuoDuo ค่อนข้างพิเศษ เน้นจับคู�
 
 ถ้าจุดแข็งของคุณคือความสามารถหลายภาษาหรือพื้นหลังข้ามวัฒนธรรม Cai DuoDuo คือที่ที่ทำให้จุดแข็งนั้นเด่นที่สุด
 
-![ภาพการทำงานร่วมกันในออฟฟิศ สื่อถึงสภาพแวดล้อมบุคลากรที่หลากหลาย](https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![ภาพการทำงานร่วมกันในออฟฟิศ สื่อถึงสภาพแวดล้อมบุคลากรที่หลากหลาย](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/office-diverse-collaboration.jpg)
 
 ---
 

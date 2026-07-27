@@ -4,7 +4,7 @@ description: "Sebelum bekerja di Taiwan, lulusan luar negeri dan internasional w
 publishDate: 2026-06-10
 tags: ["僑外生", "留台工作"]
 featured: false
-cover: "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-outside-office.jpg"
 ---
 
 Baru lulus dan ingin tetap bekerja di Taiwan?
@@ -13,7 +13,7 @@ Selamat atas keputusan itu. Tapi sebelum mulai kirim CV secara masif, ada satu h
 
 Banyak lulusan luar negeri dan internasional tidak tahu soal ini, lalu baru panik setelah dapat offer. Izin kerja bukan sekadar selembar kertas. Itu adalah dasar hukum agar Anda bisa bekerja secara legal di Taiwan. Tanpanya, meski perusahaan menerima Anda, Anda tidak boleh mulai kerja.
 
-![Pencari kerja memegang dokumen dan bersiap di depan kantor](https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Pencari kerja memegang dokumen dan bersiap di depan kantor](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-outside-office.jpg)
 
 ---
 
@@ -121,7 +121,7 @@ Masa berlaku izin kerja biasanya terikat dengan sertifikat tinggal Anda. Jika AR
 
 Izin kerja diterbitkan untuk **pemberi kerja tertentu**. Saat pindah perusahaan, izin lama tidak bisa dipakai ulang. Pemberi kerja baru wajib mengajukan ulang untuk Anda. Sebelum ganti kerja, pastikan lebih dulu bahwa perusahaan baru bersedia mengurusnya.
 
-![Pencari kerja merapikan dokumen lamaran di kafe](https://images.pexels.com/photos/4467687/pexels-photo-4467687.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Pencari kerja merapikan dokumen lamaran di kafe](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/organizing-documents-cafe.jpg)
 
 ---
 

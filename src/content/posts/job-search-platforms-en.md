@@ -4,14 +4,14 @@ description: "A clear comparison of WPORT, 104, 1111, and Cai DuoDuo. See each p
 publishDate: 2026-06-10
 tags: ["僑外生", "求職面試"]
 featured: false
-cover: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/job-browsing-cafe.jpg"
 ---
 
 Just arrived in Taiwan and ready to job hunt, but have no idea which platform to start with?
 
 You are not alone. Taiwan’s job market works differently from what you may be used to. It is not only about language. Platform features, job types, and how you apply all come with their own quirks.
 
-![Browsing job listings on a laptop in a café](https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Browsing job listings on a laptop in a café](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/job-browsing-cafe.jpg)
 
 This article covers the four platforms overseas students use most often, what each is best at, and when to use them. No more guessing. Start where it actually helps.
 
@@ -85,7 +85,7 @@ Key strengths:
 
 If your edge is multilingual ability or a cross-cultural background, Cai DuoDuo is where that advantage shows up best.
 
-![Colleagues collaborating in an office, symbolizing a diverse talent environment](https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Colleagues collaborating in an office, symbolizing a diverse talent environment](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/office-diverse-collaboration.jpg)
 
 ---
 

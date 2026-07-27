@@ -4,7 +4,7 @@ description: "ส่งเรซูเม่ไปแล้วแต่ไร้
 publishDate: 2026-06-10
 tags: ["僑外生", "求職面試"]
 featured: false
-cover: "https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/writing-resume-desk.jpg"
 ---
 
 ส่งเรซูเม่ไปหลายฉบับแล้ว แต่ยังไม่ได้รับนัดสัมภาษณ์?
@@ -13,7 +13,7 @@ cover: "https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=
 
 เรซูเม่ภาษาจีนในไต้หวันมีรูปแบบและรายละเอียดที่เป็นที่นิยมซึ่งต่างจากประเทศอื่น บทความนี้สรุป 5 รายละเอียดเรซูเม่ที่นายจ้างไต้หวันให้ความสำคัญมากที่สุด เพื่อให้คุณเทียบเช็กและหาจุดปัญหาได้อย่างรวดเร็ว
 
-![ผู้หางานที่กำลังเขียนเรซูเม่อย่างจริงจังที่โต๊ะทำงาน](https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![ผู้หางานที่กำลังเขียนเรซูเม่อย่างจริงจังที่โต๊ะทำงาน](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/writing-resume-desk.jpg)
 
 ---
 
@@ -102,7 +102,7 @@ cover: "https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=
 
 “ทำไมอยากทำงานในไต้หวัน?” เป็นคำถามที่เกือบทุกครั้งมีในสัมภาษณ์ การให้คำตอบที่น่าเชื่อถือในอัตชีวประวัติ ช่วยให้นายจ้างประทับใจตั้งแต่ตอนอ่านเรซูเม่
 
-![ผู้หางานที่กำลังจัดเอกสารสมัครงาน](https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![ผู้หางานที่กำลังจัดเอกสารสมัครงาน](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-organizing-documents.jpg)
 
 ---
 

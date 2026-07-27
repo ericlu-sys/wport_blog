@@ -4,7 +4,7 @@ description: "Sending resumes with no replies? These common issues may be why. L
 publishDate: 2026-06-10
 tags: ["僑外生", "求職面試"]
 featured: false
-cover: "https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/writing-resume-desk.jpg"
 ---
 
 You have already sent several resumes, but interview invitations never arrive?
@@ -13,7 +13,7 @@ The problem may not be your ability. It may be that your resume “makes Taiwan 
 
 Taiwan Chinese resumes follow a set of conventions that differ from habits in other countries. This article covers five resume details Taiwan employers care about most, so you can check quickly and spot the issues.
 
-![A job seeker carefully writing a resume at a desk](https://images.pexels.com/photos/4065891/pexels-photo-4065891.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![A job seeker carefully writing a resume at a desk](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/writing-resume-desk.jpg)
 
 ---
 
@@ -102,7 +102,7 @@ An autobiography is not a list of degrees. It needs a clear structure:
 
 “Why do you want to work in Taiwan?” comes up in almost every interview. Giving a persuasive answer in your autobiography helps employers form a strong impression while reading your resume.
 
-![A job seeker carefully organizing application materials](https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![A job seeker carefully organizing application materials](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-organizing-documents.jpg)
 
 ---
 

@@ -4,7 +4,7 @@ description: "Trước khi làm việc tại Đài Loan, sinh viên hải ngoạ
 publishDate: 2026-06-10
 tags: ["僑外生", "留台工作"]
 featured: false
-cover: "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-outside-office.jpg"
 ---
 
 Vừa tốt nghiệp và muốn ở lại Đài Loan làm việc?
@@ -13,7 +13,7 @@ Chúc mừng vì quyết định này. Nhưng trước khi gửi CV ào ạt, c�
 
 Nhiều sinh viên hải ngoại và quốc tế không biết điều này, đến khi nhận offer mới rối tung. Giấy phép lao động không chỉ là một tờ giấy. Đó là căn cứ pháp lý để bạn làm việc hợp pháp tại Đài Loan. Thiếu nó, dù công ty nhận bạn cũng không được đi làm.
 
-![Người tìm việc cầm hồ sơ và chuẩn bị trước văn phòng](https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Người tìm việc cầm hồ sơ và chuẩn bị trước văn phòng](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-outside-office.jpg)
 
 ---
 
@@ -121,7 +121,7 @@ Thời hạn giấy phép lao động thường gắn với giấy cư trú củ
 
 Giấy phép lao động được cấp cho **một nhà tuyển dụng cụ thể**. Đổi công ty không thể dùng lại giấy phép cũ; nhà tuyển dụng mới phải nộp lại cho bạn. Trước khi đổi việc, hãy xác nhận sớm rằng công ty mới sẵn sàng phối hợp.
 
-![Người tìm việc sắp xếp hồ sơ xin việc trong quán cà phê](https://images.pexels.com/photos/4467687/pexels-photo-4467687.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![Người tìm việc sắp xếp hồ sơ xin việc trong quán cà phê](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/organizing-documents-cafe.jpg)
 
 ---
 

@@ -4,14 +4,14 @@ description: "整理 WPORT、104、1111、才多多 4 大台灣求職平台，�
 publishDate: 2026-06-10
 tags: ["僑外生", "求職面試"]
 featured: false
-cover: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/job-browsing-cafe.jpg"
 ---
 
 剛來台灣、想找工作，卻完全不知道從哪個平台開始？
 
 這個問題真的很常見。台灣的求職生態跟你原本熟悉的環境不一樣，不只是語言的差異，連平台功能、職缺類型、投履歷的眉角都有些不同。
 
-![在咖啡廳用筆電瀏覽求職資訊的場景](https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![在咖啡廳用筆電瀏覽求職資訊的場景](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/job-browsing-cafe.jpg)
 
 這篇文章幫你整理了 4 個僑外生最常用的求職平台，說明各自的特色和最適合的使用時機，讓你不用靠運氣摸索，直接找對地方出發。
 
@@ -85,7 +85,7 @@ WPORT 職航站是專門為外籍人才設計的求職平台，除了有職缺�
 
 如果你的優勢是多語能力或有跨文化背景，才多多是最能把這個優勢發揮出來的地方。
 
-![多人在辦公室合作討論，象徵多元人才環境](https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![多人在辦公室合作討論，象徵多元人才環境](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/office-diverse-collaboration.jpg)
 
 ---
 

@@ -4,7 +4,7 @@ description: "Before working in Taiwan, overseas and international graduates mus
 publishDate: 2026-06-10
 tags: ["僑外生", "留台工作"]
 featured: false
-cover: "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-outside-office.jpg"
 ---
 
 Just graduated and want to stay in Taiwan to work?
@@ -13,7 +13,7 @@ Congratulations on that decision. But before you start blasting out resumes, the
 
 Many overseas and international graduates do not know about this until they get an offer, then scramble at the last minute. A work permit is not just a piece of paper. It is the legal basis for working in Taiwan. Without it, even if a company hires you, you cannot start work.
 
-![A job seeker holding documents and preparing outside an office](https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![A job seeker holding documents and preparing outside an office](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/jobseeker-outside-office.jpg)
 
 ---
 
@@ -121,7 +121,7 @@ A work permit's validity is usually tied to your residence certificate. If your 
 
 A work permit is issued for a **specific employer**. You cannot reuse an old permit when you switch companies. The new employer must apply for you again. Before changing jobs, confirm early that the new company is willing to handle the process.
 
-![A job seeker organizing application materials in a café](https://images.pexels.com/photos/4467687/pexels-photo-4467687.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![A job seeker organizing application materials in a café](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/organizing-documents-cafe.jpg)
 
 ---
 

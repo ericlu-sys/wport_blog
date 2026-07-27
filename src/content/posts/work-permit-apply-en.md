@@ -4,7 +4,7 @@ description: "Essential reading before working in Taiwan. Covers the work permit
 publishDate: 2026-06-10
 tags: ["僑外生", "留台工作"]
 featured: false
-cover: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1600"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reading-documents-forms.jpg"
 ---
 
 Before you start working in Taiwan, one thing matters even more than landing a job: **make sure you have legal work eligibility.**
@@ -13,7 +13,7 @@ Many overseas students assume an offer means they can start right away. In reali
 
 And starting in 2026, Taiwan introduced a new rule that is especially helpful for overseas students. Many people still do not know about it. This article walks through the process, the new system, and the key points to watch.
 
-![A worker reading documents and filling out forms](https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![A worker reading documents and filling out forms](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reading-documents-forms.jpg)
 
 ---
 
@@ -110,7 +110,7 @@ The employer also needs to prepare:
 - Copy of the company responsible person’s ID or passport
 - Copy of company registration certificate
 
-![A worker reviewing documents and a computer in an office](https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1600)
+![A worker reviewing documents and a computer in an office](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/reviewing-documents-office.jpg)
 
 ---
 
