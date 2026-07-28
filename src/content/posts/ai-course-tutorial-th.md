@@ -67,7 +67,7 @@ cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1
 
 ก่อนพูดความต่างของแต่ละเจ้า มีแนวคิดสำคัญมากสำหรับมือใหม่: **สี่ IDE นี้หน้าตาเกือบเหมือนกัน** เพราะแกนในแตกมาจาก VS Code ตัวแก้ไขที่ฮิตสุดในโลก ลองคิดว่าเป็น "ลูก AI สี่คนของ VS Code" เรียนอันเดียว ย้ายไปอันอื่นก็ใช้ได้ทันที ไม่ต้องเรียนอินเทอร์เฟซใหม่
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.23.32_wbcgxq" alt="สไลด์แนะนำเครื่องมือ IDE ที่เน้น AI รุ่นใหม่ปี 2026" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-ide-comparison-slide.png" alt="สไลด์แนะนำเครื่องมือ IDE ที่เน้น AI รุ่นใหม่ปี 2026" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 ตำแหน่งของสี่ AI IDE ฟรี:
 
@@ -107,7 +107,7 @@ AI IDE ในตระกูล Google ถ้าคุณใช้ Gmail, Google
 - **สอนการ "ป้อนบริบท"**: ข้อผิดพลาดที่มือใหม่ทำบ่อยคือถาม AI เปล่าๆ แล้วโทษว่า AI ตอบไม่แม่น การลาก README ให้ก่อน เหมือนส่งสรุปโปรเจกต์ไปให้ คำตอบจะคมขึ้นทันที
 - **สร้างกล้ามเนื้ออาชีพ "อ่าน README ก่อน"**: นั่นคือสิ่งแรกที่วิศวกรทุกคนทำเมื่อเปิดโปรเจกต์ใหม่ คุณยังไม่ต้องเข้าใจโค้ดทันที แต่ต้องรู้ว่าโปรเจกต์นี้ทำไม มีโมดูลอะไร และจะรันอย่างไร
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.24.53_wecbxe" alt="สไลด์อธิบายโฟลว์ Fork และ Repo" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-fork-repo-slide.png" alt="สไลด์อธิบายโฟลว์ Fork และ Repo" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 ภาพที่รู้สึกชัดที่สุดในห้อง: ผู้เรียนหลายคนคิดว่าต้องใช้ชั่วโมงหนึ่งถึงจะเข้าใจรีโป สามนาทีต่อมา AI จัดเป้าหมาย โครงสร้าง และ Skill ที่มีให้แล้ว ชั่วขณะนั้นเปลี่ยนปฏิกิริยาแรกเมื่อเจอโปรเจกต์แปลกๆ ในอนาคตทันที
 
@@ -143,7 +143,7 @@ AI IDE ในตระกูล Google ถ้าคุณใช้ Gmail, Google
 
 ขั้นนี้สอน mindset จริงๆ: **การใช้ AI ที่ทรงพลังสุดไม่ใช่ "เขียนให้คุณ" แต่คือ "ช่วยคุณคิด"**
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.25.30_mfkbjx" alt="สไลด์อธิบายแนวคิดการแข็งตัวของ Prompt" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-prompt-crystallization-slide.png" alt="สไลด์อธิบายแนวคิดการแข็งตัวของ Prompt" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 ### 7. Local Path × Skill สร้าง HTML: AI อ่านไฟล์โลคอลแล้วสร้างเว็บส่วนตัวในครั้งเดียว
 
@@ -235,7 +235,7 @@ AI IDE ในตระกูล Google ถ้าคุณใช้ Gmail, Google
 
 นี่ไม่ใช่ทักษะขั้นสูง นี่คืออุปกรณ์พื้นฐานปี 2026
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.44.42_iqptsm" alt="สไลด์สรุปสิ่งที่คุณทำได้หลังเรียนจบสามหน่วย" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-outcomes-summary-slide.png" alt="สไลด์สรุปสิ่งที่คุณทำได้หลังเรียนจบสามหน่วย" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 ---
 

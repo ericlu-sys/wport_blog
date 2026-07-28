@@ -67,7 +67,7 @@ That day we covered four mainstream **AI IDEs with free quotas in 2026**. First,
 
 Before the differences between vendors, one beginner-critical idea: **these four IDEs look almost identical**. Under the hood they all branch from VS Code, the world's most popular editor. Think of them as "four AI sons of VS Code." Learn one, and you can switch to another without relearning the interface.
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.23.32_wbcgxq" alt="Slide introducing next-gen AI-first IDE tools in 2026" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-ide-comparison-slide.png" alt="Slide introducing next-gen AI-first IDE tools in 2026" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 How the four free AI IDEs are positioned:
 
@@ -107,7 +107,7 @@ Two teaching intentions sit behind this move:
 - **Teach "feeding context"**: beginners often ask AI with no context, then blame it for vague answers. Dragging the README in first is like handing over a project brief. Answers get sharper immediately.
 - **Build the professional habit of "read the README first"**: that is every engineer's first move on a new project. You do not need to understand the code yet, but you do need to know what the project is for, which modules exist, and how to run it.
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.24.53_wecbxe" alt="Slide explaining Fork and repo workflow" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-fork-repo-slide.png" alt="Slide explaining Fork and repo workflow" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 The most memorable moment in the room: many learners thought it would take an hour to understand the repo. Three minutes later, AI had listed the goal, structure, and available Skills. That instant changes how they face any unfamiliar project afterward.
 
@@ -143,7 +143,7 @@ Learners only need to answer the questions AI asks. Those answers become new not
 
 The real lesson here is a mindset: **AI's strongest use is not "write for you," but "help you think."**
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.25.30_mfkbjx" alt="Slide explaining the idea of solidifying prompts" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-prompt-crystallization-slide.png" alt="Slide explaining the idea of solidifying prompts" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 ### 7. Local Path × Skill Generates HTML: AI Reads Local Files and Builds a Personal Site in One Go
 
@@ -235,7 +235,7 @@ If you followed all four stages, you should now be able to:
 
 These are not advanced skills. They are baseline equipment for 2026.
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.44.42_iqptsm" alt="Summary slide of what you can do after finishing the three units" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-outcomes-summary-slide.png" alt="Summary slide of what you can do after finishing the three units" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 ---
 

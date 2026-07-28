@@ -67,7 +67,7 @@ cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1
 
 在講各家差異之前，先講一個對初學者超重要的觀念：**這四款 IDE 介面長得幾乎一模一樣**。因為它們骨子裡都是從 VS Code 這個世界最流行的編輯器分支出來的，可以想成「四個 VS Code 的 AI 兒子」。所以你只要學會其中一款，換到另一款也能立刻上手，不用重學介面。
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.23.32_wbcgxq" alt="2026 新世代 AI 優先 IDE 工具介紹簡報" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-ide-comparison-slide.png" alt="2026 新世代 AI 優先 IDE 工具介紹簡報" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 四款免費 AI IDE 的定位：
 
@@ -107,7 +107,7 @@ Google 家族的 AI IDE。如果你原本就重度使用 Gmail、Google Drive、
 - **教會「餵上下文」這個動作**：初學者常犯的錯，就是空口問 AI，然後怪 AI 答得不精準。當你把 README 直接拖給 AI，就等於先給他一份專案簡介，他的回答會立刻變準。
 - **建立「先讀 README」的職業肌肉**：這是每個工程師打開新專案時的第一件事。你不用馬上懂程式碼，但你要先知道「這個專案是幹嘛的、有哪些模組、要怎麼跑」。
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.24.53_wecbxe" alt="Fork 與 Repo 流程說明簡報" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-fork-repo-slide.png" alt="Fork 與 Repo 流程說明簡報" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 現場最有感的畫面是：很多學員原本以為要花一小時才能看懂這個 repo，結果 3 分鐘後 AI 就把整個 repo 的目標、結構、可用的 Skill 條列出來了。這個瞬間，會直接改變他們之後遇到任何陌生專案時的第一反應。
 
@@ -143,7 +143,7 @@ Google 家族的 AI IDE。如果你原本就重度使用 Gmail、Google Drive、
 
 這一步教的其實是一個心法：**AI 最強的用法不是「幫你寫」，而是「幫你想」**。
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.25.30_mfkbjx" alt="Prompt 固化概念說明簡報" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-prompt-crystallization-slide.png" alt="Prompt 固化概念說明簡報" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 ### 7. Local Path × Skill 生成 HTML：AI 讀本機檔案，一鍵長出個人網站
 
@@ -235,7 +235,7 @@ Google 家族的 AI IDE。如果你原本就重度使用 Gmail、Google Drive、
 
 這些不是進階技能，這是 2026 年的基本配備。
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.44.42_iqptsm" alt="三個單元學完你可以做到的事情總結簡報" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-outcomes-summary-slide.png" alt="三個單元學完你可以做到的事情總結簡報" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 ---
 

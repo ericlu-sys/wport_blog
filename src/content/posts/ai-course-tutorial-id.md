@@ -67,7 +67,7 @@ Hari itu kami memperkenalkan empat **AI IDE mainstream 2026 yang punya kuota gra
 
 Sebelum perbedaan antar vendor, satu konsep yang sangat penting bagi pemula: **empat IDE ini tampilannya hampir sama**. Karena pada dasarnya mereka semua bercabang dari VS Code, editor paling populer di dunia. Anggap saja "empat anak AI dari VS Code." Cukup kuasai satu, pindah ke yang lain pun langsung terbiasa, tanpa belajar ulang antarmuka.
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.23.32_wbcgxq" alt="Slide pengenalan tools IDE AI-first generasi baru 2026" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-ide-comparison-slide.png" alt="Slide pengenalan tools IDE AI-first generasi baru 2026" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 Posisi empat AI IDE gratis:
 
@@ -107,7 +107,7 @@ Dua niat pengajaran di balik gerakan ini:
 - **Mengajarkan aksi "memberi konteks"**: kesalahan pemula yang umum adalah bertanya ke AI tanpa konteks, lalu menyalahkan AI karena jawabannya tidak akurat. Menyeret README lebih dulu sama dengan memberi ringkasan proyek. Jawaban langsung lebih tajam.
 - **Membangun otot profesional "baca README dulu"**: itu langkah pertama setiap engineer saat membuka proyek baru. Anda belum harus paham kode, tetapi harus tahu proyek ini untuk apa, modul apa saja yang ada, dan bagaimana menjalankannya.
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.24.53_wecbxe" alt="Slide penjelasan alur Fork dan Repo" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-fork-repo-slide.png" alt="Slide penjelasan alur Fork dan Repo" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 Momen paling terasa di ruangan: banyak peserta mengira butuh sejam untuk memahami repo. Tiga menit kemudian, AI sudah memaparkan tujuan, struktur, dan Skill yang tersedia. Momen itu langsung mengubah reaksi pertama mereka terhadap proyek asing apa pun setelahnya.
 
@@ -143,7 +143,7 @@ Peserta cukup menjawab pertanyaan yang diajukan AI. Jawaban itu menjadi catatan 
 
 Yang diajarkan di langkah ini sebenarnya adalah mindset: **penggunaan AI yang paling kuat bukan "menulis untuk Anda," melainkan "membantu Anda berpikir."**
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.25.30_mfkbjx" alt="Slide penjelasan konsep pemadatan Prompt" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-prompt-crystallization-slide.png" alt="Slide penjelasan konsep pemadatan Prompt" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 ### 7. Local Path × Skill Menghasilkan HTML: AI Membaca File Lokal dan Membangun Situs Pribadi Sekali Jalan
 
@@ -235,7 +235,7 @@ Jika Anda mengikuti keempat tahap, sekarang Anda seharusnya bisa:
 
 Ini bukan skill lanjutan. Ini perlengkapan dasar tahun 2026.
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.44.42_iqptsm" alt="Slide ringkasan yang bisa Anda lakukan setelah menyelesaikan tiga unit" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-outcomes-summary-slide.png" alt="Slide ringkasan yang bisa Anda lakukan setelah menyelesaikan tiga unit" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 ---
 

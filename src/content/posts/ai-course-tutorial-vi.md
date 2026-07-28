@@ -67,7 +67,7 @@ Hôm đó chúng tôi giới thiệu bốn **AI IDE mainstream năm 2026 có h�
 
 Trước khi nói khác biệt từng nhà, một khái niệm cực quan trọng với người mới: **bốn IDE này giao diện gần như giống hệt nhau**. Vì về gốc chúng đều nhánh từ VS Code, trình soạn thảo phổ biến nhất thế giới. Có thể nghĩ là "bốn người con AI của VS Code." Học một cái, sang cái khác cũng vào việc được ngay, không phải học lại giao diện.
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.23.32_wbcgxq" alt="Slide giới thiệu công cụ IDE ưu tiên AI thế hệ mới 2026" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-ide-comparison-slide.png" alt="Slide giới thiệu công cụ IDE ưu tiên AI thế hệ mới 2026" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 Vị trí của bốn AI IDE miễn phí:
 
@@ -107,7 +107,7 @@ Hai ý dạy đằng sau thao tác này:
 - **Dạy thao tác "nuôi ngữ cảnh"**: lỗi thường gặp của người mới là hỏi AI trống không rồi trách AI trả lời không chính xác. Kéo README vào trước giống như đưa bản tóm tắt dự án. Câu trả lời sẽ sắc ngay.
 - **Xây cơ bắp nghề nghiệp "đọc README trước"**: đó là việc đầu tiên mỗi kỹ sư làm khi mở dự án mới. Bạn chưa cần hiểu code ngay, nhưng cần biết dự án này để làm gì, có những module nào, chạy ra sao.
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.24.53_wecbxe" alt="Slide giải thích quy trình Fork và Repo" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-fork-repo-slide.png" alt="Slide giải thích quy trình Fork và Repo" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 Khoảnh khắc cảm nhận rõ nhất trong phòng: nhiều học viên tưởng mất một giờ mới hiểu repo. Ba phút sau AI đã liệt kê mục tiêu, cấu trúc và các Skill có sẵn. Khoảnh khắc đó thay đổi phản ứng đầu tiên của họ với mọi dự án lạ về sau.
 
@@ -143,7 +143,7 @@ Học viên chỉ cần trả lời câu hỏi AI đưa ra. Chính câu trả l�
 
 Bước này thật ra dạy một mindset: **cách dùng AI mạnh nhất không phải "viết giúp bạn," mà "giúp bạn nghĩ."**
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.25.30_mfkbjx" alt="Slide giải thích khái niệm đóng rắn Prompt" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-prompt-crystallization-slide.png" alt="Slide giải thích khái niệm đóng rắn Prompt" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 ### 7. Local Path × Skill sinh HTML: AI đọc file local và dựng trang cá nhân một lần
 
@@ -235,7 +235,7 @@ Nếu bạn đã làm theo cả bốn giai đoạn, hiện bạn nên có thể:
 
 Đây không phải kỹ năng nâng cao. Đây là trang bị cơ bản năm 2026.
 
-<img src="https://res.cloudinary.com/xyudkke9/image/upload/f_auto,q_auto:good,w_1200,c_limit/截圖_2026-07-02_上午11.44.42_iqptsm" alt="Slide tổng kết những việc bạn làm được sau ba đơn vị" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
+<img src="https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ai-course-outcomes-summary-slide.png" alt="Slide tổng kết những việc bạn làm được sau ba đơn vị" style="box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 12px;" />
 
 ---
 
