@@ -58,6 +58,7 @@ const bases = files.filter((f) => !suffixRe.test(f)).map((f) => f.replace(/\.md$
 
 const errors = [];
 const warnings = [];
+let draftCount = 0;
 
 for (const base of bases.sort()) {
   const srcPath = join(POSTS_DIR, `${base}.md`);
@@ -68,6 +69,9 @@ for (const base of bases.sort()) {
     errors.push(`${base}.md：找不到 frontmatter`);
     continue;
   }
+
+  const isDraft = String(src.draft) === "true";
+  if (isDraft) draftCount += 1;
 
   // — 原文自身的規範檢查 —
   if (srcRaw.includes("——")) {
@@ -115,13 +119,20 @@ for (const base of bases.sort()) {
     }
   }
   if (missing.length) {
-    errors.push(`${base}.md：缺少翻譯 → ${missing.join("、")}`);
+    // 草稿還沒發布，缺翻譯是正常的，發布前補齊即可。
+    const message = `${base}.md：缺少翻譯 → ${missing.join("、")}`;
+    if (isDraft) {
+      warnings.push(`${message}（draft，發布前需補齊）`);
+    } else {
+      errors.push(message);
+    }
   }
 }
 
-const translated =
-  bases.length - new Set(errors.filter((e) => e.includes("缺少翻譯")).map((e) => e.split("：")[0])).size;
-console.log(`共 ${bases.length} 篇 zh-TW 文章，${translated} 篇四語系齊全。\n`);
+const incomplete = new Set([...errors, ...warnings].filter((m) => m.includes("缺少翻譯")).map((m) => m.split("：")[0]));
+console.log(
+  `共 ${bases.length} 篇 zh-TW 文章（${draftCount} 篇 draft），` + `${bases.length - incomplete.size} 篇四語系齊全。\n`
+);
 
 for (const w of warnings) console.log(`  warn  ${w}`);
 if (warnings.length) console.log("");

@@ -87,9 +87,9 @@ Người lớn đến vậy mà tôi lại coi như trợ lý nhỏ. Ngại quá
 
 Sau bốn chuyến, tôi sắp series này thành ba tầng:
 
-1. **[Chỉ số cứng](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)**: Kiếm được tiền ≠ giá trị đầu tư, cổ phần, DD hiện trường. Đây là ngưỡng cửa.
-2. **[Công cụ Prompt](/blog/posts/startup-vc-health-check-prompt/)**: Trước khi lên sân, dùng AI làm GP pressure-test một vòng. Đây là chuẩn bị.
-3. **[Soft skill](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)**: Slide là phụ, founder là chủ thể. Đây là điểm cộng.
+1. **[Chỉ số cứng](/blog/vi/posts/ntutec-vc-hard-truths-money-vs-investment/)**: Kiếm được tiền ≠ giá trị đầu tư, cổ phần, DD hiện trường. Đây là ngưỡng cửa.
+2. **[Công cụ Prompt](/blog/vi/posts/startup-vc-health-check-prompt/)**: Trước khi lên sân, dùng AI làm GP pressure-test một vòng. Đây là chuẩn bị.
+3. **[Soft skill](/blog/vi/posts/ntutec-founder-soft-skills-beyond-deck/)**: Slide là phụ, founder là chủ thể. Đây là điểm cộng.
 
 Cuối cùng, thành thật đối diện yếu điểm để đối phương có cơ hội giúp bạn. Rồi tiếp tục coi network như tài sản lãi kép, không phải trao đổi một lần.
 
@@ -99,7 +99,7 @@ Nếu bạn đang chuẩn bị gặp VC, thứ tự gợi ý: chạy Prompt tự
 
 ## Series Chẩn đoán Startup Chuyên sâu NTUTEC × WPORT
 
-- [(1) Kiếm được tiền ≠ giá trị đầu tư](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)
-- [(2) Prompt kiểm tra sức khỏe startup cho VC](/blog/posts/startup-vc-health-check-prompt/)
-- [(3) Slide chỉ là phụ, founder mới là chủ thể](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)
-- [(4) VC theo deal từ sáu tháng trở lên](/blog/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(1) Kiếm được tiền ≠ giá trị đầu tư](/blog/vi/posts/ntutec-vc-hard-truths-money-vs-investment/)
+- [(2) Prompt kiểm tra sức khỏe startup cho VC](/blog/vi/posts/startup-vc-health-check-prompt/)
+- [(3) Slide chỉ là phụ, founder mới là chủ thể](/blog/vi/posts/ntutec-founder-soft-skills-beyond-deck/)
+- [(4) VC theo deal từ sáu tháng trở lên](/blog/vi/posts/ntutec-vc-follow-up-honesty-and-network/)

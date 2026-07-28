@@ -162,7 +162,7 @@ cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1
 
 ## ซีรีส์วินิจฉัยสตาร์ทอัพเชิงลึก NTU TEC × WPORT
 
-- [(1) ทำเงินได้ ≠ มีมูลค่าลงทุน](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)
-- [(2) Prompt ตรวจสุขภาพสตาร์ทอัพแบบ VC](/blog/posts/startup-vc-health-check-prompt/)
-- [(3) เด็คเป็นแค่ตัวประกอบ ผู้ก่อตั้งคือตัวเอก](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)
-- [(4) VC ตามดีลตั้งแต่หกเดือนขึ้นไป](/blog/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(1) ทำเงินได้ ≠ มีมูลค่าลงทุน](/blog/th/posts/ntutec-vc-hard-truths-money-vs-investment/)
+- [(2) Prompt ตรวจสุขภาพสตาร์ทอัพแบบ VC](/blog/th/posts/startup-vc-health-check-prompt/)
+- [(3) เด็คเป็นแค่ตัวประกอบ ผู้ก่อตั้งคือตัวเอก](/blog/th/posts/ntutec-founder-soft-skills-beyond-deck/)
+- [(4) VC ตามดีลตั้งแต่หกเดือนขึ้นไป](/blog/th/posts/ntutec-vc-follow-up-honesty-and-network/)

@@ -13,7 +13,7 @@ cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1
 
 ## Apa itu Charging Station?
 
-Charging Station adalah rangkaian acara tatap muka gratis WPORT di Taoyuan. Setiap sesi fokus pada satu tema, tanpa basa-basi, full praktik, supaya peserta pulang dengan hasil yang terlihat. Untuk pengenalan lengkap dan acara sebelumnya, lihat [artikel ini](/blog/posts/charging-station/).
+Charging Station adalah rangkaian acara tatap muka gratis WPORT di Taoyuan. Setiap sesi fokus pada satu tema, tanpa basa-basi, full praktik, supaya peserta pulang dengan hasil yang terlihat. Untuk pengenalan lengkap dan acara sebelumnya, lihat [artikel ini](/blog/id/posts/charging-station/).
 
 Tema Vol.3 adalah **“Kursus AI yang bisa dipraktikkan orang tanpa latar CS.”** Tidak perlu dasar programming. Sepenuhnya hands-on. Dipandu Eric (WPORT PM) dan David (backend engineer), tiga jam membawa Anda dari setup lingkungan sampai situs live:
 

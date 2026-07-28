@@ -87,9 +87,9 @@ Someone that accomplished, and I treated her like a little helper. Embarrassing,
 
 After four trips, I sorted this series into three layers:
 
-1. **[Hard metrics](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)**: Making money ≠ investment value, equity, DD on site. This is the threshold.
-2. **[Prompt tools](/blog/posts/startup-vc-health-check-prompt/)**: Before you go on, pressure-test a round with AI as GP. This is preparation.
-3. **[Soft skills](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)**: The deck is secondary. The founder is the subject. This is the bonus.
+1. **[Hard metrics](/blog/en/posts/ntutec-vc-hard-truths-money-vs-investment/)**: Making money ≠ investment value, equity, DD on site. This is the threshold.
+2. **[Prompt tools](/blog/en/posts/startup-vc-health-check-prompt/)**: Before you go on, pressure-test a round with AI as GP. This is preparation.
+3. **[Soft skills](/blog/en/posts/ntutec-founder-soft-skills-beyond-deck/)**: The deck is secondary. The founder is the subject. This is the bonus.
 
 Finally, face your weaknesses honestly so the other side has a chance to help. Then keep treating your network as a compounding asset, not a one-time exchange.
 
@@ -99,7 +99,7 @@ If you are preparing to meet a VC, the suggested order is: run the Prompt self-c
 
 ## NTUTEC × WPORT Deep Startup Diagnosis Series
 
-- [(1) Making money ≠ investment value](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)
-- [(2) VC startup health-check Prompt](/blog/posts/startup-vc-health-check-prompt/)
-- [(3) The deck is secondary. The founder is the subject](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)
-- [(4) VCs follow deals for six months and up](/blog/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(1) Making money ≠ investment value](/blog/en/posts/ntutec-vc-hard-truths-money-vs-investment/)
+- [(2) VC startup health-check Prompt](/blog/en/posts/startup-vc-health-check-prompt/)
+- [(3) The deck is secondary. The founder is the subject](/blog/en/posts/ntutec-founder-soft-skills-beyond-deck/)
+- [(4) VCs follow deals for six months and up](/blog/en/posts/ntutec-vc-follow-up-honesty-and-network/)

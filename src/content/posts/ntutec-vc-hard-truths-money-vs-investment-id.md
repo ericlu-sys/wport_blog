@@ -128,7 +128,7 @@ Kedengarannya keras, tapi semangat di baliknya sederhana: **jangan jual mimpi. B
 
 ## Seri Diagnosis Startup Mendalam NTU TEC × WPORT
 
-- [(1) Bisa untung ≠ layak investasi](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)
-- [(2) Prompt cek kesehatan startup ala VC](/blog/posts/startup-vc-health-check-prompt/)
-- [(3) Deck hanya pemeran pendukung. Founder adalah tokoh utama](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)
-- [(4) VC follow deal mulai enam bulan](/blog/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(1) Bisa untung ≠ layak investasi](/blog/id/posts/ntutec-vc-hard-truths-money-vs-investment/)
+- [(2) Prompt cek kesehatan startup ala VC](/blog/id/posts/startup-vc-health-check-prompt/)
+- [(3) Deck hanya pemeran pendukung. Founder adalah tokoh utama](/blog/id/posts/ntutec-founder-soft-skills-beyond-deck/)
+- [(4) VC follow deal mulai enam bulan](/blog/id/posts/ntutec-vc-follow-up-honesty-and-network/)

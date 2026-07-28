@@ -74,7 +74,7 @@ Tất cả đều là tài sản. Chỉ cần áp dụng nguyên tắc định l
 
 Tìm việc không phải việc chỉ bắt đầu khi tốt nghiệp năm tư. Đặc biệt với sinh viên hải ngoại muốn ở lại Đài Loan, bạn cần thời gian tích lũy điểm **hệ thống chấm điểm** (chứng chỉ ngôn ngữ, thực tập, bằng cấp chuyên môn…). Những thứ này không thể bổ sung trong một đêm.
 
-> Hệ thống chấm điểm tính thế nào, và những tổ hợp nào có thể đủ 70 điểm? Chúng tôi phân tích chi tiết hơn tại đây: [Thay đổi hệ thống chấm điểm ở lại Đài Loan 2026: Sinh viên hải ngoại nên bố cục sớm thế nào](/blog/posts/2026-point-system-taiwan-stay-changes).
+> Hệ thống chấm điểm tính thế nào, và những tổ hợp nào có thể đủ 70 điểm? Chúng tôi phân tích chi tiết hơn tại đây: [Thay đổi hệ thống chấm điểm ở lại Đài Loan 2026: Sinh viên hải ngoại nên bố cục sớm thế nào](/blog/vi/posts/2026-point-system-taiwan-stay-changes).
 
 Chúng tôi khuyến nghị mạnh: **hãy bắt đầu xây hồ sơ CV từ năm hai.** Từ bây giờ, chủ động tích lũy việc làm thêm có đầu ra, đi thi chứng chỉ, tham gia câu lạc bộ. Khi người khác tốt nghiệp năm tư còn đang rối, bạn đã cầm một bản CV dựa trên số liệu hoàn chỉnh và có thể chọn vị trí ở lại Đài Loan mình thích một cách chủ động. Trong hệ thống chấm điểm, kinh nghiệm làm việc hoặc thực tập một năm hay nửa năm đều cộng điểm. Nếu đợi đến năm tư mới chuẩn bị thì đã muộn.
 

@@ -97,7 +97,7 @@ Toastmasters ก็มีวิธีฝึกคล้ายกันชื่�
 
 ## ซีรีส์วินิจฉัยสตาร์ทอัพเชิงลึก NTUTEC × WPORT
 
-- [(1) ทำเงินได้ ≠ มีมูลค่าการลงทุน](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)
-- [(2) Prompt ตรวจสุขภาพสตาร์ทอัพสำหรับ VC](/blog/posts/startup-vc-health-check-prompt/)
-- [(3) สไลด์เป็นตัวประกอบ ผู้ก่อตั้งคือตัวเอก](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)
-- [(4) VC ตามดีลตั้งแต่หกเดือนขึ้นไป](/blog/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(1) ทำเงินได้ ≠ มีมูลค่าการลงทุน](/blog/th/posts/ntutec-vc-hard-truths-money-vs-investment/)
+- [(2) Prompt ตรวจสุขภาพสตาร์ทอัพสำหรับ VC](/blog/th/posts/startup-vc-health-check-prompt/)
+- [(3) สไลด์เป็นตัวประกอบ ผู้ก่อตั้งคือตัวเอก](/blog/th/posts/ntutec-founder-soft-skills-beyond-deck/)
+- [(4) VC ตามดีลตั้งแต่หกเดือนขึ้นไป](/blog/th/posts/ntutec-vc-follow-up-honesty-and-network/)

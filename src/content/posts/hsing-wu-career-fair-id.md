@@ -74,7 +74,7 @@ Semua ini adalah aset. Tinggal terapkan prinsip kuantifikasi di Blind Spot 1: **
 
 Mencari kerja bukan perkara yang baru dimulai saat lulus di tahun keempat. Khususnya bagi mahasiswa luar negeri yang ingin stay di Taiwan, kamu butuh waktu mengumpulkan skor **sistem poin** (uji bahasa, pengalaman magang, sertifikasi, dan lainnya). Semua itu tidak bisa dilengkapi semalaman.
 
-> Bagaimana cara hitung sistem poin, dan kombinasi apa yang bisa mencapai 70 poin? Kami mengupasnya lebih detail di sini: [Perubahan Sistem Poin Stay Taiwan 2026: Bagaimana Mahasiswa Luar Negeri Harus Berencana Lebih Awal](/blog/posts/2026-point-system-taiwan-stay-changes).
+> Bagaimana cara hitung sistem poin, dan kombinasi apa yang bisa mencapai 70 poin? Kami mengupasnya lebih detail di sini: [Perubahan Sistem Poin Stay Taiwan 2026: Bagaimana Mahasiswa Luar Negeri Harus Berencana Lebih Awal](/blog/id/posts/2026-point-system-taiwan-stay-changes).
 
 Kami sangat menyarankan: **mulai bangun arsip CV sejak tahun kedua.** Mulai sekarang, secara sadar kumpulkan kerja sampingan yang punya output, ambil sertifikasi, dan ikut organisasi. Saat orang lain panik setelah lulus tahun keempat, kamu sudah punya CV berbasis data yang matang dan bisa memilih lowongan stay Taiwan yang diinginkan dengan tenang. Dalam sistem poin, pengalaman kerja atau magang selama satu tahun maupun setengah tahun juga menambah skor. Kalau menunggu sampai tahun keempat baru bersiap, sudah terlambat.
 

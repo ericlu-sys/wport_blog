@@ -87,9 +87,9 @@ Orang sebesar itu, kok saya perlakukan seperti asisten kecil. Malu sekali.
 
 Setelah empat perjalanan, saya merangkum serial ini menjadi tiga lapisan:
 
-1. **[Metrik keras](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)**: Bisa menghasilkan uang ≠ nilai investasi, ekuitas, DD di lapangan. Ini ambang pintu.
-2. **[Tools Prompt](/blog/posts/startup-vc-health-check-prompt/)**: Sebelum naik panggung, pressure-test dulu dengan AI sebagai GP. Ini persiapan.
-3. **[Soft skill](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)**: Deck adalah pendukung, founder adalah subjek. Ini nilai tambah.
+1. **[Metrik keras](/blog/id/posts/ntutec-vc-hard-truths-money-vs-investment/)**: Bisa menghasilkan uang ≠ nilai investasi, ekuitas, DD di lapangan. Ini ambang pintu.
+2. **[Tools Prompt](/blog/id/posts/startup-vc-health-check-prompt/)**: Sebelum naik panggung, pressure-test dulu dengan AI sebagai GP. Ini persiapan.
+3. **[Soft skill](/blog/id/posts/ntutec-founder-soft-skills-beyond-deck/)**: Deck adalah pendukung, founder adalah subjek. Ini nilai tambah.
 
 Terakhir, hadapi kelemahan dengan jujur supaya lawan bicara punya kesempatan membantu. Lalu terus perlakukan network sebagai aset compounding, bukan tukar sekali pakai.
 
@@ -99,7 +99,7 @@ Kalau Anda sedang bersiap bertemu VC, urutan yang disarankan: jalankan self-chec
 
 ## Serial Diagnosis Startup Mendalam NTUTEC × WPORT
 
-- [(1) Bisa menghasilkan uang ≠ nilai investasi](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)
-- [(2) Prompt health-check startup untuk VC](/blog/posts/startup-vc-health-check-prompt/)
-- [(3) Deck hanya pendukung, founder adalah subjek](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)
-- [(4) VC follow deal mulai enam bulan](/blog/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(1) Bisa menghasilkan uang ≠ nilai investasi](/blog/id/posts/ntutec-vc-hard-truths-money-vs-investment/)
+- [(2) Prompt health-check startup untuk VC](/blog/id/posts/startup-vc-health-check-prompt/)
+- [(3) Deck hanya pendukung, founder adalah subjek](/blog/id/posts/ntutec-founder-soft-skills-beyond-deck/)
+- [(4) VC follow deal mulai enam bulan](/blog/id/posts/ntutec-vc-follow-up-honesty-and-network/)

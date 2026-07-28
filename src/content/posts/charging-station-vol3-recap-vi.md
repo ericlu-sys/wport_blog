@@ -13,7 +13,7 @@ cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1
 
 ## Charging Station là gì?
 
-Charging Station là chuỗi sự kiện offline miễn phí của WPORT tại Đào Viên. Mỗi buổi tập trung một chủ đề, không nói suông, làm tay toàn bộ, mục tiêu là mang thành quả nhìn thấy được về nhà. Muốn hiểu đầy đủ Charging Station và các buổi trước, xem [bài giới thiệu này](/blog/posts/charging-station/).
+Charging Station là chuỗi sự kiện offline miễn phí của WPORT tại Đào Viên. Mỗi buổi tập trung một chủ đề, không nói suông, làm tay toàn bộ, mục tiêu là mang thành quả nhìn thấy được về nhà. Muốn hiểu đầy đủ Charging Station và các buổi trước, xem [bài giới thiệu này](/blog/vi/posts/charging-station/).
 
 Chủ đề Vol.3 là **“Khóa AI người không có nền CS vẫn thực hành được.”** Không cần nền tảng lập trình. Toàn bộ hands-on. Eric (WPORT PM) và David (backend engineer) dẫn lớp, ba giờ đi hết từ dựng môi trường đến website lên mạng:
 

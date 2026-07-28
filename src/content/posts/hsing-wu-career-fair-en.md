@@ -74,7 +74,7 @@ These are all assets. Just apply Blind Spot 1’s quantification rule: **how muc
 
 Job hunting does not begin in senior year after graduation. Especially for overseas students who want to stay in Taiwan, you need time to accumulate **point-based evaluation** scores (language tests, internships, licenses, and more). None of that can be patched together overnight.
 
-> How is the point system calculated, and what combinations can get you to 70 points? We break it down further here: [2026 Point System Changes for Staying in Taiwan: How Overseas Students Should Plan Early](/blog/posts/2026-point-system-taiwan-stay-changes).
+> How is the point system calculated, and what combinations can get you to 70 points? We break it down further here: [2026 Point System Changes for Staying in Taiwan: How Overseas Students Should Plan Early](/blog/en/posts/2026-point-system-taiwan-stay-changes).
 
 We strongly recommend this: **start building your resume file in sophomore year.** From now on, intentionally accumulate part-time work with real output, take certifications, and join clubs. While others scramble after senior-year graduation, you will already have a polished data-driven resume and room to choose the stay-in-Taiwan roles you want. In the point system, one year or half a year of work or internship experience also adds points. If you wait until senior year to prepare, it will already be too late.
 

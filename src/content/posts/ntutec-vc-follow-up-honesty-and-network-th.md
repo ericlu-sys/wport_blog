@@ -87,9 +87,9 @@ VC ตามดีลตั้งแต่หกเดือน เพราะ�
 
 หลังสี่ทริป ผมจัดซีรีส์นี้เป็นสามชั้น:
 
-1. **[ตัวชี้วัดแข็ง](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)**: ทำเงินได้ ≠ มูลค่าการลงทุน ส่วนหุ้น DD หน้างาน นี่คือเกณฑ์ผ่านประตู
-2. **[เครื่องมือ Prompt](/blog/posts/startup-vc-health-check-prompt/)**: ก่อนขึ้นเวที ใช้ AI เป็น GP ทดสอบแรงดันหนึ่งรอบ นี่คือการเตรียมตัว
-3. **[Soft skill](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)**: สไลด์เป็นตัวประกอบ ผู้ก่อตั้งคือตัวเอก นี่คือคะแนนพิเศษ
+1. **[ตัวชี้วัดแข็ง](/blog/th/posts/ntutec-vc-hard-truths-money-vs-investment/)**: ทำเงินได้ ≠ มูลค่าการลงทุน ส่วนหุ้น DD หน้างาน นี่คือเกณฑ์ผ่านประตู
+2. **[เครื่องมือ Prompt](/blog/th/posts/startup-vc-health-check-prompt/)**: ก่อนขึ้นเวที ใช้ AI เป็น GP ทดสอบแรงดันหนึ่งรอบ นี่คือการเตรียมตัว
+3. **[Soft skill](/blog/th/posts/ntutec-founder-soft-skills-beyond-deck/)**: สไลด์เป็นตัวประกอบ ผู้ก่อตั้งคือตัวเอก นี่คือคะแนนพิเศษ
 
 สุดท้าย เผชิญจุดอ่อนอย่างซื่อสัตย์ เพื่อให้อีกฝ่ายมีโอกาสช่วยคุณ แล้วถือเครือข่ายเป็นสินทรัพย์ทบต้น ไม่ใช่การแลกครั้งเดียว
 
@@ -99,7 +99,7 @@ VC ตามดีลตั้งแต่หกเดือน เพราะ�
 
 ## ซีรีส์วินิจฉัยสตาร์ทอัพเชิงลึก NTUTEC × WPORT
 
-- [(1) ทำเงินได้ ≠ มีมูลค่าการลงทุน](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)
-- [(2) Prompt ตรวจสุขภาพสตาร์ทอัพสำหรับ VC](/blog/posts/startup-vc-health-check-prompt/)
-- [(3) สไลด์เป็นตัวประกอบ ผู้ก่อตั้งคือตัวเอก](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)
-- [(4) VC ตามดีลตั้งแต่หกเดือนขึ้นไป](/blog/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(1) ทำเงินได้ ≠ มีมูลค่าการลงทุน](/blog/th/posts/ntutec-vc-hard-truths-money-vs-investment/)
+- [(2) Prompt ตรวจสุขภาพสตาร์ทอัพสำหรับ VC](/blog/th/posts/startup-vc-health-check-prompt/)
+- [(3) สไลด์เป็นตัวประกอบ ผู้ก่อตั้งคือตัวเอก](/blog/th/posts/ntutec-founder-soft-skills-beyond-deck/)
+- [(4) VC ตามดีลตั้งแต่หกเดือนขึ้นไป](/blog/th/posts/ntutec-vc-follow-up-honesty-and-network/)

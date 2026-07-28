@@ -97,7 +97,7 @@ You can hire someone to make the deck. You can hire someone to run the numbers. 
 
 ## NTUTEC × WPORT Deep Startup Diagnosis Series
 
-- [(1) Making money ≠ investment value](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)
-- [(2) VC startup health-check Prompt](/blog/posts/startup-vc-health-check-prompt/)
-- [(3) The deck is secondary. The founder is the subject](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)
-- [(4) VCs follow deals for six months and up](/blog/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(1) Making money ≠ investment value](/blog/en/posts/ntutec-vc-hard-truths-money-vs-investment/)
+- [(2) VC startup health-check Prompt](/blog/en/posts/startup-vc-health-check-prompt/)
+- [(3) The deck is secondary. The founder is the subject](/blog/en/posts/ntutec-founder-soft-skills-beyond-deck/)
+- [(4) VCs follow deals for six months and up](/blog/en/posts/ntutec-vc-follow-up-honesty-and-network/)

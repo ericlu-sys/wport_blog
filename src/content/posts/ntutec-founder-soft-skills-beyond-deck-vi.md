@@ -97,7 +97,7 @@ Slide có thể thuê người làm. Số liệu có thể thuê người tính.
 
 ## Series Chẩn đoán Startup Chuyên sâu NTUTEC × WPORT
 
-- [(1) Kiếm được tiền ≠ giá trị đầu tư](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)
-- [(2) Prompt kiểm tra sức khỏe startup cho VC](/blog/posts/startup-vc-health-check-prompt/)
-- [(3) Slide chỉ là phụ, founder mới là chủ thể](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)
-- [(4) VC theo deal từ sáu tháng trở lên](/blog/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(1) Kiếm được tiền ≠ giá trị đầu tư](/blog/vi/posts/ntutec-vc-hard-truths-money-vs-investment/)
+- [(2) Prompt kiểm tra sức khỏe startup cho VC](/blog/vi/posts/startup-vc-health-check-prompt/)
+- [(3) Slide chỉ là phụ, founder mới là chủ thể](/blog/vi/posts/ntutec-founder-soft-skills-beyond-deck/)
+- [(4) VC theo deal từ sáu tháng trở lên](/blog/vi/posts/ntutec-vc-follow-up-honesty-and-network/)

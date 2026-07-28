@@ -128,7 +128,7 @@ Nghe thì cứng, nhưng tinh thần phía sau rất đơn giản: **đừng v�
 
 ## Series chẩn đoán startup chuyên sâu NTU TEC × WPORT
 
-- [(1) Kiếm được tiền ≠ Có giá trị đầu tư](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)
-- [(2) Prompt kiểm tra sức khỏe startup kiểu VC](/blog/posts/startup-vc-health-check-prompt/)
-- [(3) Deck chỉ là vai phụ. Founder mới là chủ thể](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)
-- [(4) VC theo deal từ sáu tháng trở lên](/blog/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(1) Kiếm được tiền ≠ Có giá trị đầu tư](/blog/vi/posts/ntutec-vc-hard-truths-money-vs-investment/)
+- [(2) Prompt kiểm tra sức khỏe startup kiểu VC](/blog/vi/posts/startup-vc-health-check-prompt/)
+- [(3) Deck chỉ là vai phụ. Founder mới là chủ thể](/blog/vi/posts/ntutec-founder-soft-skills-beyond-deck/)
+- [(4) VC theo deal từ sáu tháng trở lên](/blog/vi/posts/ntutec-vc-follow-up-honesty-and-network/)

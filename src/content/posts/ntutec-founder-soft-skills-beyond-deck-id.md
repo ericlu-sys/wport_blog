@@ -97,7 +97,7 @@ Deck bisa dibuatkan orang. Data bisa dihitung orang. Tapi **orang yang berdiri d
 
 ## Serial Diagnosis Startup Mendalam NTUTEC × WPORT
 
-- [(1) Bisa menghasilkan uang ≠ nilai investasi](/blog/posts/ntutec-vc-hard-truths-money-vs-investment/)
-- [(2) Prompt health-check startup untuk VC](/blog/posts/startup-vc-health-check-prompt/)
-- [(3) Deck hanya pendukung, founder adalah subjek](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)
-- [(4) VC follow deal mulai enam bulan](/blog/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(1) Bisa menghasilkan uang ≠ nilai investasi](/blog/id/posts/ntutec-vc-hard-truths-money-vs-investment/)
+- [(2) Prompt health-check startup untuk VC](/blog/id/posts/startup-vc-health-check-prompt/)
+- [(3) Deck hanya pendukung, founder adalah subjek](/blog/id/posts/ntutec-founder-soft-skills-beyond-deck/)
+- [(4) VC follow deal mulai enam bulan](/blog/id/posts/ntutec-vc-follow-up-honesty-and-network/)
