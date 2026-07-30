@@ -101,3 +101,4 @@ VC 投的是人。人對產品有沒有愛，藏不住。
 - [（二）VC 新創健康檢查 Prompt](/blog/posts/startup-vc-health-check-prompt/)
 - [（三）簡報只是配角，創辦人才是主體](/blog/posts/ntutec-founder-soft-skills-beyond-deck/)
 - [（四）VC 跟案六個月起](/blog/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [（五）出場不只 IPO、股權別一次給爆、簡報請講具體](/blog/posts/ntutec-license-equity-pitch-specificity/)
