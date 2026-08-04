@@ -4,8 +4,9 @@
 Answers "why isn't this page indexed?" per URL, using the official
 `urlInspection.index.inspect` endpoint (read-only, no indexing requests are sent).
 
-Uses the OAuth token cached at `~/.config/wport_blog/google_gsc_token.json`
-(scope: webmasters / webmasters.readonly).
+Uses the OAuth token from `scripts/google_api_auth_test.py`:
+`~/.config/wport_blog/google_oauth_token.json` (falls back to
+`google_gsc_token.json`). Scope: webmasters / webmasters.readonly.
 
 Usage:
     python3 scripts/gsc_inspect_urls.py
@@ -33,7 +34,10 @@ from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-TOKEN_PATH = Path.home() / ".config/wport_blog/google_gsc_token.json"
+TOKEN_CANDIDATES = (
+    Path.home() / ".config/wport_blog/google_oauth_token.json",
+    Path.home() / ".config/wport_blog/google_gsc_token.json",
+)
 DEFAULT_SITE_URL = "sc-domain:wport.me"
 DEFAULT_SITEMAP = "https://wport.me/blog/sitemap-0.xml"
 INSPECT_ENDPOINT = "https://searchconsole.googleapis.com/v1/urlInspection/index:inspect"
@@ -50,16 +54,17 @@ def load_token() -> str:
             "Missing dependencies. Install with: pip3 install google-auth google-auth-oauthlib"
         ) from exc
 
-    if not TOKEN_PATH.exists():
-        print(f"OAuth token not found at {TOKEN_PATH}", file=sys.stderr)
+    token_path = next((path for path in TOKEN_CANDIDATES if path.exists()), None)
+    if token_path is None:
+        print(f"OAuth token not found at {TOKEN_CANDIDATES[0]}", file=sys.stderr)
         print("Run scripts/google_api_auth_test.py once to authorise.", file=sys.stderr)
         raise SystemExit(1)
 
-    creds = Credentials.from_authorized_user_file(str(TOKEN_PATH))
+    creds = Credentials.from_authorized_user_file(str(token_path))
     if not creds.valid:
         if creds.expired and creds.refresh_token:
             creds.refresh(Request())
-            TOKEN_PATH.write_text(creds.to_json(), encoding="utf-8")
+            token_path.write_text(creds.to_json(), encoding="utf-8")
         else:
             print("Token is invalid and cannot be refreshed.", file=sys.stderr)
             raise SystemExit(1)

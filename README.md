@@ -222,6 +222,151 @@ npm run dev
 開啟 `http://localhost:3000` 確認文章顯示正常後再 commit。多語系文章請一併確認
 `http://localhost:3000/blog/en/posts/你的文章` 等四個語系路由。
 
+## Google CLI（Search Console / PageSpeed Insights）+ 追蹤 Key
+
+Blog 與主站共用 **`wport.me`**。認證方式依產品分開：
+
+| 產品 | 本專案資源 | 建議認證 | 說明 |
+|------|------------|----------|------|
+| **GA4** | `WPORT-行銷總覽`／Measurement ID `G-WQWNNDZ22Y` | **Key** | 前台／GTM 用 Measurement ID；報表看 [GA4 UI](https://analytics.google.com/) |
+| **GTM** | Container `GTM-MGLNLCG5` | **Key** | 前台用 Container ID（可用 `PUBLIC_GTM_ID` 覆寫）；設定看 [GTM UI](https://tagmanager.google.com/) |
+| **Google Search Console** | `sc-domain:wport.me`（涵蓋 `https://wport.me/blog/`） | **OAuth** | CLI／API 查 sitemap、URL Inspection；需使用者帳號權限 |
+| **PageSpeed Insights** | 測 `https://wport.me/blog/` 等公開 URL | **OAuth** | CLI 打 PSI REST；官方 scope 為 `openid` |
+
+**重點：** GA4／GTM 日常追蹤與後台操作靠 **Container／Measurement ID（key）**，不必為了埋碼去跑 OAuth。Search Console 與 PageSpeed Insights 的 CLI 查詢則**建議用 OAuth**（不要只用沒帶 scope 的 `gcloud auth login`）。
+
+完整分析規格見 [`docs/analytics-guide.md`](./docs/analytics-guide.md)、[`docs/analytics.md`](./docs/analytics.md)。效能紀錄見 [`docs/perf-log.md`](./docs/perf-log.md)。
+
+### 0. 認證怎麼選
+
+#### GA4 / GTM：使用 Key（不必 OAuth）
+
+前台埋碼與日常後台用公開 ID 即可（這些本來就會出現在 HTML，不是秘密金鑰）：
+
+| Key | 值 | 用途 |
+|-----|-----|------|
+| GTM Container ID | `GTM-MGLNLCG5` | Blog 掛 GTM snippet；可選 env `PUBLIC_GTM_ID` 覆寫 |
+| GA4 Measurement ID | `G-WQWNNDZ22Y` | 經 GTM 送到 `WPORT-行銷總覽` |
+
+報表、Preview、Publish 請直接用 GA4／GTM 網頁後台。不必為了「看流量／改 tag」先做 Desktop OAuth。
+
+#### Search Console / PageSpeed Insights：建議 OAuth（第一次本機授權）
+
+這兩項的 CLI／API 需要**使用者帳號**權限，請用 Desktop OAuth 或 `gcloud auth application-default login`（並指定 scope）。
+
+1. 在 Google Cloud Console 啟用 **Search Console API**、**PageSpeed Insights API**。
+2. OAuth consent screen 設為 **Internal**（Workspace 帳號），建立 **Desktop** OAuth Client，下載 client JSON（勿 commit）。
+3. 安裝依賴並跑一次授權（會開瀏覽器，成功後把 refresh token 存本機）：
+
+```bash
+pip3 install google-auth google-auth-oauthlib google-auth-httplib2
+
+# 參數改成你的 Desktop OAuth client JSON 路徑
+python3 scripts/google_api_auth_test.py "/path/to/your-oauth-client.json"
+```
+
+Token 寫入：`~/.config/wport_blog/google_oauth_token.json`。成功時應能列出 GSC sites，且包含 **`sc-domain:wport.me`**。
+
+> 上述授權腳本也會順手探測 GTM／GA4 API 權限；那是進階自動化用。日常 GA4／GTM 仍以 **Key + UI** 為主。
+
+---
+
+### 1. Google Search Console（CLI + OAuth）
+
+**資源（property）：** `sc-domain:wport.me`  
+**用途：** 查 sitemap、URL Inspection（收錄狀態）、效能報表需 UI 時再進 GSC 後台。
+
+#### 方式 A：本專案腳本（推薦）
+
+```bash
+# 第一次授權（見上一節 OAuth），token 在 google_oauth_token.json
+
+# 檢查 sitemap 內 URL 的收錄／索引狀態（URL Inspection API）
+python3 scripts/gsc_inspect_urls.py
+python3 scripts/gsc_inspect_urls.py --limit 20
+python3 scripts/gsc_inspect_urls.py --site "sc-domain:wport.me"
+python3 scripts/gsc_inspect_urls.py --urls https://wport.me/blog/ https://wport.me/blog/archive/
+```
+
+腳本預設 sitemap：`https://wport.me/blog/sitemap-0.xml`。Quota 約每日 2000 次 inspection／property。
+
+#### 方式 B：`gcloud` Application Default Credentials + curl
+
+```bash
+# 用 OAuth 登入，明確要 GSC scope（不要省略 --scopes）
+gcloud auth application-default login \
+  --scopes=https://www.googleapis.com/auth/webmasters.readonly,https://www.googleapis.com/auth/cloud-platform
+
+TOKEN="$(gcloud auth application-default print-access-token)"
+
+# 列出帳號有權限的 GSC properties（應看到 sc-domain:wport.me）
+curl -s -H "Authorization: Bearer ${TOKEN}" \
+  "https://www.googleapis.com/webmasters/v3/sites" | jq .
+
+# 列出該網域已提交的 sitemaps
+SITE="$(python3 -c 'import urllib.parse; print(urllib.parse.quote("sc-domain:wport.me", safe=""))')"
+curl -s -H "Authorization: Bearer ${TOKEN}" \
+  "https://www.googleapis.com/webmasters/v3/sites/${SITE}/sitemaps" | jq .
+```
+
+**注意：** Domain／URL 驗證（DNS 或 meta）必須在 [Search Console UI](https://search.google.com/search-console) **人工完成一次**；CLI 無法代替驗證點選。
+
+---
+
+### 2. PageSpeed Insights（CLI + OAuth）
+
+**測哪個 URL：** 例如 `https://wport.me/blog/`、`https://wport.me/blog/archive/`、任一文章頁。  
+**用途：** 遠端 Lab 分數（Lighthouse）+ 若有資料則含 CrUX 欄位體驗。
+
+#### 方式 A：`gcloud` OAuth（ADC）+ curl（官方 REST，建議）
+
+```bash
+# Cloud Console 啟用「PageSpeed Insights API」後：
+gcloud auth application-default login \
+  --scopes=openid,https://www.googleapis.com/auth/cloud-platform
+
+TOKEN="$(gcloud auth application-default print-access-token)"
+URL="$(python3 -c 'import urllib.parse; print(urllib.parse.quote("https://wport.me/blog/", safe=""))')"
+
+# Mobile
+curl -s -H "Authorization: Bearer ${TOKEN}" \
+  "https://pagespeedonline.googleapis.com/pagespeedonline/v5/runPagespeed?url=${URL}&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo" \
+  | jq '{id, score: .lighthouseResult.categories.performance.score, lcp: .lighthouseResult.audits["largest-contentful-paint"].displayValue}'
+
+# Desktop
+curl -s -H "Authorization: Bearer ${TOKEN}" \
+  "https://pagespeedonline.googleapis.com/pagespeedonline/v5/runPagespeed?url=${URL}&strategy=desktop&category=performance" \
+  | jq '{id, score: .lighthouseResult.categories.performance.score}'
+```
+
+官方 REST 授權 scope 為 **`openid`**。本專案建議 PSI 走 OAuth，避免 API Key 散落在 shell history。
+
+#### 方式 B：npm `psi` CLI（備援）
+
+```bash
+npx psi https://wport.me/blog/ --strategy=mobile
+npx psi https://wport.me/blog/ --strategy=desktop
+```
+
+Quota 用盡時可改本機 Lighthouse（與 PSI Lab 同引擎）：`npm run preview` 後對 `localhost` 跑 Lighthouse。結果可記在 [`docs/perf-log.md`](./docs/perf-log.md)。
+
+---
+
+### 3. 進階：沿用 OAuth 的自動化腳本（可選）
+
+日常 GA4／GTM 用 Key + UI 即可。若要用腳本批次拉 GA4 閱讀數或寫入 GTM workspace，才需要上一節的 OAuth token：
+
+```bash
+# 更新前台「N 閱讀」（寫入 src/data/post-views.json）
+python3 scripts/fetch_ga4_views.py
+python3 scripts/fetch_ga4_views.py --dry-run
+
+# 冪等建立／補齊 Blog 用的 GTM variables / triggers / tags（不會自動 Publish）
+python3 scripts/gtm_build_blog_tags.py
+```
+
+**資安：** `client_secret*.json`、`google_oauth_token.json`、ADC credential 檔都不要 commit。Measurement ID／GTM Container ID 可出現在前端；OAuth client secret 與 refresh token 不行。
+
 ## Design Kit & Template Reuse
 
 This blog is now structured to support template reuse for client delivery.

@@ -327,4 +327,4 @@ npm run preview
 
 - 技術規格：[`docs/analytics.md`](./analytics.md)
 - 授課備課：`~/Documents/obsidian/wport_obsidian/WPORT教學/AI-Agent操作Google行銷API完整指南.md`
-- README 對外指引：[`README.md`](../README.md) 「Analytics / GTM / Search Console」段落
+- README 對外指引：[`README.md`](../README.md) 「Google CLI（Search Console / PageSpeed Insights）+ 追蹤 Key」段落
