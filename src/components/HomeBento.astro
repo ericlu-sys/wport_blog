@@ -401,9 +401,12 @@ const cards = HOME_CATEGORIES.map((category) => {
       padding-top: 40px;
     }
 
+    /* Rows must be able to grow: a fixed 200px row is shorter than the cards'
+       min-height, which made each card bleed over the one below it. */
     .bento-grid {
       grid-template-columns: 1fr;
-      grid-auto-rows: 200px;
+      grid-auto-rows: minmax(200px, auto);
+      gap: 16px;
     }
 
     .bento-card--large {

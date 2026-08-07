@@ -229,6 +229,29 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
     font-family: var(--font-sans);
   }
 
+  /* Phones: the RSS pill is flex-shrink: 0 and eats ~150px, which left the
+     heading a ~130px column and broke the title and subtitle over 2-4 lines.
+     Stack them instead so the heading gets the full width. */
+  @media (max-width: 640px) {
+    .archive-main {
+      padding: 32px 16px 64px;
+    }
+
+    .archive-header {
+      margin-bottom: 28px;
+    }
+
+    .archive-header__top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .archive-title {
+      font-size: 26px;
+    }
+  }
+
   .archive-filters {
     margin-bottom: 40px;
   }

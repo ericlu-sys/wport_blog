@@ -41,6 +41,15 @@ export const localeLabels: Record<Locale, string> = {
   "th-TH": "ภาษาไทย",
 };
 
+/** Compact labels for the mobile language switcher, where the full ones don't fit. */
+export const localeShortLabels: Record<Locale, string> = {
+  "zh-TW": "繁中",
+  "en-US": "EN",
+  "id-ID": "ID",
+  "vi-VN": "VI",
+  "th-TH": "ไทย",
+};
+
 /** BCP 47 / HTML lang + hreflang values. */
 export const localeHtmlLang: Record<Locale, string> = {
   "zh-TW": "zh-TW",

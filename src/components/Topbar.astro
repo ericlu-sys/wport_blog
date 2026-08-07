@@ -2,6 +2,7 @@
 import {
   defaultLocale,
   localeLabels,
+  localeShortLabels,
   locales,
   type Locale,
 } from "@/i18n/locales";
@@ -41,14 +42,38 @@ const langOptions = locales.map((loc) => ({
     </a>
 
     <nav class="topbar-nav">
-      <a href={homeHref} class:list={["topbar-link", { "topbar-link--active": currentPage === "home" }]}
-        >{t(locale, "nav.home")}</a
+      <a
+        href={homeHref}
+        class:list={["topbar-link", "topbar-link--nav", { "topbar-link--active": currentPage === "home" }]}
       >
+        <svg class="topbar-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="M3 10.4 12 3.2l9 7.2"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M5.4 9.6V20a1 1 0 0 0 1 1h11.2a1 1 0 0 0 1-1V9.6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+        <span class="topbar-link-text">{t(locale, "nav.home")}</span>
+      </a>
       <a
         href={archiveHref}
-        class:list={["topbar-link", { "topbar-link--active": currentPage === "archive" }]}
-        >{t(locale, "nav.archive")}</a
+        class:list={["topbar-link", "topbar-link--nav", { "topbar-link--active": currentPage === "archive" }]}
       >
+        <svg class="topbar-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M9 6h11M9 12h11M9 18h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          <circle cx="4.5" cy="6" r="1.3" fill="currentColor"></circle>
+          <circle cx="4.5" cy="12" r="1.3" fill="currentColor"></circle>
+          <circle cx="4.5" cy="18" r="1.3" fill="currentColor"></circle>
+        </svg>
+        <span class="topbar-link-text">{t(locale, "nav.archive")}</span>
+      </a>
       <a href={jobsHref} class="topbar-link topbar-link--cta" target="_blank" rel="noopener noreferrer"
         >{t(locale, "nav.jobs")}</a
       >
@@ -62,7 +87,17 @@ const langOptions = locales.map((loc) => ({
           aria-expanded="false"
           data-lang-trigger
         >
-          <span data-lang-label>{localeLabels[locale]}</span>
+          <svg class="topbar-lang-globe" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"></circle>
+            <path d="M3.2 12h17.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            <path
+              d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linejoin="round"></path>
+          </svg>
+          <span class="topbar-lang-full" data-lang-label>{localeLabels[locale]}</span>
+          <span class="topbar-lang-short" aria-hidden="true">{localeShortLabels[locale]}</span>
           <svg class="topbar-lang-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <polyline
               points="6 9 12 15 18 9"
@@ -174,6 +209,16 @@ const langOptions = locales.map((loc) => ({
     border-bottom: 2px solid transparent;
     line-height: 1.2;
     box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+    white-space: nowrap;
+  }
+
+  .topbar-icon {
+    display: none;
+    flex-shrink: 0;
   }
 
   .topbar-link:hover {
@@ -252,6 +297,11 @@ const langOptions = locales.map((loc) => ({
   .topbar-lang-trigger:focus-visible {
     outline: 2px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
     outline-offset: 2px;
+  }
+
+  .topbar-lang-globe,
+  .topbar-lang-short {
+    display: none;
   }
 
   .topbar-lang-chevron {
@@ -340,6 +390,74 @@ const langOptions = locales.map((loc) => ({
 
     .topbar-lang-option {
       font-size: 13px;
+    }
+  }
+
+  /* Phones: the five locales have labels of wildly different lengths ("所有文章"
+     vs "Semua artikel" vs "บทความทั้งหมด"), so text nav can't fit at any size.
+     Home/archive/language collapse to icons; only the jobs CTA keeps its label. */
+  @media (max-width: 640px) {
+    .topbar-inner {
+      padding: 0 4px;
+    }
+
+    .topbar-logo {
+      padding: 0 8px;
+    }
+
+    .topbar-nav {
+      gap: 2px;
+      padding-right: 4px;
+    }
+
+    .topbar-icon {
+      display: block;
+    }
+
+    .topbar-link--nav {
+      padding: 8px;
+      min-height: 36px;
+    }
+
+    /* Kept in the DOM, hidden visually: still the link's accessible name. */
+    .topbar-link--nav .topbar-link-text {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* An underline under a bare icon reads as a stray line; use a pill instead. */
+    .topbar-link--nav.topbar-link--active {
+      background: var(--color-primary-light);
+      border-radius: 8px;
+      border-bottom-color: transparent;
+    }
+
+    .topbar-link--cta {
+      padding: 6px 12px;
+      min-height: 36px;
+    }
+
+    .topbar-lang-trigger {
+      padding: 8px;
+      gap: 4px;
+      min-height: 36px;
+    }
+
+    .topbar-lang-globe,
+    .topbar-lang-short {
+      display: block;
+    }
+
+    .topbar-lang-full,
+    .topbar-lang-chevron {
+      display: none;
     }
   }
 </style>
