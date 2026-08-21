@@ -25,7 +25,7 @@ const CANONICAL_TAGS = [
 ];
 
 // 這些欄位在翻譯檔必須與原文完全一致
-const MIRRORED_FIELDS = ["publishDate", "tags", "featured", "cover", "draft"];
+const MIRRORED_FIELDS = ["publishDate", "tags", "featured", "cover", "draft", "voice"];
 
 /** 極簡 frontmatter 解析，只支援本站用到的純量與行內陣列。 */
 function parseFrontmatter(raw) {

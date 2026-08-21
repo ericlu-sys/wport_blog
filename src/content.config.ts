@@ -12,6 +12,9 @@ const posts = defineCollection({
     featured: z.boolean().optional(),
     cover: z.string().optional(),
     draft: z.boolean().optional(),
+    // 這篇要用誰的語氣寫：eric = 盧旭熙本人語氣（見 gen-eric-voice skill）、
+    // neutral = 中性編輯語氣。省略時視為 neutral。
+    voice: z.enum(["eric", "neutral"]).optional(),
   }),
 });
 
