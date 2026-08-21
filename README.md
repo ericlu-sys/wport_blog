@@ -82,14 +82,14 @@ The script also supports custom ports and common Git/GitHub flows, with inline c
 ```md
 .
 ├── src/
-│   ├── content/
-│   │   └── posts/  # Blog posts (.md)
-│   ├── layouts/    # Astro layouts
-│   ├── pages/      # Astro pages
-│   │   └── api/    # API endpoints
-│   ├── components/ # UI components (Astro & React)
-│   └── assets/     # Static assets
-├── public/         # Public assets
+│ ├── content/
+│ │ └── posts/ # Blog posts (.md)
+│ ├── layouts/ # Astro layouts
+│ ├── pages/ # Astro pages
+│ │ └── api/ # API endpoints
+│ ├── components/ # UI components (Astro & React)
+│ └── assets/ # Static assets
+├── public/ # Public assets
 ```
 
 ## Writing Blog Posts
@@ -120,15 +120,16 @@ cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1
 ---
 ```
 
-| 欄位 | 型別 | 必填 | 說明 |
-|---|---|---|---|
-| `title` | string | ✅ | 文章標題 |
-| `description` | string | ✅ | 摘要，建議 50–160 字元，用於 SEO |
-| `publishDate` | date | ✅ | 格式 `YYYY-MM-DD` |
-| `tags` | string[] | — | 分類標籤，**必須從下方 canonical 清單挑選**，建議 2–4 個 |
-| `featured` | boolean | — | `true` 會在首頁置頂顯示，預設 `false` |
-| `cover` | string | — | 封面圖片 URL，**必須是 Cloudinary**（見下方 Images） |
-| `draft` | boolean | — | `true` 則文章不對外顯示，預設發布 |
+| 欄位          | 型別     | 必填 | 說明                                                        |
+| ------------- | -------- | ---- | ----------------------------------------------------------- |
+| `title`       | string   | ✅   | 文章標題                                                    |
+| `description` | string   | ✅   | 摘要，建議 50–160 字元，用於 SEO                            |
+| `publishDate` | date     | ✅   | 格式 `YYYY-MM-DD`                                           |
+| `tags`        | string[] | —    | 分類標籤，**必須從下方 canonical 清單挑選**，建議 2–4 個    |
+| `featured`    | boolean  | —    | `true` 會在首頁置頂顯示，預設 `false`                       |
+| `cover`       | string   | —    | 封面圖片 URL，**必須是 Cloudinary**（見下方 Images）        |
+| `draft`       | boolean  | —    | `true` 則文章不對外顯示，預設發布                           |
+| `voice`       | string   | —    | `"eric"` 或 `"neutral"`，省略視為 `neutral`（見下方 Voice） |
 
 ### Tags
 
@@ -144,11 +145,27 @@ cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1
 `LEGACY_TAG_REDIRECTS` 找到對應的叢集標籤，例如 `履歷`／`面試`／`求職` → `求職面試`，
 `工作許可`／`居留證` → `留台工作`。
 
+### Voice（用誰的語氣寫）
+
+部落格不只一個人寫，所以「這篇是誰的聲音」寫在 frontmatter，不靠口頭交辦：
+
+| 值                  | 意思               |
+| ------------------- | ------------------ |
+| `eric`              | 盧旭熙本人語氣     |
+| `neutral`（或省略） | 中性編輯語氣，預設 |
+
+`voice: "eric"` 的文章骨架固定為 `## 一句話總結` → `## 核心論點` → `## 我為什麼會寫這篇`，
+從具體場景或自己的失誤進場，收尾收在畫面或自嘲而不是呼籲。用 AI 協助寫作時，先呼叫
+`gen-eric-voice` skill（語料來自 2010–2026 的 FB／IG 貼文），成品範例見 `Eric網站` repo
+的 `src/content/posts/`。
+
+`voice` 是鏡像欄位，四個翻譯檔必須跟原文一致，`npm run check:i18n` 會檢查。
+
 ### Images
 
 **不要將圖片檔案 commit 進 repo。** 所有圖片統一透過 Cloudinary 託管，文章內只放 URL。
 
-**上傳流程：**
+**上傳流程（Dashboard，手動）：**
 
 1. 登入 [Cloudinary Dashboard](https://cloudinary.com/)，使用 wport 公司帳號（cloud name: `dyebbsckc`）
 2. 上傳圖片到 `wport-blog/` 資料夾
@@ -160,21 +177,62 @@ https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_li
 
 **URL 參數說明：**
 
-| 參數 | 說明 |
-|---|---|
-| `f_auto` | 自動選擇最佳格式（WebP / AVIF），依瀏覽器支援決定 |
-| `q_auto:good` | 自動壓縮品質（約 80–85%），肉眼無感但檔案大幅縮小 |
+| 參數             | 說明                                                    |
+| ---------------- | ------------------------------------------------------- |
+| `f_auto`         | 自動選擇最佳格式（WebP / AVIF），依瀏覽器支援決定       |
+| `q_auto:good`    | 自動壓縮品質（約 80–85%），肉眼無感但檔案大幅縮小       |
 | `w_1200,c_limit` | 最大寬度 1200px，只縮不放大，適合 Mobile 與 Retina 螢幕 |
 
-> 上傳原始圖片尺寸不限，Cloudinary 會自動處理。行銷同仁可直接用 Cloudinary Dashboard 上傳，無需任何 API 金鑰。
+> 上傳原始圖片尺寸不限，Cloudinary 會自動處理。
 
-要批次上傳的話，可以用 `scripts/upload_to_cloudinary.py`，來源支援本機檔案、遠端 URL 與 Google Drive：
+**上傳流程（CLI，推薦）：**
+
+只要你是在 IDE 裡直接改檔案、push 文章的人（不分工程或行銷），就用 `scripts/upload_to_cloudinary.py`。
+它會自動上傳到 `wport-blog/`、套好 transformation，並直接印出可以貼進文章的完整 URL，不必手動組：
 
 ```bash
 python3 scripts/upload_to_cloudinary.py 圖片名稱=./photo.jpg 另一張=https://example.com/a.jpg
 ```
 
-這個腳本會從專案根目錄的 `.env` 讀 `CLOUDINARY_API_KEY` 與 `CLOUDINARY_API_SECRET`（`.env` 已被 gitignore）。**金鑰不要寫進程式碼。**
+來源支援三種：本機檔案（`./photo.jpg`）、遠端 URL（Cloudinary 直接抓取，不用先下載）、
+Google Drive（`drive:<file_id>`，需先 `gcloud auth login --enable-gdrive-access`）。
+
+**要當文章封面的話，加 `--cover`，它會直接寫進 frontmatter：**
+
+```bash
+python3 scripts/upload_to_cloudinary.py --cover charging-station \
+    charging-station-banner=./banner.jpg
+```
+
+slug 用 zh-TW 原文的檔名（不帶 `-en` `-id` `-vi` `-th`）。因為 `cover` 規定五語系必須一致，
+腳本會同時寫進原文與所有已存在的翻譯檔；缺少的翻譯檔只會提醒，不會自動建立。
+`--cover` 一次只能配一張圖。
+
+> 🚫 圖片檔（`.png` `.jpg` `.webp` …）**不能 commit 進 repo**，pre-commit 會擋下來
+> （`scripts/check-no-image-commit.mjs`）。`public/` 底下的網站 UI 資產（favicon、footer
+> icon、吉祥物）不在此限。真的需要例外時用 `ALLOW_IMAGE_COMMIT=1 git commit ...`。
+
+**API 金鑰：一人一把，放自己的 local，不要進 repo。**
+
+1. 到 [Cloudinary Dashboard](https://cloudinary.com/) → Settings → API Keys → **Generate New Key**，
+   產一組屬於自己的 key／secret。**不要共用別人的那一把**，這樣任何一把外洩或有人離職時，
+   可以單獨撤銷該金鑰，不影響其他人。
+2. 把 `.env.example` 複製成 `.env`（`.env` 已被 gitignore），填上自己的那一組：
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   ```
+   CLOUDINARY_CLOUD_NAME=dyebbsckc
+   CLOUDINARY_API_KEY=你自己的 key
+   CLOUDINARY_API_SECRET=你自己的 secret
+   ```
+
+3. 腳本會**先讀環境變數，缺的才從 `.env` 補**，所以 CI 或臨時使用也可以只 `export`，不必落地成檔案。
+
+> ⚠️ `cloud name`（`dyebbsckc`）是公開資訊，出現在每一個圖片 URL 裡，可以進 repo。
+> `API_KEY` 與 `API_SECRET` **不可以**進 repo，也不要貼進程式碼、文章、commit message 或 Slack。
 
 ### 多語系翻譯（i18n）
 
@@ -226,12 +284,12 @@ npm run dev
 
 Blog 與主站共用 **`wport.me`**。認證方式依產品分開：
 
-| 產品 | 本專案資源 | 建議認證 | 說明 |
-|------|------------|----------|------|
-| **GA4** | `WPORT-行銷總覽`／Measurement ID `G-WQWNNDZ22Y` | **Key** | 前台／GTM 用 Measurement ID；報表看 [GA4 UI](https://analytics.google.com/) |
-| **GTM** | Container `GTM-MGLNLCG5` | **Key** | 前台用 Container ID（可用 `PUBLIC_GTM_ID` 覆寫）；設定看 [GTM UI](https://tagmanager.google.com/) |
-| **Google Search Console** | `sc-domain:wport.me`（涵蓋 `https://wport.me/blog/`） | **OAuth** | CLI／API 查 sitemap、URL Inspection；需使用者帳號權限 |
-| **PageSpeed Insights** | 測 `https://wport.me/blog/` 等公開 URL | **OAuth** | CLI 打 PSI REST；官方 scope 為 `openid` |
+| 產品                      | 本專案資源                                            | 建議認證  | 說明                                                                                              |
+| ------------------------- | ----------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------- |
+| **GA4**                   | `WPORT-行銷總覽`／Measurement ID `G-WQWNNDZ22Y`       | **Key**   | 前台／GTM 用 Measurement ID；報表看 [GA4 UI](https://analytics.google.com/)                       |
+| **GTM**                   | Container `GTM-MGLNLCG5`                              | **Key**   | 前台用 Container ID（可用 `PUBLIC_GTM_ID` 覆寫）；設定看 [GTM UI](https://tagmanager.google.com/) |
+| **Google Search Console** | `sc-domain:wport.me`（涵蓋 `https://wport.me/blog/`） | **OAuth** | CLI／API 查 sitemap、URL Inspection；需使用者帳號權限                                             |
+| **PageSpeed Insights**    | 測 `https://wport.me/blog/` 等公開 URL                | **OAuth** | CLI 打 PSI REST；官方 scope 為 `openid`                                                           |
 
 **重點：** GA4／GTM 日常追蹤與後台操作靠 **Container／Measurement ID（key）**，不必為了埋碼去跑 OAuth。Search Console 與 PageSpeed Insights 的 CLI 查詢則**建議用 OAuth**（不要只用沒帶 scope 的 `gcloud auth login`）。
 
@@ -243,10 +301,10 @@ Blog 與主站共用 **`wport.me`**。認證方式依產品分開：
 
 前台埋碼與日常後台用公開 ID 即可（這些本來就會出現在 HTML，不是秘密金鑰）：
 
-| Key | 值 | 用途 |
-|-----|-----|------|
-| GTM Container ID | `GTM-MGLNLCG5` | Blog 掛 GTM snippet；可選 env `PUBLIC_GTM_ID` 覆寫 |
-| GA4 Measurement ID | `G-WQWNNDZ22Y` | 經 GTM 送到 `WPORT-行銷總覽` |
+| Key                | 值             | 用途                                               |
+| ------------------ | -------------- | -------------------------------------------------- |
+| GTM Container ID   | `GTM-MGLNLCG5` | Blog 掛 GTM snippet；可選 env `PUBLIC_GTM_ID` 覆寫 |
+| GA4 Measurement ID | `G-WQWNNDZ22Y` | 經 GTM 送到 `WPORT-行銷總覽`                       |
 
 報表、Preview、Publish 請直接用 GA4／GTM 網頁後台。不必為了「看流量／改 tag」先做 Desktop OAuth。
 
@@ -444,9 +502,9 @@ No database tables or migrations are required — this project uses Supabase Aut
 
 If you prefer to use a hosted Supabase project, add these variables to your `.env` file:
 
-| Variable | Description |
-|---|---|
-| `SUPABASE_URL` | Project URL from Supabase dashboard → Settings → API |
+| Variable       | Description                                                |
+| -------------- | ---------------------------------------------------------- |
+| `SUPABASE_URL` | Project URL from Supabase dashboard → Settings → API       |
 | `SUPABASE_KEY` | `anon` public key from Supabase dashboard → Settings → API |
 
 ```
@@ -466,12 +524,12 @@ Users can then sign in immediately after sign-up without clicking a confirmation
 
 ### Auth routes
 
-| Route | Description |
-|---|---|
-| `/auth/signin` | Email/password sign-in form |
-| `/auth/signup` | Email/password sign-up form |
-| `/auth/confirm-email` | Post-signup "check your inbox" page |
-| `/dashboard` | Example protected page (redirects to `/auth/signin` if unauthenticated) |
+| Route                 | Description                                                             |
+| --------------------- | ----------------------------------------------------------------------- |
+| `/auth/signin`        | Email/password sign-in form                                             |
+| `/auth/signup`        | Email/password sign-up form                                             |
+| `/auth/confirm-email` | Post-signup "check your inbox" page                                     |
+| `/dashboard`          | Example protected page (redirects to `/auth/signin` if unauthenticated) |
 
 Route protection is handled in `src/middleware.ts`. Add paths to the `PROTECTED_ROUTES` array there to require authentication.
 

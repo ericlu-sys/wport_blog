@@ -9,6 +9,7 @@ node_modules/
 
 # python virtualenv (for scripts/*.py, e.g. setup_gtm_job_events.py)
 .venv/
+__pycache__/
 
 # logs
 npm-debug.log*
