@@ -46,7 +46,13 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
           <h1 class="archive-title">{t(locale, "archive.heading")}</h1>
           <p class="archive-subtitle">{t(locale, "archive.subtitle")}</p>
         </div>
-        <a href={rssFeedUrl} class="archive-rss-link" rel="alternate" type="application/rss+xml" title={t(locale, "archive.rss")}>
+        <a
+          href={rssFeedUrl}
+          class="archive-rss-link"
+          rel="alternate"
+          type="application/rss+xml"
+          title={t(locale, "archive.rss")}
+        >
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
               d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"
@@ -521,7 +527,7 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
     }
   }
 
-  let activeTag = "";
+  let activeTags = [];
   let debounceTimer = 0;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const CARD_TRANSITION_MS = prefersReducedMotion ? 0 : 200;
@@ -567,7 +573,8 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
     const description = (card.getAttribute("data-description") ?? "").toLowerCase();
     const tags = (card.getAttribute("data-tags") ?? "").toLowerCase();
 
-    const matchTag = !activeTag || tags.split(",").includes(activeTag.toLowerCase());
+    const cardTags = tags.split(",");
+    const matchTag = activeTags.length === 0 || activeTags.some((tag) => cardTags.includes(tag.toLowerCase()));
     const matchSearch = !query || title.includes(query) || description.includes(query) || tags.includes(query);
 
     return matchTag && matchSearch;
@@ -590,17 +597,18 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
 
   function syncUrl(query) {
     const params = new URLSearchParams();
-    if (activeTag) params.set("tag", activeTag);
+    if (activeTags.length > 0) params.set("tag", activeTags.join(","));
     if (query) params.set("q", query);
     const next = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
     window.history.replaceState(null, "", next);
   }
 
-  function setActiveTagButton(tag) {
+  function setActiveTagButtons(tags) {
     if (!tagRow) return;
     tagRow.querySelectorAll(".archive-tag-btn").forEach((btn) => {
       const btnTag = btn.getAttribute("data-tag") ?? "";
-      btn.classList.toggle("is-active", btnTag === tag);
+      // data-tag="" 是「全部」，只有在沒有任何標籤被選時亮起
+      btn.classList.toggle("is-active", btnTag ? tags.includes(btnTag) : tags.length === 0);
     });
   }
 
@@ -619,17 +627,25 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
   const params = new URLSearchParams(window.location.search);
   const urlTag = params.get("tag");
   const urlSearch = params.get("q") ?? "";
-  const resolvedTag = resolveTag(urlTag);
 
-  if (resolvedTag && tagRow?.querySelector(`[data-tag="${CSS.escape(resolvedTag)}"]`)) {
-    activeTag = resolvedTag;
-    setActiveTagButton(resolvedTag);
+  // `?tag=` 支援逗號分隔的多個標籤（首頁分類卡片會這樣帶），語意是「任一命中」
+  const resolvedTags = [];
+  for (const raw of (urlTag ?? "").split(",")) {
+    const resolved = resolveTag(raw.trim());
+    if (!resolved || resolvedTags.includes(resolved)) continue;
+    if (tagRow?.querySelector(`[data-tag="${CSS.escape(resolved)}"]`)) {
+      resolvedTags.push(resolved);
+    }
+  }
 
-    if (urlTag && urlTag !== resolvedTag) {
-      const params = new URLSearchParams(window.location.search);
-      params.set("tag", resolvedTag);
-      const next = `${window.location.pathname}?${params.toString()}`;
-      window.history.replaceState(null, "", next);
+  if (resolvedTags.length > 0) {
+    activeTags = resolvedTags;
+    setActiveTagButtons(activeTags);
+
+    if (urlTag !== activeTags.join(",")) {
+      const nextParams = new URLSearchParams(window.location.search);
+      nextParams.set("tag", activeTags.join(","));
+      window.history.replaceState(null, "", `${window.location.pathname}?${nextParams.toString()}`);
     }
   }
 
@@ -654,8 +670,9 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
     }
 
     const nextTag = target.getAttribute("data-tag") ?? "";
-    activeTag = activeTag === nextTag ? "" : nextTag;
-    setActiveTagButton(activeTag);
+    const isOnlyActive = activeTags.length === 1 && activeTags[0] === nextTag;
+    activeTags = !nextTag || isOnlyActive ? [] : [nextTag];
+    setActiveTagButtons(activeTags);
     applyFilters();
     syncUrl(getSearchQuery());
   });
