@@ -166,3 +166,4 @@ Nếu bạn chưa gặp VC, hãy để AI đóng vai GP cười nhưng hỏi r�
 - [(2) Prompt kiểm tra sức khỏe startup kiểu VC](/blog/vi/posts/startup-vc-health-check-prompt/)
 - [(3) Deck chỉ là vai phụ. Founder mới là chủ thể](/blog/vi/posts/ntutec-founder-soft-skills-beyond-deck/)
 - [(4) VC theo deal từ sáu tháng trở lên](/blog/vi/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(5) Exit không chỉ có IPO, đừng chia cổ phần quá tay, slide phải cụ thể](/blog/vi/posts/ntutec-license-equity-pitch-specificity/)

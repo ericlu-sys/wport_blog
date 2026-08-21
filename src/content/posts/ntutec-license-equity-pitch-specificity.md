@@ -4,6 +4,7 @@ description: "第五次帶團隊拜訪台大創創：翰疆談 License 與中東
 publishDate: 2026-07-23
 tags: ["台大創創", "創業募資"]
 featured: false
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ntutec5-group-photo.jpg"
 draft: false
 ---
 
@@ -13,9 +14,13 @@ draft: false
 
 這場三家輪流上場：翰疆生技 Jimmy、毛湯圓 Shon、還有新加坡國立大學大二、21 歲的 Kai（Flex Bubble）。Howard 一樣問得很犀利，有幾題我當場就記下來，覺得值得寫成這篇。
 
+![台大創創第五場，WPORT 團隊與三家新創在會議室一起聽 pitch](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ntutec5-session.jpg)
+
 ---
 
 ## 1. Jimmy／翰疆生技：License 進出、中東未開發寶地
+
+![翰疆生技用投影片說明生技出海的雙重困境與募資規劃](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ntutec5-hanjiang-license.jpg)
 
 翰疆做的是生技授權與技轉，講到 License in / out，Howard 明顯很有興趣。
 
@@ -37,6 +42,8 @@ Howard 問得最狠的一句是：
 
 ## 2. Shon／毛湯圓：第三個月就出海，但股權別一次給爆
 
+![毛湯圓創辦人 Shon 在會議室說明寵物食品的出海布局](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ntutec5-maotangyuan.jpg)
+
 毛湯圓是寵物食品，第三個月就出海，馬來西亞、新加坡、上海都有布局。產品進到約 300 家店鋪，也跨足人類保健品與碳權。
 
 前面快沒錢的時候，選擇帶樣品一家一家跑。有代理商直接找上來，也參加 SBIR。香港跑通後，飛去馬來西亞 [petico.my](https://petico.my) 談，目前通路已經快 300 間。公司路徑是先有限公司，再轉股份有限公司；一股 10 元，實收資本額 1000 萬，今年都是正現金流。
@@ -54,6 +61,8 @@ Howard 這次對股權問得很嚴厲：**為什麼這個人投這麼少，卻�
 ---
 
 ## 3. Kai／Flex Bubble：21 歲大二，prototype 比簡報更重要
+
+![Kai 介紹 Flex Bubble，投影畫面是傳統電商的品牌痛點](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/ntutec5-flexbubble.jpg)
 
 Kai 21 歲，新加坡國立大學大二，加入 ACE 新加坡。產品是 Flex Bubble，偏 social media 類型，帶電商導購，可用 stitch 做 mockup。現場共識很清楚：**其實 prototype 比簡報更重要。**
 

@@ -103,3 +103,4 @@ Kalau Anda sedang bersiap bertemu VC, urutan yang disarankan: jalankan self-chec
 - [(2) Prompt health-check startup untuk VC](/blog/id/posts/startup-vc-health-check-prompt/)
 - [(3) Deck hanya pendukung, founder adalah subjek](/blog/id/posts/ntutec-founder-soft-skills-beyond-deck/)
 - [(4) VC follow deal mulai enam bulan](/blog/id/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(5) Exit bukan hanya IPO, jangan obral saham, buat deck yang konkret](/blog/id/posts/ntutec-license-equity-pitch-specificity/)

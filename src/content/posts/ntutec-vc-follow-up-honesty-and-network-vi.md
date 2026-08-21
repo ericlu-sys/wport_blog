@@ -103,3 +103,4 @@ Nếu bạn đang chuẩn bị gặp VC, thứ tự gợi ý: chạy Prompt tự
 - [(2) Prompt kiểm tra sức khỏe startup cho VC](/blog/vi/posts/startup-vc-health-check-prompt/)
 - [(3) Slide chỉ là phụ, founder mới là chủ thể](/blog/vi/posts/ntutec-founder-soft-skills-beyond-deck/)
 - [(4) VC theo deal từ sáu tháng trở lên](/blog/vi/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(5) Exit không chỉ có IPO, đừng chia cổ phần quá tay, slide phải cụ thể](/blog/vi/posts/ntutec-license-equity-pitch-specificity/)

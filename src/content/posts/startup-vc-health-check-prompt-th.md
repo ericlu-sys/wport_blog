@@ -166,3 +166,4 @@ cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1
 - [(2) Prompt ตรวจสุขภาพสตาร์ทอัพแบบ VC](/blog/th/posts/startup-vc-health-check-prompt/)
 - [(3) เด็คเป็นแค่ตัวประกอบ ผู้ก่อตั้งคือตัวเอก](/blog/th/posts/ntutec-founder-soft-skills-beyond-deck/)
 - [(4) VC ตามดีลตั้งแต่หกเดือนขึ้นไป](/blog/th/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(5) ทางออกไม่ได้มีแค่ IPO อย่าแจกหุ้นหมดหน้าตัก สไลด์ต้องพูดให้เป็นรูปธรรม](/blog/th/posts/ntutec-license-equity-pitch-specificity/)

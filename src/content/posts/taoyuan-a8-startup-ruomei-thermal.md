@@ -2,16 +2,31 @@
 title: "桃園 A8 看案筆記（一）｜若美科技：AI 散熱燒錢，材料端先從輻射下手"
 description: "台大創創邀請一起到桃園 A8 聽案，第一站若美科技：輻射散熱、自建 AI 熱模擬、日本代理布局、全球 90+ 客戶，以及為什麼我覺得這是一家扎實的實業公司。"
 publishDate: 2026-07-21
-tags: ["新創參訪", "桃園", "台大創創", "散熱材料", "AI 產業"]
+tags: ["台大創創", "創業募資"]
 featured: false
-draft: true
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taoyuan-a8-ruomei-pitch.jpg"
+draft: false
+voice: "eric"
 ---
 
-這次是**台大創創**找 WPORT 一起到**桃園 A8**聽新創 pitch，現場一家一家聽。這是**四篇系列的第一篇**，先記：**台灣若美科技股份有限公司**。後續三家為[環創源（二）](/blog/posts/taoyuan-a8-startup-eith-wastewater/)、[宸祿（三）](/blog/posts/taoyuan-a8-startup-chenlu-endoscopy/)、[歐維克（四）](/blog/posts/taoyuan-a8-startup-awarek-thermal/)。先當草稿，能改就改。
+## 一句話總結
 
-若美給我的第一印象很清楚：他們本來就是材料公司，主軸放在次世代散熱。AI 算力往上衝，資料中心與高功率裝置為了把熱帶走，電費與冷卻成本跟著燒。他們的切入點不是再做一個更大的風扇或液冷板，而是從材料與輻射路徑下手，並開始補一層熱模擬軟體。
+若美不是要做一顆更大的風扇，而是把**熱輻射**拉進散熱路徑，再自己補一層 AI 熱模擬；三年 90+ 客戶、日本代理洽談中、高雄橋頭有自己的工廠，是我最近看到最像在做實業的一家。
 
-聽完整場，我的感覺很直接：這是我最近看到最扎實的新創之一，比較像在做實業。有方案、有技術、有產學、有顧客 PoC，也有政府網絡。
+## 核心論點
+
+- **切入點對**：AI 算力往上衝，資料中心真正在燒的是電費與冷卻成本，這個痛點會長期存在。
+- **定位聰明**：他們把自己講成液冷、水冷的互補層，不是取代。這比硬碰硬務實。
+- **「熱穿殼」是好記的 slogan，但要自己先幫它收斂定義**，不然盡職調查一碰就卡。
+- **「扎實」形容的不是技術，是治理**：第一天就有 ERP、有內部稽核、2029 上創新板的路徑講得出來。
+
+## 我為什麼記這一家
+
+這次是**台大創創**找 WPORT 一起到**桃園 A8**聽新創 pitch，現場一家一家聽。這是**四篇系列的第一篇**：**台灣若美科技股份有限公司**。後續三家為[環創源（二）](/blog/posts/taoyuan-a8-startup-eith-wastewater/)、[宸祿（三）](/blog/posts/taoyuan-a8-startup-chenlu-endoscopy/)、[歐維克（四）](/blog/posts/taoyuan-a8-startup-awarek-thermal/)。
+
+四家聽完，若美是我筆記寫最多的一家。
+
+第一印象很清楚：他們本來就是材料公司，主軸放在次世代散熱。AI 算力往上衝，資料中心與高功率裝置為了把熱帶走，電費與冷卻成本跟著燒。他們的切入點不是再做一個更大的風扇或液冷板，而是從材料與輻射路徑下手，並開始補一層熱模擬軟體。
 
 ---
 
@@ -32,6 +47,8 @@ draft: true
 ---
 
 ## 現場補記：客戶、日本線、學研、製造
+
+![若美科技在 A8 現場向台大創創與 WPORT 團隊說明散熱材料](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taoyuan-a8-ruomei-room.jpg)
 
 這幾點是現場口述，之後若有簡報或合約細節再校正：
 
@@ -121,10 +138,13 @@ draft: true
 
 很多新創會卡在「技術很酷，但沒人買單」或「有人願意聽，但交不出可導入方案」。若美這場聽下來，至少在敘事與證據鏈上是對齊的：方案、技術、產學、PoC、政府網絡、自有工廠同時出現，連募資輪次、IPO 出場、內稽與 ERP 都講到了。這也是為什麼我會用「扎實」兩個字形容它。
 
+最後要老實說一句：我不是材料背景，上面拆「熱穿殼」那段是我回家查完才敢寫的，若美的工程師看到大概會想補充幾句。有理解錯的地方，歡迎指正。
+
 ---
 
-## 待補（其他廠商與細節）
+## 桃園 A8 看案系列（共四家）
 
-> **桃園 A8 看案系列（共四家）**  
-> （一）若美 · （二）[環創源](/blog/posts/taoyuan-a8-startup-eith-wastewater/) · （三）[宸祿](/blog/posts/taoyuan-a8-startup-chenlu-endoscopy/) · （四）[歐維克](/blog/posts/taoyuan-a8-startup-awarek-thermal/)  
-> TODO：現場照片／簡報重點圖
+- （一）若美科技：AI 散熱燒錢，材料端先從輻射下手
+- [（二）環創源科技：把廢水變成資源，Pitch 要讓非專家聽得懂](/blog/posts/taoyuan-a8-startup-eith-wastewater/)
+- [（三）宸祿科技：AI 雙鏡頭內視鏡，先 SaMD 再一次性鏡體](/blog/posts/taoyuan-a8-startup-chenlu-endoscopy/)
+- [（四）歐維克：Sensor Fusion 熱成像，跟標案 SI 合作](/blog/posts/taoyuan-a8-startup-awarek-thermal/)

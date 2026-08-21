@@ -2,14 +2,29 @@
 title: "桃園 A8 看案筆記（二）｜環創源科技：把廢水變成資源，以及 Pitch 要讓非專家也聽得懂"
 description: "台大創創邀請一起到桃園 A8 聽案，第二站環創源科技：氨氣／氨水回收、上市櫃客戶 8+，以及 VC 不一定懂你的領域時，怎麼用白話把痛點、技術與商業模式講清楚。"
 publishDate: 2026-07-21
-tags: ["新創參訪", "桃園", "台大創創", "廢水處理", "循環經濟"]
+tags: ["台大創創", "簡報 Pitch", "創業募資"]
 featured: false
-draft: true
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taoyuan-a8-eith-pitch.jpg"
+draft: false
+voice: "eric"
 ---
+
+## 一句話總結
+
+氨水濃度 20% 以下是要花錢處理的廢棄物，20% 以上可以當資源賣錢；環創源賣的提濃裝置，本質上就是幫客戶跨過這條線。技術很硬，但那天的簡報主線發散，把最該被記住的數字稀釋掉了。
+
+## 核心論點
+
+- **市場是剛性的**：法規越來越嚴、高科技業用水 2016–2024 幾乎翻倍，不處理不行。
+- **商模其實很清楚**：工程顧問設計約占營收 90% 撐現金流，資源化產品（硝酸銨、PU 板材，毛利約 50%）才是新增長。
+- **委外清廢棄物不等於甩鍋**：《廢棄物清理法》第 30 條寫得明白，責任還是回追到產源身上。這才是上市櫃客戶願意付錢的真正理由。
+- **這場最大的收穫不是氨氮電解，是 pitch 教訓**：VC 不一定懂你的領域，白話講不清楚，後面的數字就接不住。
+
+## 我為什麼記這一家
 
 延續[桃園 A8 看案筆記（一）若美](/blog/posts/taoyuan-a8-startup-ruomei-thermal/)，同場第二家，**四篇系列之（二）**：**環創源科技股份有限公司**。
 
-若美那篇偏材料與散熱，這家則是**廢水處理與資源循環工程**。聽完我的筆記分成兩塊：一塊是這家公司在做什麼；另一塊是 pitch 現場給我的提醒，因為這次感受特別深。
+若美那篇偏材料與散熱，這家則是**廢水處理與資源循環工程**。老實說，這場我中間有一大段是聽不懂的。回家查完才把它串起來，也才發現「聽不懂」這件事本身，就是這篇最值得寫的部分。
 
 ---
 
@@ -248,10 +263,9 @@ VC 在意的通常是：
 
 ---
 
-## 待補
+## 桃園 A8 看案系列（共四家）
 
-> **桃園 A8 看案系列（共四家）**  
-> [（一）若美](/blog/posts/taoyuan-a8-startup-ruomei-thermal/) · （二）環創源 · （三）[宸祿](/blog/posts/taoyuan-a8-startup-chenlu-endoscopy/) · （四）[歐維克](/blog/posts/taoyuan-a8-startup-awarek-thermal/)  
-> TODO：環創源現場照片／簡報
-
-四家草稿已齊，之後可逐篇潤稿、補圖。
+- [（一）若美科技：AI 散熱燒錢，材料端先從輻射下手](/blog/posts/taoyuan-a8-startup-ruomei-thermal/)
+- （二）環創源科技：把廢水變成資源，Pitch 要讓非專家聽得懂
+- [（三）宸祿科技：AI 雙鏡頭內視鏡，先 SaMD 再一次性鏡體](/blog/posts/taoyuan-a8-startup-chenlu-endoscopy/)
+- [（四）歐維克：Sensor Fusion 熱成像，跟標案 SI 合作](/blog/posts/taoyuan-a8-startup-awarek-thermal/)

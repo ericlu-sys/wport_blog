@@ -132,3 +132,4 @@ These sound harsh, but the spirit underneath is simple: **do not sell a dream. S
 - [(2) VC startup health-check Prompt](/blog/en/posts/startup-vc-health-check-prompt/)
 - [(3) The deck is only supporting cast. The founder is the main act](/blog/en/posts/ntutec-founder-soft-skills-beyond-deck/)
 - [(4) VCs follow deals for six months and up](/blog/en/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(5) Exits are not only IPOs, do not give away equity too fast, make your deck specific](/blog/en/posts/ntutec-license-equity-pitch-specificity/)

@@ -103,3 +103,4 @@ If you are preparing to meet a VC, the suggested order is: run the Prompt self-c
 - [(2) VC startup health-check Prompt](/blog/en/posts/startup-vc-health-check-prompt/)
 - [(3) The deck is secondary. The founder is the subject](/blog/en/posts/ntutec-founder-soft-skills-beyond-deck/)
 - [(4) VCs follow deals for six months and up](/blog/en/posts/ntutec-vc-follow-up-honesty-and-network/)
+- [(5) Exits are not only IPOs, do not give away equity too fast, make your deck specific](/blog/en/posts/ntutec-license-equity-pitch-specificity/)

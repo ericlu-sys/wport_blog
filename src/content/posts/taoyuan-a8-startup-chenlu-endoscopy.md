@@ -2,14 +2,29 @@
 title: "桃園 A8 看案筆記（三）｜宸祿科技：AI 雙鏡頭內視鏡，先 SaMD 再一次性鏡體"
 description: "台大創創邀請一起到桃園 A8 聽案，第三站宸祿科技：AI 醫療內視鏡輔助、三軍總 IRB、TFDA 審查中，以及 A8 團隊整體給我的成熟感。"
 publishDate: 2026-07-21
-tags: ["新創參訪", "桃園", "台大創創", "醫療器材", "AI 醫療"]
+tags: ["台大創創", "創業募資"]
 featured: false
-draft: true
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taoyuan-a8-chenlu-pitch.jpg"
+draft: false
+voice: "eric"
 ---
+
+## 一句話總結
+
+先用 SaMD 軟體進醫院 workflow 收第一筆錢，再靠一次性鏡體放量拉營收。三總 IRB 已過、TFDA 審查中，這是四家裡把「產品、法規、商模」三條線排得最整齊的一家。
+
+## 核心論點
+
+- **痛點具體**：大腸內視鏡會漏看病灶，AI 雙鏡頭同框比對是在補那一眼。
+- **順序想清楚了**：軟體先進場（門檻低、回饋快），耗材後放量（走量、recurring）。VC 比較好算路徑。
+- **法規有進度就不是概念簡報**：IRB 過了、TFDA 在審，講的是時程不是願景。
+- **他們知道臨床現場不是只有演算法**：會特地強調網路不能斷斷續續，這種話只有真的進過場域的人會講。
+
+## 我為什麼記這一家
 
 延續[（一）若美](/blog/posts/taoyuan-a8-startup-ruomei-thermal/)與[（二）環創源](/blog/posts/taoyuan-a8-startup-eith-wastewater/)，同場第三家，**四篇系列之（三）**：**宸祿科技股份有限公司**。
 
-若美偏材料、環創源偏廢水資源化，這家則是 **AI 醫療內視鏡輔助系統**。聽完我的筆記：產品路徑清楚、法規進度有交代、商模分階段，整體成熟度在 A8 這場裡很突出。
+若美偏材料、環創源偏廢水資源化，這家則是 **AI 醫療內視鏡輔助系統**。上一家我聽到後半段有點跟不上，這家反而是一路很好跟：一條線從痛點講到收錢，中間沒有岔開。
 
 ---
 
@@ -86,6 +101,8 @@ TFDA 審查中、IRB 已過、第一年示範醫院與支數為現場口述，�
 
 ## 這場 A8 的總心得（聽完四家）
 
+![台大創創與 WPORT 團隊在桃園 A8 聽四家新創 pitch](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taoyuan-a8-audience2.jpg)
+
 若美、環創源、宸祿、歐維克，四個完全不同的領域（材料散熱、廢水資源化、醫療內視鏡、熱成像 AIoT），但共同點是：**A8 這批團隊整體都很成熟。**
 
 不是只有簡報漂亮，而是大多能講到產品、客戶、法規或財務路徑；有的已經在談 IPO 與全球代理，有的還在補 pitch 節奏，但底層都像在**做實業或推上市**，不是概念發想型。
@@ -94,10 +111,9 @@ TFDA 審查中、IRB 已過、第一年示範醫院與支數為現場口述，�
 
 ---
 
-## 待補
+## 桃園 A8 看案系列（共四家）
 
-> **桃園 A8 看案系列（共四家）**  
-> [（一）若美](/blog/posts/taoyuan-a8-startup-ruomei-thermal/) · [（二）環創源](/blog/posts/taoyuan-a8-startup-eith-wastewater/) · （三）宸祿 · [（四）歐維克](/blog/posts/taoyuan-a8-startup-awarek-thermal/)  
-> TODO：宸祿現場照片／簡報
-
-四家草稿已齊，之後可逐篇潤稿、補圖、決定何時從 `draft: true` 轉正式發布。
+- [（一）若美科技：AI 散熱燒錢，材料端先從輻射下手](/blog/posts/taoyuan-a8-startup-ruomei-thermal/)
+- [（二）環創源科技：把廢水變成資源，Pitch 要讓非專家聽得懂](/blog/posts/taoyuan-a8-startup-eith-wastewater/)
+- （三）宸祿科技：AI 雙鏡頭內視鏡，先 SaMD 再一次性鏡體
+- [（四）歐維克：Sensor Fusion 熱成像，跟標案 SI 合作](/blog/posts/taoyuan-a8-startup-awarek-thermal/)

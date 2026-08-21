@@ -2,14 +2,31 @@
 title: "桃園 A8 看案筆記（四）｜歐維克：Sensor Fusion 熱成像，不造機器狗，跟標案 SI 合作"
 description: "台大創創邀請一起到桃園 A8 聽案，第四站歐維克（AWAREK）：主力是 sensor fusion 熱成像與 AI 告警，不自製無人機／機器狗，由打標案的 SI 整合導入。"
 publishDate: 2026-07-21
-tags: ["新創參訪", "桃園", "台大創創", "熱成像", "AIoT"]
+tags: ["台大創創", "創業募資"]
 featured: false
-draft: true
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taoyuan-a8-awarek-audience.jpg"
+draft: false
+voice: "eric"
 ---
+
+## 一句話總結
+
+歐維克不做機器狗、不做無人機，只做熱成像加 sensor fusion 那一層；要去打標案的 SI 需要這塊能力時，會回過頭來找他們。專心當零件，比從零建整機品牌輕得多。
+
+## 核心論點
+
+- **不做載具是策略，不是能力不足**：整機交給合作方，自己守住感測與判讀那一層。
+- **傳統監視器補不了溫度盲區**：可見光看不到過熱，火災前的高溫異常要靠熱成像。
+- **渠道是別人的標案**：SI 主動找上門，等於借整個標案生態系進場。
+- **VC 不只給錢**：Howard 現場說手邊有消防公司人脈可以介紹。這種具體的 intro，比「我們很看好你」值錢。
+
+## 我為什麼記這一家
 
 延續[桃園 A8 看案系列](/blog/posts/taoyuan-a8-startup-ruomei-thermal/)，同場第四家，**四篇系列之（四）**：**歐維克股份有限公司**（品牌 **AWAREK**）。
 
-前三篇為[若美（一）](/blog/posts/taoyuan-a8-startup-ruomei-thermal/)、[環創源（二）](/blog/posts/taoyuan-a8-startup-eith-wastewater/)、[宸祿（三）](/blog/posts/taoyuan-a8-startup-chenlu-endoscopy/)。這家切到 **AIoT ＋ 熱成像**，主力是 **sensor fusion**；應用場景含移動巡邏，但**自己不做機器狗、無人機**。
+前三篇為[若美（一）](/blog/posts/taoyuan-a8-startup-ruomei-thermal/)、[環創源（二）](/blog/posts/taoyuan-a8-startup-eith-wastewater/)、[宸祿（三）](/blog/posts/taoyuan-a8-startup-chenlu-endoscopy/)。
+
+我一開始也以為他們是做機器狗的。現場釐清之後才發現不是，而這個「不做什麼」的決定，就是這家最值得記的地方。
 
 ---
 
@@ -116,10 +133,15 @@ draft: true
 
 ---
 
-## 待補
+四家聽完，這場就收在合照。
 
-> **桃園 A8 看案系列（共四家）**  
-> [（一）若美](/blog/posts/taoyuan-a8-startup-ruomei-thermal/) · [（二）環創源](/blog/posts/taoyuan-a8-startup-eith-wastewater/) · [（三）宸祿](/blog/posts/taoyuan-a8-startup-chenlu-endoscopy/) · （四）歐維克  
-> TODO：歐維克現場照片／簡報
+![桃園 A8 看案結束後，台大創創與 WPORT 團隊在 A8 進駐企業牆前合影](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/wport-blog/taoyuan-a8-group.jpg)
 
-**本系列四家草稿已齊。** 若美（材料散熱）→ 環創源（廢水資源化）→ 宸祿（醫療內視鏡）→ 歐維克（熱成像 AIoT）。之後可逐篇潤稿與補圖。
+---
+
+## 桃園 A8 看案系列（共四家）
+
+- [（一）若美科技：AI 散熱燒錢，材料端先從輻射下手](/blog/posts/taoyuan-a8-startup-ruomei-thermal/)
+- [（二）環創源科技：把廢水變成資源，Pitch 要讓非專家聽得懂](/blog/posts/taoyuan-a8-startup-eith-wastewater/)
+- [（三）宸祿科技：AI 雙鏡頭內視鏡，先 SaMD 再一次性鏡體](/blog/posts/taoyuan-a8-startup-chenlu-endoscopy/)
+- （四）歐維克：Sensor Fusion 熱成像，跟標案 SI 合作
