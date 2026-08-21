@@ -280,6 +280,53 @@ npm run dev
 開啟 `http://localhost:3000` 確認文章顯示正常後再 commit。多語系文章請一併確認
 `http://localhost:3000/blog/en/posts/你的文章` 等四個語系路由。
 
+## Deployment（正式站怎麼上線）
+
+**push 到 `master` 就會自動部署，不需要手動做任何事。**
+
+`wport.me/blog` 由 **Cloudflare Workers static assets** 服務（Worker 名稱 `wport-blog`，
+在公司帳號「WPORT職航站」底下）。Cloudflare 的 **Workers Builds** 接著這個 GitHub repo，
+push 到 `master` 會自動 build 並部署，大約 **3 到 4 分鐘**。
+
+> ⚠️ **這個設定在 Cloudflare 後台，repo 裡看不到。**
+> `.github/workflows/` 是空的、`package.json` 沒有 deploy script、`wrangler.toml` 也只有
+> `name` 與 `[assets]`。所以光看 repo 會誤以為是純手動部署（實際踩過這個坑）。
+> 另外，push 完馬上去 curl 正式站會拿到 404，那是 build 還沒跑完，不是失敗，等幾分鐘再看。
+
+**不需要 GitHub Actions。** build 跑在 Cloudflare 那邊，不消耗 Actions 額度。
+也**不需要常駐的 `CLOUDFLARE_API_TOKEN`**，自動部署不經過 repo secrets。
+
+### 確認部署狀態
+
+```bash
+npx wrangler deployments list --name wport-blog
+```
+
+Dashboard：<https://dash.cloudflare.com/75b047576ec4742e0e6e7dac01966a46/workers/services/view/wport-blog/production>
+
+### 手動部署（緊急時才用）
+
+自動部署掛掉、或要在不 push 的情況下先推上去時：
+
+```bash
+npx wrangler whoami        # 必須是 ericlu@wport.me（WPORT職航站）
+npm run build
+npx wrangler deploy
+```
+
+⚠️ wrangler 本機**一次只綁一個 OAuth 登入**。若 `whoami` 顯示的是個人帳號，
+`wrangler deploy` 不會更新正式站，而是會在個人帳號底下**新建一個** `wport-blog` Worker。
+切換要 `npx wrangler logout && npx wrangler login`（`login` 會開瀏覽器，需人工授權）。
+
+`wport-blog` 是 **Worker**，不是 Pages，所以用 `wrangler deploy`，不要用 `wrangler pages deploy`。
+
+### 上線前的檢查
+
+```bash
+npm run check:i18n   # 已發布文章缺翻譯會是錯誤，會擋發布
+npm run build        # 確認每篇文章都有五個語系路由
+```
+
 ## Google CLI（Search Console / PageSpeed Insights）+ 追蹤 Key
 
 Blog 與主站共用 **`wport.me`**。認證方式依產品分開：

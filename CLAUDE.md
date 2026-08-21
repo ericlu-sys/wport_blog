@@ -61,6 +61,10 @@ Pre-commit hooks: husky + lint-staged runs `eslint --fix` on `*.{ts,tsx,astro}` 
   `voice` 是鏡像欄位，四個翻譯檔要跟原文一致。
 - **文章內的站內連結要帶語系前綴**：翻譯檔請用 `/blog/<lang>/posts/<slug>/`，讓讀者留在同一語系。若目標文章沒有該語系翻譯，才退回 `/blog/posts/<slug>/`。
 
+### Deployment
+
+- Pushing to `master` auto-deploys. Cloudflare **Workers Builds** watches this repo and builds + deploys `wport-blog` (Workers static assets, company account WPORT職航站) in about 3 to 4 minutes. The config lives in the Cloudflare dashboard, **not in this repo**: `.github/workflows/` is empty, there is no deploy script, and `wrangler.toml` only has `name` and `[assets]`. Do not conclude from the repo alone that deployment is manual, and do not add a GitHub Actions workflow for it. A 404 right after pushing means the build is still running. See README "Deployment" for manual deploy and the account-switching caveat.
+
 ### Environment
 
 - Node.js v22.14.0 (see `.nvmrc`).
