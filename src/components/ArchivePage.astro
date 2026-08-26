@@ -1,24 +1,33 @@
 ---
+import type { Page } from "astro";
 import BlogLayout from "@/layouts/BlogLayout.astro";
 import Topbar from "@/components/Topbar.astro";
 import { BASE_PATH, SITE_ORIGIN } from "@/lib/llms-content";
 import CoverImage from "@/components/CoverImage.astro";
-import { CANONICAL_TAGS, LEGACY_TAG_REDIRECTS } from "@/lib/tags";
 import { getPostViews, formatPostViews } from "@/lib/post-views";
 import { defaultLocale, type Locale } from "@/i18n/locales";
 import { dateLocaleFor, localizedPath, t } from "@/i18n/utils";
 import { translateTag } from "@/i18n/tags";
-import { getLanguageSwitcherHrefs, getPostsByLocale, viewsKeyForPost } from "@/lib/posts";
+import { tagHubPath } from "@/lib/hubs";
+import { tagSlug } from "@/lib/tags";
+import { getLanguageSwitcherHrefs, getPostsByLocale, getTagHubs, viewsKeyForPost, type PostMeta } from "@/lib/posts";
 
 interface Props {
   locale?: Locale;
+  page: Page<PostMeta>;
 }
 
-const { locale = defaultLocale } = Astro.props;
+const { locale = defaultLocale, page } = Astro.props;
 
-const postsMeta = await getPostsByLocale(locale);
-const posts = postsMeta.map((p) => p.entry);
+const postsMeta = page.data;
+const allPosts = await getPostsByLocale(locale);
 const languageHrefs = await getLanguageSwitcherHrefs(locale, { page: "archive" });
+
+// Pagination hrefs are built here rather than taken from `page.url`, so page 1
+// stays `/archive/` and every href carries the trailing slash the server
+// expects. See the note on withTrailingSlash in src/i18n/utils.ts.
+const pageHref = (n: number) => localizedPath(locale, n === 1 ? "/archive/" : `/archive/${n}/`);
+const currentPath = page.currentPage === 1 ? "/archive/" : `/archive/${page.currentPage}/`;
 
 const COVER_COLORS = [
   { hue: "#E0F5F3", accent: "#56C7BB" },
@@ -29,14 +38,15 @@ const COVER_COLORS = [
   { hue: "#FFF7ED", accent: "#F97316" },
 ];
 
-const usedTagSet = new Set(posts.flatMap((p) => p.data.tags ?? []));
-const archiveTags = CANONICAL_TAGS.filter((tag) => usedTagSet.has(tag));
+// Counted across the whole locale, not just this page, so the tag row is
+// identical on every page of the archive.
+const tagHubs = await getTagHubs(locale);
 
 const withBase = (path: string) => localizedPath(locale, path);
 const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
 ---
 
-<BlogLayout title={t(locale, "archive.title")} locale={locale} alternatePath="/archive">
+<BlogLayout title={t(locale, "archive.title")} locale={locale} alternatePath={currentPath}>
   <Topbar currentPage="archive" locale={locale} languageHrefs={languageHrefs} />
 
   <main class="archive-main">
@@ -92,21 +102,24 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
         />
       </div>
 
-      <div
-        class="archive-tag-row"
-        id="archive-tag-row"
-        data-canonical-tags={JSON.stringify(CANONICAL_TAGS)}
-        data-legacy-redirects={JSON.stringify(LEGACY_TAG_REDIRECTS)}
-      >
-        <button type="button" class="archive-tag-btn is-active" data-tag="">{t(locale, "archive.allTags")}</button>
+      <!--
+        These were buttons that filtered the grid client-side and pushed `?tag=`
+        into the URL, so every tag rendered the same page as far as Google was
+        concerned. They are links to real hub pages now.
+      -->
+      <nav class="archive-tag-row" id="archive-tag-row" aria-label={t(locale, "home.topics.title")}>
+        <a href={withBase("/archive/")} class="archive-tag-btn is-active" aria-current="page">
+          {t(locale, "archive.allTags")}
+        </a>
         {
-          archiveTags.map((tag) => (
-            <button type="button" class="archive-tag-btn" data-tag={tag}>
+          tagHubs.map(({ tag, count }) => (
+            <a href={tagHubPath(locale, tagSlug(tag))} class="archive-tag-btn">
               {translateTag(locale, tag)}
-            </button>
+              <span class="archive-tag-count">{count}</span>
+            </a>
           ))
         }
-      </div>
+      </nav>
     </div>
 
     <p id="archive-empty" class="archive-empty" hidden>{t(locale, "archive.empty")}</p>
@@ -173,6 +186,49 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
         })
       }
     </ul>
+
+    {
+      page.lastPage > 1 && (
+        <nav class="archive-pagination" aria-label={t(locale, "nav.archive")}>
+          {page.currentPage > 1 ? (
+            <a href={pageHref(page.currentPage - 1)} class="archive-page-link" rel="prev">
+              {t(locale, "archive.prev")}
+            </a>
+          ) : (
+            <span class="archive-page-link is-disabled">{t(locale, "archive.prev")}</span>
+          )}
+
+          <ol class="archive-page-numbers">
+            {Array.from({ length: page.lastPage }, (_, i) => i + 1).map((n) => (
+              <li>
+                {n === page.currentPage ? (
+                  <span class="archive-page-number is-current" aria-current="page">
+                    {n}
+                  </span>
+                ) : (
+                  <a href={pageHref(n)} class="archive-page-number">
+                    {n}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ol>
+
+          {page.currentPage < page.lastPage ? (
+            <a href={pageHref(page.currentPage + 1)} class="archive-page-link" rel="next">
+              {t(locale, "archive.next")}
+            </a>
+          ) : (
+            <span class="archive-page-link is-disabled">{t(locale, "archive.next")}</span>
+          )}
+        </nav>
+      )
+    }
+
+    <p class="archive-page-status">
+      {t(locale, "archive.pageLabel", { n: page.currentPage, total: page.lastPage })} ·
+      {t(locale, "bento.count", { n: allPosts.length })}
+    </p>
   </main>
 </BlogLayout>
 
@@ -357,6 +413,65 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
     }
   }
 
+  .archive-tag-count {
+    margin-left: 6px;
+    font-size: 11px;
+    color: var(--color-text-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .archive-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 48px;
+  }
+  .archive-page-link {
+    font-size: 14px;
+    color: #0d7c70;
+    text-decoration: none;
+  }
+  .archive-page-link.is-disabled {
+    color: var(--color-text-faint);
+  }
+  .archive-page-numbers {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .archive-page-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #444;
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+  }
+  .archive-page-number:hover {
+    background: #f4f4f4;
+  }
+  .archive-page-number.is-current {
+    background: #eaf8f7;
+    color: #0d7c70;
+    font-weight: 600;
+  }
+  .archive-page-status {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--color-text-faint);
+  }
+
   .archive-empty {
     color: var(--fg-meta);
     font-size: 15px;
@@ -509,25 +624,12 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
 </style>
 
 <script is:inline>
+  // Tag filtering moved to real hub pages under /tags/, so all that is left
+  // here is free-text search over the cards on the current page.
   const searchInput = document.getElementById("archive-search");
-  const tagRow = document.getElementById("archive-tag-row");
   const emptyState = document.getElementById("archive-empty");
   const cards = Array.from(document.querySelectorAll(".archive-card-item"));
 
-  let canonicalTags = [];
-  let legacyTagRedirects = {};
-
-  if (tagRow) {
-    try {
-      canonicalTags = JSON.parse(tagRow.getAttribute("data-canonical-tags") || "[]");
-      legacyTagRedirects = JSON.parse(tagRow.getAttribute("data-legacy-redirects") || "{}");
-    } catch {
-      canonicalTags = [];
-      legacyTagRedirects = {};
-    }
-  }
-
-  let activeTags = [];
   let debounceTimer = 0;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const CARD_TRANSITION_MS = prefersReducedMotion ? 0 : 200;
@@ -569,15 +671,11 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
   }
 
   function cardMatches(card, query) {
+    if (!query) return true;
     const title = (card.getAttribute("data-title") ?? "").toLowerCase();
     const description = (card.getAttribute("data-description") ?? "").toLowerCase();
     const tags = (card.getAttribute("data-tags") ?? "").toLowerCase();
-
-    const cardTags = tags.split(",");
-    const matchTag = activeTags.length === 0 || activeTags.some((tag) => cardTags.includes(tag.toLowerCase()));
-    const matchSearch = !query || title.includes(query) || description.includes(query) || tags.includes(query);
-
-    return matchTag && matchSearch;
+    return title.includes(query) || description.includes(query) || tags.includes(query);
   }
 
   function applyFilters() {
@@ -596,59 +694,11 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
   }
 
   function syncUrl(query) {
-    const params = new URLSearchParams();
-    if (activeTags.length > 0) params.set("tag", activeTags.join(","));
-    if (query) params.set("q", query);
-    const next = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname;
+    const next = query ? `${window.location.pathname}?q=${encodeURIComponent(query)}` : window.location.pathname;
     window.history.replaceState(null, "", next);
   }
 
-  function setActiveTagButtons(tags) {
-    if (!tagRow) return;
-    tagRow.querySelectorAll(".archive-tag-btn").forEach((btn) => {
-      const btnTag = btn.getAttribute("data-tag") ?? "";
-      // data-tag="" 是「全部」，只有在沒有任何標籤被選時亮起
-      btn.classList.toggle("is-active", btnTag ? tags.includes(btnTag) : tags.length === 0);
-    });
-  }
-
-  function resolveTag(tag) {
-    if (!tag) {
-      return null;
-    }
-
-    if (canonicalTags.includes(tag)) {
-      return tag;
-    }
-
-    return legacyTagRedirects[tag] ?? tag;
-  }
-
-  const params = new URLSearchParams(window.location.search);
-  const urlTag = params.get("tag");
-  const urlSearch = params.get("q") ?? "";
-
-  // `?tag=` 支援逗號分隔的多個標籤（首頁分類卡片會這樣帶），語意是「任一命中」
-  const resolvedTags = [];
-  for (const raw of (urlTag ?? "").split(",")) {
-    const resolved = resolveTag(raw.trim());
-    if (!resolved || resolvedTags.includes(resolved)) continue;
-    if (tagRow?.querySelector(`[data-tag="${CSS.escape(resolved)}"]`)) {
-      resolvedTags.push(resolved);
-    }
-  }
-
-  if (resolvedTags.length > 0) {
-    activeTags = resolvedTags;
-    setActiveTagButtons(activeTags);
-
-    if (urlTag !== activeTags.join(",")) {
-      const nextParams = new URLSearchParams(window.location.search);
-      nextParams.set("tag", activeTags.join(","));
-      window.history.replaceState(null, "", `${window.location.pathname}?${nextParams.toString()}`);
-    }
-  }
-
+  const urlSearch = new URLSearchParams(window.location.search).get("q") ?? "";
   if (searchInput instanceof HTMLInputElement && urlSearch) {
     searchInput.value = urlSearch;
   }
@@ -661,20 +711,6 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
       applyFilters();
       syncUrl(getSearchQuery());
     }, 180);
-  });
-
-  tagRow?.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLButtonElement) || !target.classList.contains("archive-tag-btn")) {
-      return;
-    }
-
-    const nextTag = target.getAttribute("data-tag") ?? "";
-    const isOnlyActive = activeTags.length === 1 && activeTags[0] === nextTag;
-    activeTags = !nextTag || isOnlyActive ? [] : [nextTag];
-    setActiveTagButtons(activeTags);
-    applyFilters();
-    syncUrl(getSearchQuery());
   });
 </script>
 

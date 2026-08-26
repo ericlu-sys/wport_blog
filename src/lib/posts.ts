@@ -1,6 +1,8 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import { defaultLocale, locales, type Locale } from "@/i18n/locales";
 import { localizedPath, parsePostEntryId, postPath } from "@/i18n/utils";
+import { CANONICAL_TAGS, canonicalTagsForPost, type CanonicalTag } from "@/lib/tags";
+import type { HomeCategory } from "@/lib/home-categories";
 
 export type PostEntry = CollectionEntry<"posts">;
 
@@ -65,6 +67,36 @@ export async function getLanguageSwitcherHrefs(
   }
   void locale;
   return hrefs;
+}
+
+/** Posts in `locale` that belong to a canonical tag hub, newest first. */
+export async function getPostsForTag(locale: Locale, tag: CanonicalTag): Promise<PostMeta[]> {
+  const posts = await getPostsByLocale(locale);
+  return posts.filter((meta) => canonicalTagsForPost(meta.entry.data.tags).includes(tag));
+}
+
+/** Every canonical tag that has at least one published post in `locale`. */
+export async function getTagHubs(locale: Locale): Promise<{ tag: CanonicalTag; count: number }[]> {
+  const posts = await getPostsByLocale(locale);
+  const counts = new Map<CanonicalTag, number>();
+  for (const meta of posts) {
+    for (const tag of canonicalTagsForPost(meta.entry.data.tags)) {
+      counts.set(tag, (counts.get(tag) ?? 0) + 1);
+    }
+  }
+  return CANONICAL_TAGS.filter((tag) => counts.has(tag)).map((tag) => ({
+    tag,
+    count: counts.get(tag) ?? 0,
+  }));
+}
+
+/** Posts in `locale` matching any of a home category's tags, newest first. */
+export async function getPostsForTopic(locale: Locale, category: HomeCategory): Promise<PostMeta[]> {
+  const posts = await getPostsByLocale(locale);
+  return posts.filter((meta) => {
+    const tags = meta.entry.data.tags ?? [];
+    return category.filterTags.some((tag) => tags.includes(tag));
+  });
 }
 
 export function viewsKeyForPost(meta: PostMeta): string {

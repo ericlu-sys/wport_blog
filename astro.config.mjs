@@ -23,7 +23,9 @@ const lastmodByUrl = buildLastmodMap();
 // Submitting only the zh-TW posts concentrates that budget until they start
 // getting picked up; the translations stay discoverable through hreflang and
 // the locale archives, and belong back in the sitemap once zh-TW is indexed.
-const TRANSLATED_POST_URL = /\/blog\/(en|id|vi|th)\/posts\//;
+// Same reasoning applies to the translated tag and topic hubs: they mirror the
+// zh-TW hubs and only exist to serve readers who already switched language.
+const TRANSLATED_URL = /\/blog\/(en|id|vi|th)\/(posts|tags|topics)\//;
 
 // https://astro.build/config
 export default defineConfig({
@@ -33,7 +35,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) => !TRANSLATED_POST_URL.test(page),
+      filter: (page) => !TRANSLATED_URL.test(page),
       serialize(item) {
         const lastmod = lastmodByUrl.get(item.url);
         return lastmod ? { ...item, lastmod } : item;

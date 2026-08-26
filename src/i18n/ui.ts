@@ -57,6 +57,13 @@ export type UiKey =
   | "archive.searchPlaceholder"
   | "archive.empty"
   | "archive.allTags"
+  | "hub.otherTopics"
+  | "hub.description"
+  | "home.recent.title"
+  | "home.topics.title"
+  | "archive.pageLabel"
+  | "archive.prev"
+  | "archive.next"
   | "post.back"
   | "post.followTitle"
   | "post.followDesc"
@@ -170,6 +177,13 @@ const zhTW: UiDict = {
   "archive.searchPlaceholder": "搜尋文章…",
   "archive.empty": "找不到符合的文章。",
   "archive.allTags": "全部",
+  "hub.otherTopics": "其他主題",
+  "hub.description": "{tag}：這個主題底下的所有文章。",
+  "home.recent.title": "最新文章",
+  "home.topics.title": "依標籤瀏覽",
+  "archive.pageLabel": "第 {n} 頁，共 {total} 頁",
+  "archive.prev": "← 上一頁",
+  "archive.next": "下一頁 →",
   "post.back": "返回文章列表",
   "post.followTitle": "追蹤 WPORT，不錯過每一場活動",
   "post.followDesc": "最新活動資訊、AI 工具教學、在台求職攻略，第一時間送到你面前。",
@@ -261,11 +275,13 @@ const enUS: UiDict = {
   "bento.aria": "Browse posts by topic",
   "bento.label": "EXPLORE",
   "bento.title": "Find posts by topic",
-  "bento.subtitle": "From staying in Taiwan and AI hands-on to fundraising and WPORT features, jump straight to what you need.",
+  "bento.subtitle":
+    "From staying in Taiwan and AI hands-on to fundraising and WPORT features, jump straight to what you need.",
   "bento.cta": "Explore →",
   "bento.count": "{n} posts",
   "bento.overseasStudents.label": "Overseas student guide",
-  "bento.overseasStudents.description": "Clear explainers on staying and working in Taiwan so regulations feel less overwhelming.",
+  "bento.overseasStudents.description":
+    "Clear explainers on staying and working in Taiwan so regulations feel less overwhelming.",
   "bento.overseasStudents.coverAlt": "Cover for the overseas student guide section, career and regulation events",
   "bento.ai.label": "AI skills",
   "bento.ai.description": "Break down AI tools and workflows that level up your career skills.",
@@ -283,6 +299,13 @@ const enUS: UiDict = {
   "archive.searchPlaceholder": "Search posts…",
   "archive.empty": "No matching posts found.",
   "archive.allTags": "All",
+  "hub.otherTopics": "Other topics",
+  "hub.description": "{tag}: every post in this topic.",
+  "home.recent.title": "Latest posts",
+  "home.topics.title": "Browse by tag",
+  "archive.pageLabel": "Page {n} of {total}",
+  "archive.prev": "← Previous",
+  "archive.next": "Next →",
   "post.back": "Back to posts",
   "post.followTitle": "Follow WPORT so you never miss an event",
   "post.followDesc": "Event updates, AI tool guides, and job-search tips for staying in Taiwan, delivered first.",
@@ -374,11 +397,13 @@ const idID: UiDict = {
   "bento.aria": "Jelajahi artikel berdasarkan topik",
   "bento.label": "EXPLORE",
   "bento.title": "Temukan artikel berdasarkan topik",
-  "bento.subtitle": "Dari tinggal di Taiwan dan praktik AI hingga penggalangan dana serta fitur WPORT, langsung ke yang Anda butuhkan.",
+  "bento.subtitle":
+    "Dari tinggal di Taiwan dan praktik AI hingga penggalangan dana serta fitur WPORT, langsung ke yang Anda butuhkan.",
   "bento.cta": "Masuk ke topik →",
   "bento.count": "{n} artikel",
   "bento.overseasStudents.label": "Panduan mahasiswa luar negeri",
-  "bento.overseasStudents.description": "Penjelasan jelas tentang tinggal dan bekerja di Taiwan agar regulasi tidak membingungkan.",
+  "bento.overseasStudents.description":
+    "Penjelasan jelas tentang tinggal dan bekerja di Taiwan agar regulasi tidak membingungkan.",
   "bento.overseasStudents.coverAlt": "Sampul panduan mahasiswa luar negeri, acara karier dan regulasi",
   "bento.ai.label": "Keterampilan AI",
   "bento.ai.description": "Uraikan alat dan alur AI yang meningkatkan kemampuan karier Anda.",
@@ -396,6 +421,13 @@ const idID: UiDict = {
   "archive.searchPlaceholder": "Cari artikel…",
   "archive.empty": "Tidak ada artikel yang cocok.",
   "archive.allTags": "Semua",
+  "hub.otherTopics": "Topik lain",
+  "hub.description": "{tag}: semua artikel dalam topik ini.",
+  "home.recent.title": "Artikel terbaru",
+  "home.topics.title": "Telusuri berdasarkan tag",
+  "archive.pageLabel": "Halaman {n} dari {total}",
+  "archive.prev": "← Sebelumnya",
+  "archive.next": "Berikutnya →",
   "post.back": "Kembali ke daftar artikel",
   "post.followTitle": "Ikuti WPORT agar tidak ketinggalan acara",
   "post.followDesc": "Info acara, panduan AI, dan tips mencari kerja di Taiwan, langsung ke Anda.",
@@ -509,6 +541,13 @@ const viVN: UiDict = {
   "archive.searchPlaceholder": "Tìm bài viết…",
   "archive.empty": "Không tìm thấy bài viết phù hợp.",
   "archive.allTags": "Tất cả",
+  "hub.otherTopics": "Chủ đề khác",
+  "hub.description": "{tag}: tất cả bài viết trong chủ đề này.",
+  "home.recent.title": "Bài viết mới nhất",
+  "home.topics.title": "Duyệt theo thẻ",
+  "archive.pageLabel": "Trang {n} / {total}",
+  "archive.prev": "← Trước",
+  "archive.next": "Sau →",
   "post.back": "Quay lại danh sách bài viết",
   "post.followTitle": "Theo dõi WPORT để không bỏ lỡ sự kiện",
   "post.followDesc": "Thông tin sự kiện, hướng dẫn AI và mẹo tìm việc tại Đài Loan, đến sớm với bạn.",
@@ -600,7 +639,8 @@ const thTH: UiDict = {
   "bento.aria": "สำรวจบทความตามหัวข้อ",
   "bento.label": "EXPLORE",
   "bento.title": "ค้นหาบทความตามหัวข้อ",
-  "bento.subtitle": "ตั้งแต่การอยู่ต่อในไต้หวัน งาน AI ภาคปฏิบัติ ไปจนถึงการระดมทุนและฟีเจอร์ WPORT ไปที่สิ่งที่คุณต้องการได้ทันที",
+  "bento.subtitle":
+    "ตั้งแต่การอยู่ต่อในไต้หวัน งาน AI ภาคปฏิบัติ ไปจนถึงการระดมทุนและฟีเจอร์ WPORT ไปที่สิ่งที่คุณต้องการได้ทันที",
   "bento.cta": "เข้าสู่หมวด →",
   "bento.count": "{n} บทความ",
   "bento.overseasStudents.label": "คู่มือนักศึกษาต่างชาติ",
@@ -622,6 +662,13 @@ const thTH: UiDict = {
   "archive.searchPlaceholder": "ค้นหาบทความ…",
   "archive.empty": "ไม่พบบทความที่ตรงกัน",
   "archive.allTags": "ทั้งหมด",
+  "hub.otherTopics": "หัวข้ออื่น",
+  "hub.description": "{tag}: บทความทั้งหมดในหัวข้อนี้",
+  "home.recent.title": "บทความล่าสุด",
+  "home.topics.title": "เรียกดูตามแท็ก",
+  "archive.pageLabel": "หน้า {n} จาก {total}",
+  "archive.prev": "← ก่อนหน้า",
+  "archive.next": "ถัดไป →",
   "post.back": "กลับไปรายการบทความ",
   "post.followTitle": "ติดตาม WPORT เพื่อไม่พลาดกิจกรรม",
   "post.followDesc": "อัปเดตกิจกรรม คู่มือ AI และเคล็ดลับหางานในไต้หวัน ส่งถึงคุณก่อนใคร",

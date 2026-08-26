@@ -1,0 +1,253 @@
+---
+import BlogLayout from "@/layouts/BlogLayout.astro";
+import Topbar from "@/components/Topbar.astro";
+import { defaultLocale, type Locale } from "@/i18n/locales";
+import { dateLocaleFor, localizedPath, t } from "@/i18n/utils";
+import { translateTag } from "@/i18n/tags";
+import type { PostMeta } from "@/lib/posts";
+import type { HubSibling } from "@/lib/hub-types";
+
+interface Props {
+  locale?: Locale;
+  /** Display name of this hub, already translated. */
+  label: string;
+  description: string;
+  posts: PostMeta[];
+  siblings: HubSibling[];
+  /** Logical path without locale prefix, e.g. `/tags/overseas-students/`. */
+  alternatePath: string;
+  languageHrefs?: Partial<Record<Locale, string>>;
+}
+
+const { locale = defaultLocale, label, description, posts, siblings, alternatePath, languageHrefs = {} } = Astro.props;
+
+const withBase = (path: string) => localizedPath(locale, path);
+---
+
+<BlogLayout
+  title={label}
+  description={description}
+  locale={locale}
+  alternatePath={alternatePath}
+  tags={posts.flatMap((meta) => meta.entry.data.tags ?? []).slice(0, 10)}
+>
+  <Topbar currentPage="archive" locale={locale} languageHrefs={languageHrefs} />
+
+  <main class="hub-main">
+    <header class="hub-header">
+      <a href={withBase("/archive/")} class="hub-back">{t(locale, "post.back")}</a>
+      <h1 class="hub-title">{label}</h1>
+      <p class="hub-subtitle">
+        {description}
+        <span class="hub-count">{t(locale, "bento.count", { n: posts.length })}</span>
+      </p>
+    </header>
+
+    {
+      posts.length === 0 ? (
+        <p class="hub-empty">{t(locale, "home.empty")}</p>
+      ) : (
+        <ul class="hub-list">
+          {posts.map((meta) => (
+            <li>
+              <a href={withBase(`/posts/${meta.baseSlug}/`)} class="hub-item">
+                <span class="hub-item-title">{meta.entry.data.title}</span>
+                <span class="hub-item-desc">{meta.entry.data.description}</span>
+                <span class="hub-item-meta">
+                  {(meta.entry.data.tags ?? []).slice(0, 3).map((tag: string) => (
+                    <span class="hub-item-tag">{translateTag(locale, tag)}</span>
+                  ))}
+                  <time datetime={meta.entry.data.publishDate.toISOString()} class="hub-item-date">
+                    {meta.entry.data.publishDate.toLocaleDateString(dateLocaleFor(locale), {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    <!--
+      Hubs link to each other so Googlebot can walk the whole taxonomy from any
+      one of them, instead of having to return to the home page each time.
+    -->
+    <nav class="hub-siblings" aria-label={t(locale, "hub.otherTopics")}>
+      <h2 class="hub-siblings-title">{t(locale, "hub.otherTopics")}</h2>
+      <ul class="hub-siblings-list">
+        {
+          siblings.map((sibling) => (
+            <li>
+              <a
+                href={sibling.href}
+                class:list={["hub-sibling", sibling.isCurrent && "is-current"]}
+                aria-current={sibling.isCurrent ? "page" : undefined}
+              >
+                {sibling.label}
+                <span class="hub-sibling-count">{sibling.count}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a href={withBase("/archive/")} class="hub-all-link">{t(locale, "home.cta.archive")}</a>
+    </nav>
+  </main>
+</BlogLayout>
+
+<style is:global>
+  .hub-main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  .hub-back {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+  .hub-back:hover {
+    color: #0d7c70;
+  }
+  .hub-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2e2e2e;
+    line-height: 1.3;
+    font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+  }
+  .hub-subtitle {
+    margin-top: 8px;
+    font-size: 15px;
+    color: var(--color-text-muted);
+  }
+  .hub-count {
+    color: var(--color-text-faint);
+  }
+  .hub-empty {
+    color: var(--color-text-muted);
+    font-size: 15px;
+  }
+  .hub-list {
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 0;
+    border-top: 1px solid #f0f0f0;
+  }
+  .hub-item {
+    display: block;
+    padding: 18px 0;
+    border-bottom: 1px solid #f0f0f0;
+    text-decoration: none;
+  }
+  .hub-item-title {
+    display: block;
+    font-size: 17px;
+    font-weight: 600;
+    color: #2e2e2e;
+    line-height: 1.5;
+  }
+  .hub-item:hover .hub-item-title {
+    color: #0d7c70;
+  }
+  .hub-item-desc {
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .hub-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .hub-item-tag {
+    font-size: 11px;
+    color: #0d7c70;
+    background: #eaf8f7;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  .hub-item-date {
+    font-size: 12px;
+    color: var(--color-text-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hub-siblings {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .hub-siblings-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-bottom: 14px;
+    font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+  }
+  .hub-siblings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hub-sibling {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 6px 14px;
+    border: 1px solid #e6e6e6;
+    border-radius: 999px;
+    font-size: 13px;
+    color: #444;
+    text-decoration: none;
+    transition:
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+  .hub-sibling:hover {
+    border-color: #56c7bb;
+    color: #0d7c70;
+  }
+  .hub-sibling.is-current {
+    background: #eaf8f7;
+    border-color: #56c7bb;
+    color: #0d7c70;
+    font-weight: 600;
+  }
+  .hub-sibling-count {
+    font-size: 11px;
+    color: var(--color-text-faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .hub-all-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0d7c70;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .hub-title {
+      font-size: 26px;
+    }
+  }
+</style>

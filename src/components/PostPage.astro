@@ -7,20 +7,11 @@ import { getCoverImageUrls } from "@/lib/cover-image";
 import { getPostViews, formatPostViews } from "@/lib/post-views";
 import { getJobsConfig } from "@/lib/analytics";
 import { locales, type Locale } from "@/i18n/locales";
-import {
-  dateLocaleFor,
-  localizedCanonicalUrl,
-  localizedPath,
-  postCanonicalUrl,
-  t,
-} from "@/i18n/utils";
+import { dateLocaleFor, localizedCanonicalUrl, localizedPath, postCanonicalUrl, t } from "@/i18n/utils";
 import { translateTag } from "@/i18n/tags";
-import {
-  getLanguageSwitcherHrefs,
-  getPostsByLocale,
-  type PostMeta,
-  viewsKeyForPost,
-} from "@/lib/posts";
+import { tagHubPath } from "@/lib/hubs";
+import { canonicalTagsForPost, tagSlug } from "@/lib/tags";
+import { getLanguageSwitcherHrefs, getPostsByLocale, type PostMeta, viewsKeyForPost } from "@/lib/posts";
 
 interface Props {
   postMeta: PostMeta;
@@ -60,6 +51,7 @@ const shareUrlEncoded = encodeURIComponent(shareUrl);
 const shareTitle = encodeURIComponent(post.data.title);
 const shareText = encodeURIComponent(`${post.data.title}｜Wport Blog`);
 const withBase = (path: string) => localizedPath(locale, path);
+const hubTags = canonicalTagsForPost(post.data.tags).slice(0, 4);
 
 const rawMdPath = `/blog/posts/${baseSlug}.md`;
 const rawMdUrl = `https://wport.me/blog/posts/${baseSlug}.md`;
@@ -71,9 +63,12 @@ const jobKeywords = ((post.data as { jobKeywords?: string[] }).jobKeywords ?? []
 
 const languageHrefs = await getLanguageSwitcherHrefs(locale, { page: "post", baseSlug });
 const alternateUrls = Object.fromEntries(
-  locales.map((loc) => [loc, languageHrefs[loc].includes(`/posts/${baseSlug}`)
-    ? postCanonicalUrl(loc, baseSlug)
-    : localizedCanonicalUrl(loc, "/")])
+  locales.map((loc) => [
+    loc,
+    languageHrefs[loc].includes(`/posts/${baseSlug}`)
+      ? postCanonicalUrl(loc, baseSlug)
+      : localizedCanonicalUrl(loc, "/"),
+  ])
 ) as Record<Locale, string>;
 
 const clientVars = {
@@ -181,14 +176,18 @@ const postViews = getPostViews(viewsKeyForPost(postMeta));
       <!-- 主內容 -->
       <article>
         <header class="post-header">
+          <!--
+            Chips point at the canonical tag hub, so a post tagged with a legacy
+            name still links somewhere real. They used to point at
+            /archive?tag=<name>, which was the archive page filtered by JS.
+          -->
           <div class="post-tags">
             {
-              post.data.tags &&
-                post.data.tags.slice(0, 4).map((tag: string) => (
-                  <a href={`${withBase("/archive")}?tag=${encodeURIComponent(tag)}`} class="tag">
-                    {translateTag(locale, tag)}
-                  </a>
-                ))
+              hubTags.map((tag) => (
+                <a href={tagHubPath(locale, tagSlug(tag))} class="tag">
+                  {translateTag(locale, tag)}
+                </a>
+              ))
             }
           </div>
           <h1 class="post-title">
@@ -350,7 +349,12 @@ const postViews = getPostViews(viewsKeyForPost(postMeta));
         <div class="sidebar-card" id="ai-copy-panel">
           <div class="sidebar-label sidebar-section-label">{t(locale, "post.aiCopy.title")}</div>
           <div class="ai-copy-body">
-            <div class="ai-copy-segment" role="tablist" aria-label={t(locale, "post.aiCopy.formatAria")} data-active="md">
+            <div
+              class="ai-copy-segment"
+              role="tablist"
+              aria-label={t(locale, "post.aiCopy.formatAria")}
+              data-active="md"
+            >
               <span class="ai-copy-segment-indicator" aria-hidden="true"></span>
               <button
                 type="button"
@@ -518,14 +522,24 @@ const postViews = getPostViews(viewsKeyForPost(postMeta));
                 ></path>
               </svg>
             </a>
-            <button class="share-btn" id="share-instagram-btn" data-share-platform="instagram" title={t(locale, "post.share.instagram")}>
+            <button
+              class="share-btn"
+              id="share-instagram-btn"
+              data-share-platform="instagram"
+              title={t(locale, "post.share.instagram")}
+            >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm8.2 1.8H8A4.2 4.2 0 0 0 3.8 8v8a4.2 4.2 0 0 0 4.2 4.2h8a4.2 4.2 0 0 0 4.2-4.2V8A4.2 4.2 0 0 0 16 3.8zm-4 3.1a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2zm0 1.8a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6zm5.6-.9a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"
                 ></path>
               </svg>
             </button>
-            <button class="share-btn" id="copy-link-btn" data-share-platform="copy_link" title={t(locale, "post.share.copyLink")}>
+            <button
+              class="share-btn"
+              id="copy-link-btn"
+              data-share-platform="copy_link"
+              title={t(locale, "post.share.copyLink")}
+            >
               <svg
                 width="14"
                 height="14"
@@ -1506,10 +1520,7 @@ const postViews = getPostViews(viewsKeyForPost(postMeta));
 
   function updateProgress() {
     const el = document.documentElement;
-    const pct =
-      el.scrollHeight - el.clientHeight > 0
-        ? (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100
-        : 0;
+    const pct = el.scrollHeight - el.clientHeight > 0 ? (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100 : 0;
     const w = pct.toFixed(1) + "%";
     if (sidebarFill) sidebarFill.style.width = w;
     if (progressPct) progressPct.textContent = Math.round(pct) + "%";

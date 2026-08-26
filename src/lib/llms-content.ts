@@ -1,5 +1,5 @@
 import type { CollectionEntry } from "astro:content";
-import { HOME_CATEGORIES, getCategoryTagParam } from "@/lib/home-categories";
+import { HOME_CATEGORIES } from "@/lib/home-categories";
 
 export const SITE_ORIGIN = "https://wport.me";
 export const BASE_PATH = "/blog";
@@ -185,9 +185,8 @@ export function buildLlmsTxt(posts: CollectionEntry<"posts">[]): string {
   lines.push("## Topic Clusters");
   lines.push("");
   for (const category of HOME_CATEGORIES) {
-    const tag = getCategoryTagParam(category);
-    const archiveUrl = `${SITE_ORIGIN}${BASE_PATH}/archive/?tag=${encodeURIComponent(tag)}`;
-    lines.push(`- **${category.label}** (${category.eyebrow}): ${category.description} → ${archiveUrl}`);
+    const topicUrl = `${SITE_ORIGIN}${BASE_PATH}/topics/${category.id}/`;
+    lines.push(`- **${category.label}** (${category.eyebrow}): ${category.description} → ${topicUrl}`);
   }
   lines.push("");
   lines.push("## Quick Answers for AI Assistants");

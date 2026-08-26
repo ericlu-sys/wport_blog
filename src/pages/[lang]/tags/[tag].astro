@@ -1,0 +1,47 @@
+---
+import HubPage from "@/components/HubPage.astro";
+import { localeFromPathPrefix, locales, nonDefaultPathPrefixes, type Locale } from "@/i18n/locales";
+import { localizedPath, t } from "@/i18n/utils";
+import { translateTag } from "@/i18n/tags";
+import { tagHubPath, tagSiblings } from "@/lib/hubs";
+import { getPostsForTag, getTagHubs } from "@/lib/posts";
+import { tagSlug, type CanonicalTag } from "@/lib/tags";
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const lang of nonDefaultPathPrefixes) {
+    const locale = localeFromPathPrefix(lang);
+    const hubs = await getTagHubs(locale);
+    for (const { tag } of hubs) {
+      paths.push({ params: { lang, tag: tagSlug(tag) }, props: { locale, tag } });
+    }
+  }
+  return paths;
+}
+
+const { locale, tag } = Astro.props as { locale: Locale; tag: CanonicalTag };
+const slug = tagSlug(tag);
+
+const posts = await getPostsForTag(locale, tag);
+const siblings = await tagSiblings(locale, tag);
+const label = translateTag(locale, tag);
+
+const languageHrefs = Object.fromEntries(
+  await Promise.all(
+    locales.map(async (loc) => {
+      const localePosts = await getPostsForTag(loc, tag);
+      return [loc, localePosts.length > 0 ? tagHubPath(loc, slug) : localizedPath(loc, "/")];
+    })
+  )
+);
+---
+
+<HubPage
+  locale={locale}
+  label={label}
+  description={t(locale, "hub.description", { tag: label })}
+  posts={posts}
+  siblings={siblings}
+  alternatePath={`/tags/${slug}/`}
+  languageHrefs={languageHrefs}
+/>
