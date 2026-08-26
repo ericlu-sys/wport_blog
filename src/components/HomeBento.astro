@@ -1,12 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { getCoverImageUrls } from "@/lib/cover-image";
-import {
-  HOME_CATEGORIES,
-  getCategoryArchiveHref,
-  getPostsForCategory,
-  type HomeCategoryId,
-} from "@/lib/home-categories";
+import { HOME_CATEGORIES, getCategoryHref, getPostsForCategory, type HomeCategoryId } from "@/lib/home-categories";
 import { defaultLocale, type Locale } from "@/i18n/locales";
 import { t, type UiKey } from "@/i18n/utils";
 
@@ -18,10 +13,7 @@ interface Props {
 
 const { posts, withBase, locale = defaultLocale } = Astro.props;
 
-const categoryKeys: Record<
-  HomeCategoryId,
-  { label: UiKey; description: UiKey; coverAlt: UiKey }
-> = {
+const categoryKeys: Record<HomeCategoryId, { label: UiKey; description: UiKey; coverAlt: UiKey }> = {
   "overseas-students": {
     label: "bento.overseasStudents.label",
     description: "bento.overseasStudents.description",
@@ -49,7 +41,7 @@ const cards = HOME_CATEGORIES.map((category) => {
   const count = getPostsForCategory(posts, category).length;
   return {
     category,
-    href: getCategoryArchiveHref(category, withBase),
+    href: getCategoryHref(category, withBase),
     label: t(locale, keys.label),
     description: t(locale, keys.description),
     coverAlt: t(locale, keys.coverAlt),
@@ -70,10 +62,7 @@ const cards = HOME_CATEGORIES.map((category) => {
     <div class="bento-grid">
       {
         cards.map(({ category, href, label, description, coverAlt, countLabel, cover }) => (
-          <a
-            href={href}
-            class:list={["bento-card", `bento-card--${category.size}`, `bento-card--${category.id}`]}
-          >
+          <a href={href} class:list={["bento-card", `bento-card--${category.size}`, `bento-card--${category.id}`]}>
             <div class="bento-card__media">
               <img
                 src={cover.default}

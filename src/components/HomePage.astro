@@ -10,7 +10,13 @@ import { getPostViews, formatPostViews } from "@/lib/post-views";
 import { defaultLocale, type Locale } from "@/i18n/locales";
 import { dateLocaleFor, localizedPath, t } from "@/i18n/utils";
 import { translateTag } from "@/i18n/tags";
-import { getLanguageSwitcherHrefs, getPostsByLocale, viewsKeyForPost } from "@/lib/posts";
+import { getLanguageSwitcherHrefs, getPostsByLocale, getTagHubs, viewsKeyForPost } from "@/lib/posts";
+import { tagHubPath } from "@/lib/hubs";
+import { tagSlug } from "@/lib/tags";
+
+/** Newest posts linked straight from the home page. Fixed, so the page height
+ * does not grow with the archive. Everything older is one hop away via a tag hub. */
+const RECENT_POST_COUNT = 10;
 
 interface Props {
   locale?: Locale;
@@ -23,6 +29,8 @@ const sorted = postsMeta.map((p) => p.entry);
 const featured = postsMeta.filter((p) => p.entry.data.featured).slice(0, 3);
 const popularMeta = featured.length > 0 ? featured : postsMeta.slice(0, 3);
 const popular = popularMeta;
+const recent = postsMeta.slice(0, RECENT_POST_COUNT);
+const tagHubs = await getTagHubs(locale);
 
 const languageHrefs = await getLanguageSwitcherHrefs(locale, { page: "home" });
 
@@ -192,6 +200,61 @@ const lcpCover = lcpCoverSource ? getCoverImageUrls(lcpCoverSource, "card") : un
             </ul>
           )
         }
+      </div>
+    </section>
+
+    <!--
+      RECENT + TAG HUBS — the home page is the most frequently crawled URL in
+      this section, so it has to hand Googlebot somewhere to go. It used to link
+      only the three featured posts, leaving everything else behind /archive/,
+      which is crawled far less often.
+
+      Both blocks are deliberately bounded: the newest RECENT_POST_COUNT posts
+      and the fixed set of canonical tag hubs. The list never grows with the
+      post count, and every older post stays reachable in one hop from a hub.
+    -->
+    <section class="home-index-section">
+      <div class="home-index-inner">
+        <div class="home-index-header">
+          <h2 class="home-index-title">{t(locale, "home.recent.title")}</h2>
+          <a href={withBase("/archive/")} class="home-index-see-all">{t(locale, "home.popular.seeAll")}</a>
+        </div>
+        {
+          recent.length === 0 ? (
+            <p class="home-index-empty">{t(locale, "home.empty")}</p>
+          ) : (
+            <ul class="home-index-list">
+              {recent.map((meta) => (
+                <li>
+                  <a href={withBase(`/posts/${meta.baseSlug}/`)} class="home-index-link">
+                    <span class="home-index-link-title">{meta.entry.data.title}</span>
+                    <time datetime={meta.entry.data.publishDate.toISOString()} class="home-index-date">
+                      {meta.entry.data.publishDate.toLocaleDateString(dateLocaleFor(locale), {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+
+        <h2 class="home-index-title home-index-title--tags">{t(locale, "home.topics.title")}</h2>
+        <ul class="home-tag-list">
+          {
+            tagHubs.map(({ tag, count }) => (
+              <li>
+                <a href={tagHubPath(locale, tagSlug(tag))} class="home-tag">
+                  {translateTag(locale, tag)}
+                  <span class="home-tag-count">{count}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
     </section>
   </main>
@@ -533,7 +596,116 @@ const lcpCover = lcpCoverSource ? getCoverImageUrls(lcpCoverSource, "card") : un
     color: var(--color-text-faint);
   }
 
+  /* Recent posts + tag hubs */
+  .home-index-section {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
+  .home-index-inner {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 40px;
+  }
+  .home-index-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .home-index-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2e2e2e;
+    line-height: 1.3;
+    font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+  }
+  .home-index-title--tags {
+    margin-top: 44px;
+    margin-bottom: 16px;
+  }
+  .home-index-see-all {
+    flex: none;
+    color: #0d7c70;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .home-index-empty {
+    color: var(--color-text-muted);
+    font-size: 15px;
+  }
+  .home-index-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 32px;
+  }
+  .home-index-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f6f6f6;
+    text-decoration: none;
+    transition: color 150ms ease;
+  }
+  .home-index-link-title {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+  }
+  .home-index-link:hover .home-index-link-title {
+    color: #0d7c70;
+  }
+  .home-index-date {
+    flex: none;
+    font-size: 12px;
+    color: var(--color-text-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .home-tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .home-tag {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 7px 15px;
+    border: 1px solid #e6e6e6;
+    border-radius: 999px;
+    font-size: 13px;
+    color: #444;
+    text-decoration: none;
+    transition:
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+  .home-tag:hover {
+    border-color: #56c7bb;
+    color: #0d7c70;
+  }
+  .home-tag-count {
+    font-size: 11px;
+    color: var(--color-text-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
   @media (max-width: 768px) {
+    .home-index-list {
+      grid-template-columns: 1fr;
+    }
     .hero-inner {
       grid-template-columns: 1fr;
     }

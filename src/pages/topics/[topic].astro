@@ -1,0 +1,40 @@
+---
+import HubPage from "@/components/HubPage.astro";
+import { defaultLocale, locales } from "@/i18n/locales";
+import { localizedPath } from "@/i18n/utils";
+import { categoryDescription, categoryLabel, topicHubPath, topicSiblings } from "@/lib/hubs";
+import { HOME_CATEGORIES, type HomeCategory } from "@/lib/home-categories";
+import { getPostsForTopic } from "@/lib/posts";
+
+export function getStaticPaths() {
+  return HOME_CATEGORIES.map((category) => ({
+    params: { topic: category.id },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props as { category: HomeCategory };
+const locale = defaultLocale;
+
+const posts = await getPostsForTopic(locale, category);
+const siblings = await topicSiblings(locale, category.id);
+
+const languageHrefs = Object.fromEntries(
+  await Promise.all(
+    locales.map(async (loc) => {
+      const localePosts = await getPostsForTopic(loc, category);
+      return [loc, localePosts.length > 0 ? topicHubPath(loc, category.id) : localizedPath(loc, "/")];
+    })
+  )
+);
+---
+
+<HubPage
+  locale={locale}
+  label={categoryLabel(locale, category)}
+  description={categoryDescription(locale, category)}
+  posts={posts}
+  siblings={siblings}
+  alternatePath={`/topics/${category.id}/`}
+  languageHrefs={languageHrefs}
+/>

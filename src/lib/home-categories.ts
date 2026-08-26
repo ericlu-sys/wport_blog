@@ -71,11 +71,15 @@ export function getPostsForCategory(
   return posts.filter((post) => postMatchesCategory(post, category));
 }
 
-/** archive 的 `?tag=` 值：整組 filterTags，用逗號隔開，語意是「任一命中」。 */
-export function getCategoryTagParam(category: HomeCategory): string {
-  return category.filterTags.join(",");
+export function getCategoryById(id: string): HomeCategory | undefined {
+  return HOME_CATEGORIES.find((category) => category.id === id);
 }
 
-export function getCategoryArchiveHref(category: HomeCategory, withBase: (path: string) => string): string {
-  return `${withBase("/archive")}?tag=${encodeURIComponent(getCategoryTagParam(category))}`;
+/**
+ * Bento cards used to point at `/archive?tag=A,B,C`, which was the same HTML as
+ * `/archive` filtered by client-side JS. Google saw one page, so the four topics
+ * contributed nothing to the link graph. They are real pages now.
+ */
+export function getCategoryHref(category: HomeCategory, withBase: (path: string) => string): string {
+  return withBase(`/topics/${category.id}/`);
 }
