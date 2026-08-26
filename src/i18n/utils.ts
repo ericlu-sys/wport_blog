@@ -13,6 +13,22 @@ import { t, type UiKey } from "./ui";
 export { t };
 export type { UiKey };
 
+/**
+ * Page URLs must carry a trailing slash. Astro builds with `format: "directory"`,
+ * so every page lands at `<path>/index.html`, and Cloudflare Workers Assets runs
+ * the default `html_handling: "auto-trailing-slash"`, which answers a slashless
+ * request with a 307 to the slashed form. Emitting the slashless form left every
+ * internal link, hreflang, and sitemap entry pointing at a URL that redirects.
+ */
+function withTrailingSlash(path: string): string {
+  if (!path || path.endsWith("/")) return path;
+  // Query strings and fragments are appended by callers, not routed.
+  if (/[?#]/.test(path)) return path;
+  // Asset paths (favicon.ico, foo.md) are real files, not directories.
+  if (/\.[a-z0-9]+$/i.test(path)) return path;
+  return `${path}/`;
+}
+
 /** Build a site path for a locale, respecting Astro `base` (/blog). */
 export function localizedPath(locale: Locale, path = "/"): string {
   const baseUrl = import.meta.env.BASE_URL;
@@ -21,14 +37,14 @@ export function localizedPath(locale: Locale, path = "/"): string {
   const cleanPath = path.replace(/^\//, "");
 
   if (!prefix) {
-    return `${normalizedBase}${cleanPath}`;
+    return withTrailingSlash(`${normalizedBase}${cleanPath}`);
   }
 
   if (!cleanPath) {
     return `${normalizedBase}${prefix}/`;
   }
 
-  return `${normalizedBase}${prefix}/${cleanPath}`;
+  return withTrailingSlash(`${normalizedBase}${prefix}/${cleanPath}`);
 }
 
 /** Absolute canonical URL for a locale path. */

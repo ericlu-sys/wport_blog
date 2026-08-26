@@ -193,7 +193,7 @@ export default function ArticleArchive({ posts, allTags }: Props) {
             return (
               <li key={post.id}>
                 <a
-                  href={withBase(`/posts/${post.id}`)}
+                  href={withBase(`/posts/${post.id}/`)}
                   className={`card${isRead ? " is-read" : ""}`}
                   data-post-id={post.id}
                 >

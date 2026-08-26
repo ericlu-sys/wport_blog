@@ -12,6 +12,19 @@ import { buildLastmodMap } from "./src/lib/sitemap-lastmod.ts";
 // Without <lastmod>, Google has no signal that a URL is worth re-crawling.
 const lastmodByUrl = buildLastmodMap();
 
+// Translated post pages are kept out of the sitemap on purpose.
+//
+// As of 2026-08-26 the sitemap carried 140 URLs and Search Console had crawled
+// exactly 6 of them (the five locale home pages plus the zh-TW archive). All
+// 130 post pages sat at "Discovered - currently not indexed" with no
+// lastCrawlTime at all, i.e. Googlebot had never fetched a single one. 104 of
+// those 130 are machine translations of the same 26 articles, so they were
+// spending this section's crawl budget without any search demand behind them.
+// Submitting only the zh-TW posts concentrates that budget until they start
+// getting picked up; the translations stay discoverable through hreflang and
+// the locale archives, and belong back in the sitemap once zh-TW is indexed.
+const TRANSLATED_POST_URL = /\/blog\/(en|id|vi|th)\/posts\//;
+
 // https://astro.build/config
 export default defineConfig({
   output: "static",
@@ -20,6 +33,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
+      filter: (page) => !TRANSLATED_POST_URL.test(page),
       serialize(item) {
         const lastmod = lastmodByUrl.get(item.url);
         return lastmod ? { ...item, lastmod } : item;

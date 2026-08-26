@@ -194,6 +194,41 @@ const lcpCover = lcpCoverSource ? getCoverImageUrls(lcpCoverSource, "card") : un
         }
       </div>
     </section>
+
+    <!--
+      FULL INDEX — every post, one hop from the home page.
+      The home page is the most frequently crawled URL in this section, but it
+      only linked the three featured posts; everything else sat behind
+      /archive/, which Googlebot visits far less often. Listing all posts here
+      gives each one a link from the page Google actually comes back to.
+    -->
+    <section class="all-posts-section">
+      <div class="all-posts-inner">
+        <h2 class="all-posts-title">{t(locale, "nav.archive")}</h2>
+        {
+          sorted.length === 0 ? (
+            <p class="all-posts-empty">{t(locale, "home.empty")}</p>
+          ) : (
+            <ul class="all-posts-list">
+              {postsMeta.map((meta) => (
+                <li>
+                  <a href={withBase(`/posts/${meta.baseSlug}`)} class="all-posts-link">
+                    <span class="all-posts-link-title">{meta.entry.data.title}</span>
+                    <time datetime={meta.entry.data.publishDate.toISOString()} class="all-posts-date">
+                      {meta.entry.data.publishDate.toLocaleDateString(dateLocaleFor(locale), {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </div>
+    </section>
   </main>
 </BlogLayout>
 
@@ -533,7 +568,67 @@ const lcpCover = lcpCoverSource ? getCoverImageUrls(lcpCoverSource, "card") : un
     color: var(--color-text-faint);
   }
 
+  /* Full index */
+  .all-posts-section {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+  }
+  .all-posts-inner {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 40px;
+  }
+  .all-posts-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2e2e2e;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+  }
+  .all-posts-empty {
+    color: var(--color-text-muted);
+    font-size: 15px;
+  }
+  .all-posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px 32px;
+  }
+  .all-posts-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 9px 0;
+    border-bottom: 1px solid #f6f6f6;
+    text-decoration: none;
+    transition: color 150ms ease;
+  }
+  .all-posts-link-title {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+  }
+  .all-posts-link:hover .all-posts-link-title {
+    color: #0d7c70;
+  }
+  .all-posts-date {
+    flex: none;
+    font-size: 12px;
+    color: var(--color-text-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
   @media (max-width: 768px) {
+    .all-posts-list {
+      grid-template-columns: 1fr;
+    }
     .hero-inner {
       grid-template-columns: 1fr;
     }
