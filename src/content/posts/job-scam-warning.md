@@ -4,10 +4,10 @@ description: "求職過程中遇到奇怪的職缺，你知道怎麼判斷真假
 publishDate: 2026-08-19
 tags: ["僑外生", "求職面試", "留台工作"]
 featured: false
-cover: "https://res.cloudinary.com/xyudkke9/image/upload/w_1200,h_630,c_fill,g_auto,f_auto,q_auto/v1787129564/ChatGPT_Image_2026%E5%B9%B48%E6%9C%8819%E6%97%A5_%E4%B8%8B%E5%8D%8804_50_22_b8vr5i.png"
+cover: "https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/v1787888445/wport-blog/job-scam-warning-cover.jpg"
 ---
 
-![小心工作詐騙](https://res.cloudinary.com/xyudkke9/image/upload/w_1200,f_auto,q_auto/v1787129564/ChatGPT_Image_2026%E5%B9%B48%E6%9C%8819%E6%97%A5_%E4%B8%8B%E5%8D%8804_50_22_b8vr5i.png)
+![小心工作詐騙](https://res.cloudinary.com/dyebbsckc/image/upload/f_auto,q_auto:good,w_1200,c_limit/v1787888445/wport-blog/job-scam-warning-cover.jpg)
 
 在台灣求職的僑外生，面對的風險不只是找不到工作，有時候還會遇到真正的詐騙。詐騙者很清楚僑外生對台灣就業市場還不熟悉，往往把陷阱設計得看起來像正常的工作機會。
 
@@ -65,7 +65,7 @@ cover: "https://res.cloudinary.com/xyudkke9/image/upload/w_1200,h_630,c_fill,g_a
 
 在台灣，你可以透過**經濟部商業司的公司登記查詢系統**確認一家公司是否合法登記。只要輸入公司名稱或統一編號，就能查到基本資訊。
 
-網址：[https://www.ris.gov.tw](https://findbiz.nat.gov.tw)
+網址：[https://findbiz.nat.gov.tw](https://findbiz.nat.gov.tw)
 
 ### 查雇主資格
 
