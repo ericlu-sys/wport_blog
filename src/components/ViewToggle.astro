@@ -1,0 +1,140 @@
+---
+/**
+ * Thumbnail / list switch for the post collections.
+ *
+ * The choice is stored in localStorage under `wport.postsView` and applied as
+ * `data-posts-view` on <html>, so it holds across the archive and every hub.
+ * BlogLayout restores it in <head> before first paint.
+ */
+import { defaultLocale, type Locale } from "@/i18n/locales";
+import { t } from "@/i18n/utils";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = defaultLocale } = Astro.props;
+---
+
+<div class="view-toggle" role="group" aria-label={t(locale, "view.label")}>
+  <button
+    type="button"
+    class="view-toggle__btn is-active"
+    data-view-option="grid"
+    aria-pressed="true"
+    title={t(locale, "view.grid")}
+  >
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="3" width="7.5" height="7.5" rx="1.5" fill="currentColor"></rect>
+      <rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5" fill="currentColor"></rect>
+      <rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5" fill="currentColor"></rect>
+      <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5" fill="currentColor"></rect>
+    </svg>
+    <span class="view-toggle__label">{t(locale, "view.grid")}</span>
+  </button>
+  <button
+    type="button"
+    class="view-toggle__btn"
+    data-view-option="list"
+    aria-pressed="false"
+    title={t(locale, "view.list")}
+  >
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="4" width="4.5" height="4.5" rx="1.2" fill="currentColor"></rect>
+      <rect x="3" y="15.5" width="4.5" height="4.5" rx="1.2" fill="currentColor"></rect>
+      <rect x="10" y="5.4" width="11" height="2" rx="1" fill="currentColor"></rect>
+      <rect x="10" y="16.9" width="11" height="2" rx="1" fill="currentColor"></rect>
+    </svg>
+    <span class="view-toggle__label">{t(locale, "view.list")}</span>
+  </button>
+</div>
+
+<style is:global>
+  .view-toggle {
+    display: inline-flex;
+    flex-shrink: 0;
+    gap: 2px;
+    padding: 3px;
+    border: 1px solid var(--border-default);
+    border-radius: 999px;
+    background: var(--bg-page);
+  }
+
+  .view-toggle__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--fg-meta);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition:
+      background 150ms ease,
+      color 150ms ease;
+  }
+
+  .view-toggle__btn:hover {
+    color: var(--color-primary);
+  }
+
+  .view-toggle__btn.is-active {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  /* The labels are the only thing that makes the control wide; drop them on
+     phones and keep the two icons. */
+  @media (max-width: 520px) {
+    .view-toggle__label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .view-toggle__btn {
+      padding: 6px 10px;
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const KEY = "wport.postsView";
+    const root = document.documentElement;
+    const buttons = Array.from(document.querySelectorAll("[data-view-option]"));
+
+    function apply(view) {
+      root.setAttribute("data-posts-view", view);
+      buttons.forEach((btn) => {
+        const isActive = btn.getAttribute("data-view-option") === view;
+        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+        btn.classList.toggle("is-active", isActive);
+      });
+    }
+
+    apply(root.getAttribute("data-posts-view") === "list" ? "list" : "grid");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const view = btn.getAttribute("data-view-option") === "list" ? "list" : "grid";
+        apply(view);
+        try {
+          window.localStorage.setItem(KEY, view);
+        } catch {
+          /* private mode: the choice just does not persist */
+        }
+      });
+    });
+  })();
+</script>

@@ -1,9 +1,10 @@
 ---
 import BlogLayout from "@/layouts/BlogLayout.astro";
 import Topbar from "@/components/Topbar.astro";
+import PostCards from "@/components/PostCards.astro";
+import ViewToggle from "@/components/ViewToggle.astro";
 import { defaultLocale, type Locale } from "@/i18n/locales";
-import { dateLocaleFor, localizedPath, t } from "@/i18n/utils";
-import { translateTag } from "@/i18n/tags";
+import { localizedPath, t } from "@/i18n/utils";
 import type { PostMeta } from "@/lib/posts";
 import type { HubSibling } from "@/lib/hub-types";
 
@@ -36,39 +37,25 @@ const withBase = (path: string) => localizedPath(locale, path);
   <main class="hub-main">
     <header class="hub-header">
       <a href={withBase("/archive/")} class="hub-back">{t(locale, "post.back")}</a>
-      <h1 class="hub-title">{label}</h1>
-      <p class="hub-subtitle">
-        {description}
-        <span class="hub-count">{t(locale, "bento.count", { n: posts.length })}</span>
-      </p>
+      <div class="hub-header__top">
+        <div>
+          <h1 class="hub-title">{label}</h1>
+          <p class="hub-subtitle">
+            {description}
+            <span class="hub-count">{t(locale, "bento.count", { n: posts.length })}</span>
+          </p>
+        </div>
+        <ViewToggle locale={locale} />
+      </div>
     </header>
 
     {
       posts.length === 0 ? (
         <p class="hub-empty">{t(locale, "home.empty")}</p>
       ) : (
-        <ul class="hub-list">
-          {posts.map((meta) => (
-            <li>
-              <a href={withBase(`/posts/${meta.baseSlug}/`)} class="hub-item">
-                <span class="hub-item-title">{meta.entry.data.title}</span>
-                <span class="hub-item-desc">{meta.entry.data.description}</span>
-                <span class="hub-item-meta">
-                  {(meta.entry.data.tags ?? []).slice(0, 3).map((tag: string) => (
-                    <span class="hub-item-tag">{translateTag(locale, tag)}</span>
-                  ))}
-                  <time datetime={meta.entry.data.publishDate.toISOString()} class="hub-item-date">
-                    {meta.entry.data.publishDate.toLocaleDateString(dateLocaleFor(locale), {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </time>
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div class="hub-posts">
+          <PostCards locale={locale} posts={posts} eagerFirst />
+        </div>
       )
     }
 
@@ -115,6 +102,13 @@ const withBase = (path: string) => localizedPath(locale, path);
   .hub-back:hover {
     color: #0d7c70;
   }
+  .hub-header__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
   .hub-title {
     font-size: 32px;
     font-weight: 700;
@@ -134,57 +128,8 @@ const withBase = (path: string) => localizedPath(locale, path);
     color: var(--color-text-muted);
     font-size: 15px;
   }
-  .hub-list {
-    list-style: none;
-    padding: 0;
-    margin: 32px 0 0;
-    border-top: 1px solid #f0f0f0;
-  }
-  .hub-item {
-    display: block;
-    padding: 18px 0;
-    border-bottom: 1px solid #f0f0f0;
-    text-decoration: none;
-  }
-  .hub-item-title {
-    display: block;
-    font-size: 17px;
-    font-weight: 600;
-    color: #2e2e2e;
-    line-height: 1.5;
-  }
-  .hub-item:hover .hub-item-title {
-    color: #0d7c70;
-  }
-  .hub-item-desc {
-    display: block;
-    margin-top: 4px;
-    font-size: 14px;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .hub-item-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-  }
-  .hub-item-tag {
-    font-size: 11px;
-    color: #0d7c70;
-    background: #eaf8f7;
-    padding: 2px 8px;
-    border-radius: 999px;
-  }
-  .hub-item-date {
-    font-size: 12px;
-    color: var(--color-text-faint);
-    font-variant-numeric: tabular-nums;
+  .hub-posts {
+    margin-top: 32px;
   }
 
   .hub-siblings {
@@ -248,6 +193,12 @@ const withBase = (path: string) => localizedPath(locale, path);
   @media (max-width: 768px) {
     .hub-title {
       font-size: 26px;
+    }
+
+    .hub-header__top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
     }
   }
 </style>
