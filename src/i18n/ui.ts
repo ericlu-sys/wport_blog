@@ -57,6 +57,9 @@ export type UiKey =
   | "archive.searchPlaceholder"
   | "archive.empty"
   | "archive.allTags"
+  | "view.label"
+  | "view.grid"
+  | "view.list"
   | "hub.otherTopics"
   | "hub.description"
   | "home.recent.title"
@@ -177,6 +180,9 @@ const zhTW: UiDict = {
   "archive.searchPlaceholder": "搜尋文章…",
   "archive.empty": "找不到符合的文章。",
   "archive.allTags": "全部",
+  "view.label": "檢視方式",
+  "view.grid": "縮圖",
+  "view.list": "清單",
   "hub.otherTopics": "其他主題",
   "hub.description": "{tag}：這個主題底下的所有文章。",
   "home.recent.title": "最新文章",
@@ -299,6 +305,9 @@ const enUS: UiDict = {
   "archive.searchPlaceholder": "Search posts…",
   "archive.empty": "No matching posts found.",
   "archive.allTags": "All",
+  "view.label": "View",
+  "view.grid": "Grid",
+  "view.list": "List",
   "hub.otherTopics": "Other topics",
   "hub.description": "{tag}: every post in this topic.",
   "home.recent.title": "Latest posts",
@@ -421,6 +430,9 @@ const idID: UiDict = {
   "archive.searchPlaceholder": "Cari artikel…",
   "archive.empty": "Tidak ada artikel yang cocok.",
   "archive.allTags": "Semua",
+  "view.label": "Tampilan",
+  "view.grid": "Kisi",
+  "view.list": "Daftar",
   "hub.otherTopics": "Topik lain",
   "hub.description": "{tag}: semua artikel dalam topik ini.",
   "home.recent.title": "Artikel terbaru",
@@ -541,6 +553,9 @@ const viVN: UiDict = {
   "archive.searchPlaceholder": "Tìm bài viết…",
   "archive.empty": "Không tìm thấy bài viết phù hợp.",
   "archive.allTags": "Tất cả",
+  "view.label": "Chế độ xem",
+  "view.grid": "Lưới",
+  "view.list": "Danh sách",
   "hub.otherTopics": "Chủ đề khác",
   "hub.description": "{tag}: tất cả bài viết trong chủ đề này.",
   "home.recent.title": "Bài viết mới nhất",
@@ -662,6 +677,9 @@ const thTH: UiDict = {
   "archive.searchPlaceholder": "ค้นหาบทความ…",
   "archive.empty": "ไม่พบบทความที่ตรงกัน",
   "archive.allTags": "ทั้งหมด",
+  "view.label": "มุมมอง",
+  "view.grid": "ตาราง",
+  "view.list": "รายการ",
   "hub.otherTopics": "หัวข้ออื่น",
   "hub.description": "{tag}: บทความทั้งหมดในหัวข้อนี้",
   "home.recent.title": "บทความล่าสุด",

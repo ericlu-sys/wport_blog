@@ -67,6 +67,17 @@ const hreflangLinks = locales.map((loc) => ({
     <link rel="icon" type="image/x-icon" href={withBase("/favicon.ico")} />
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
     <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+    <!-- Restore the thumbnail/list choice before first paint (see ViewToggle). -->
+    <script is:inline>
+      try {
+        const storedPostsView = window.localStorage.getItem("wport.postsView");
+        if (storedPostsView === "list" || storedPostsView === "grid") {
+          document.documentElement.setAttribute("data-posts-view", storedPostsView);
+        }
+      } catch {
+        /* private mode: fall back to the default grid view */
+      }
+    </script>
     {
       gtmId && (
         <script is:inline define:vars={{ gtmId }}>

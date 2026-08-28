@@ -3,14 +3,14 @@ import type { Page } from "astro";
 import BlogLayout from "@/layouts/BlogLayout.astro";
 import Topbar from "@/components/Topbar.astro";
 import { BASE_PATH, SITE_ORIGIN } from "@/lib/llms-content";
-import CoverImage from "@/components/CoverImage.astro";
-import { getPostViews, formatPostViews } from "@/lib/post-views";
+import PostCards from "@/components/PostCards.astro";
+import ViewToggle from "@/components/ViewToggle.astro";
 import { defaultLocale, type Locale } from "@/i18n/locales";
-import { dateLocaleFor, localizedPath, t } from "@/i18n/utils";
+import { localizedPath, t } from "@/i18n/utils";
 import { translateTag } from "@/i18n/tags";
 import { tagHubPath } from "@/lib/hubs";
 import { tagSlug } from "@/lib/tags";
-import { getLanguageSwitcherHrefs, getPostsByLocale, getTagHubs, viewsKeyForPost, type PostMeta } from "@/lib/posts";
+import { getLanguageSwitcherHrefs, getPostsByLocale, getTagHubs, type PostMeta } from "@/lib/posts";
 
 interface Props {
   locale?: Locale;
@@ -28,15 +28,6 @@ const languageHrefs = await getLanguageSwitcherHrefs(locale, { page: "archive" }
 // expects. See the note on withTrailingSlash in src/i18n/utils.ts.
 const pageHref = (n: number) => localizedPath(locale, n === 1 ? "/archive/" : `/archive/${n}/`);
 const currentPath = page.currentPage === 1 ? "/archive/" : `/archive/${page.currentPage}/`;
-
-const COVER_COLORS = [
-  { hue: "#E0F5F3", accent: "#56C7BB" },
-  { hue: "#FEF3E2", accent: "#F59E0B" },
-  { hue: "#EEF2FF", accent: "#6366F1" },
-  { hue: "#FDF2F8", accent: "#EC4899" },
-  { hue: "#F0FDF4", accent: "#22C55E" },
-  { hue: "#FFF7ED", accent: "#F97316" },
-];
 
 // Counted across the whole locale, not just this page, so the tag row is
 // identical on every page of the archive.
@@ -56,23 +47,26 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
           <h1 class="archive-title">{t(locale, "archive.heading")}</h1>
           <p class="archive-subtitle">{t(locale, "archive.subtitle")}</p>
         </div>
-        <a
-          href={rssFeedUrl}
-          class="archive-rss-link"
-          rel="alternate"
-          type="application/rss+xml"
-          title={t(locale, "archive.rss")}
-        >
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"></path>
-            <circle cx="5" cy="19" r="1" fill="currentColor"></circle>
-          </svg>
-          {t(locale, "archive.rss")}
-        </a>
+        <div class="archive-header__actions">
+          <ViewToggle locale={locale} />
+          <a
+            href={rssFeedUrl}
+            class="archive-rss-link"
+            rel="alternate"
+            type="application/rss+xml"
+            title={t(locale, "archive.rss")}
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"></path>
+              <circle cx="5" cy="19" r="1" fill="currentColor"></circle>
+            </svg>
+            {t(locale, "archive.rss")}
+          </a>
+        </div>
       </div>
     </header>
 
@@ -124,68 +118,7 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
 
     <p id="archive-empty" class="archive-empty" hidden>{t(locale, "archive.empty")}</p>
 
-    <ul class="card-grid" id="archive-grid">
-      {
-        postsMeta.map((meta, i) => {
-          const post = meta.entry;
-          const cover = COVER_COLORS[i % COVER_COLORS.length];
-          const tags = post.data.tags ?? [];
-          return (
-            <li
-              class="archive-card-item"
-              data-title={post.data.title}
-              data-description={post.data.description}
-              data-tags={tags.join(",")}
-            >
-              <a href={withBase(`/posts/${meta.baseSlug}`)} class="card" data-post-id={meta.baseSlug}>
-                <div class="card-cover" style={`background: ${cover.hue};`}>
-                  {post.data.cover ? (
-                    <CoverImage
-                      src={post.data.cover}
-                      alt={`${post.data.title} cover`}
-                      class="card-cover-image"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <>
-                      <div class="card-cover-shape1" style={`background: ${cover.accent};`} />
-                      <div class="card-cover-shape2" style={`background: ${cover.accent};`} />
-                      <div class="card-cover-label" style={`color: ${cover.accent};`}>
-                        wport
-                      </div>
-                    </>
-                  )}
-                </div>
-                <div class="card-body">
-                  {tags.length > 0 && (
-                    <div class="card-tags">
-                      {tags.slice(0, 4).map((tag: string) => (
-                        <span class="tag">{translateTag(locale, tag)}</span>
-                      ))}
-                    </div>
-                  )}
-                  <div class="card-title">{post.data.title}</div>
-                  <div class="card-excerpt">{post.data.description}</div>
-                  <div class="card-footer">
-                    {(() => {
-                      const views = getPostViews(viewsKeyForPost(meta));
-                      return views > 0 ? <span class="card-views">{formatPostViews(views)}</span> : null;
-                    })()}
-                    <span class="card-date">
-                      {post.data.publishDate.toLocaleDateString(dateLocaleFor(locale), {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </span>
-                  </div>
-                </div>
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
+    <PostCards locale={locale} posts={postsMeta} id="archive-grid" searchable eagerFirst />
 
     {
       page.lastPage > 1 && (
@@ -248,6 +181,13 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
     align-items: flex-start;
     justify-content: space-between;
     gap: 16px;
+  }
+
+  .archive-header__actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 10px;
   }
 
   .archive-rss-link {
@@ -390,13 +330,13 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
     box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-primary) 18%, transparent);
   }
 
-  .archive-card-item {
+  .post-card-item {
     transition:
       opacity 200ms ease,
       transform 200ms ease;
   }
 
-  .archive-card-item.is-filtered-out {
+  .post-card-item.is-filtered-out {
     opacity: 0;
     transform: translateY(6px);
     pointer-events: none;
@@ -404,7 +344,7 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
 
   @media (prefers-reduced-motion: reduce) {
     .archive-tag-btn,
-    .archive-card-item {
+    .post-card-item {
       transition: none;
     }
 
@@ -477,150 +417,6 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
     font-size: 15px;
     margin: 0 0 24px;
   }
-
-  .archive-card-item[hidden] {
-    display: none;
-  }
-
-  .card-grid {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  @media (min-width: 640px) {
-    .card-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  @media (min-width: 960px) {
-    .card-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-
-  .card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background: var(--bg-page);
-    border-radius: 12px;
-    border: 1px solid #e8e8e8;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    transition:
-      box-shadow 180ms ease,
-      transform 180ms ease;
-  }
-
-  .card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
-    transform: translateY(-2px);
-  }
-
-  .card-cover {
-    height: 140px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .card-cover-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .card-cover-shape1 {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-    opacity: 0.18;
-    position: absolute;
-    top: 28px;
-    left: 28px;
-  }
-
-  .card-cover-shape2 {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    opacity: 0.25;
-    position: absolute;
-    bottom: 20px;
-    right: 36px;
-  }
-
-  .card-cover-label {
-    font-size: 36px;
-    font-weight: 700;
-    opacity: 0.22;
-    user-select: none;
-    letter-spacing: -2px;
-  }
-
-  .card-body {
-    padding: 18px 20px 20px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 10px;
-  }
-
-  .card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .tag {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--color-primary);
-    background: var(--bg-tag);
-    border-radius: 999px;
-    padding: 2px 8px;
-  }
-
-  .card-title {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--fg-heading);
-    line-height: 1.4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    min-height: calc(1.4em * 2);
-  }
-
-  .card-excerpt {
-    font-size: 13.5px;
-    color: var(--fg-meta);
-    line-height: 1.65;
-    flex: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .card-footer {
-    padding-top: 8px;
-    border-top: 1px solid var(--bg-code);
-  }
-
-  .card-date {
-    font-size: 12px;
-    color: var(--color-text-faint);
-  }
 </style>
 
 <script is:inline>
@@ -628,7 +424,7 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
   // here is free-text search over the cards on the current page.
   const searchInput = document.getElementById("archive-search");
   const emptyState = document.getElementById("archive-empty");
-  const cards = Array.from(document.querySelectorAll(".archive-card-item"));
+  const cards = Array.from(document.querySelectorAll(".post-card-item"));
 
   let debounceTimer = 0;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -712,9 +508,4 @@ const rssFeedUrl = `${SITE_ORIGIN}${BASE_PATH}/feed.xml`;
       syncUrl(getSearchQuery());
     }, 180);
   });
-</script>
-
-<script>
-  import { applyReadMarkers } from "@/lib/read-markers";
-  applyReadMarkers();
 </script>
